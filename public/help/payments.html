@@ -1,0 +1,481 @@
+<h6 class="text-h6 mb-3">Table of contents</h6>
+
+<a href="#payments-q01" class="d-block text-body-1">What fiat payment gateways are supported?</a>
+<a href="#payments-q13" class="d-block text-body-1">What crypto payment gateways are supported?</a>
+<a href="#payments-q14" class="d-block text-body-1">What direct crypto payment methods are available?</a>
+<a href="#payments-q18" class="d-block text-body-1">How to integrate PayPal?</a>
+<a href="#payments-q17" class="d-block text-body-1">How to integrate Stripe?</a>
+<a href="#payments-q19" class="d-block text-body-1">How to integrate Freekassa?</a>
+<a href="#payments-q03" class="d-block text-body-1">How to integrate coinpayments.net?</a>
+<a href="#payments-q12" class="d-block text-body-1">How to integrate cryptapi.io?</a>
+<a href="#payments-q04" class="d-block text-body-1">How to set up payments on Ethereum, BSC, Polygon, smartBCH chains through Metamask?</a>
+<a href="#payments-q15" class="d-block text-body-1">How to set up payments on other EVM chains through Metamask?</a>
+<a href="#payments-q16" class="d-block text-body-1">How to enable auto withdrawals for the EVM chain?</a>
+<a href="#payments-q07" class="d-block text-body-1">How to set up payments on the Tron network through Tronlink?</a>
+<a href="#payments-q11" class="d-block text-body-1">How to set up payments on the Solana network via Phantom?</a>
+<a href="#payments-q05" class="d-block text-body-1">How to set up a manual payment method?</a>
+<a href="#payments-q08" class="d-block text-body-1">Why deposits are stuck in Pending state?</a>
+<a href="#payments-q09" class="d-block text-body-1">I get a 500 server error after completing a deposit</a>
+
+<div id="payments-q01" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">What fiat payment gateways are supported?</h6>
+  <p>
+    The following <b>fiat</b> payment gateways are supported:
+  </p>
+  <ul>
+    <li><a href="https://www.paypal.com/" target="_blank">Paypal</a> (deposits)</li>
+    <li><a href="https://stripe.com/" target="_blank">Stripe</a> (deposits)</li>
+    <li><a href="https://www.skrill.com/" target="_blank">Skrill</a> (deposits)</li>
+  </ul>
+</div>
+
+<div id="payments-q13" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">What crypto payment gateways are supported?</h6>
+  <p>
+    The following <b>crypto</b> payment gateways are supported:
+  </p>
+  <ul>
+    <li><a href="https://www.coinpayments.net/" target="_blank">coinpayments.net</a> (deposits and withdrawals)</li>
+    <li><a href="https://cryptapi.io/" target="_blank">cryptapi.io</a> (deposits)</li>
+  </ul>
+</div>
+
+<div id="payments-q14" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">What direct crypto payment methods are available?</h6>
+  <p>
+    The application supports a number of crypto payment methods that allow the client to make direct deposits to the casino address without any intermediaries.
+    The following blockchains and wallets are supported:
+  </p>
+  <ul>
+    <li>Any EVM (Ethereum Virtual Machine) chain (Ethereum, Binance Smart Chain, Polygon etc) through Metamask wallet (on desktop) or a web3 compatible wallet (on mobile). All coins and tokens are supported.</li>
+    <li>Tron through Tronlink wallet (TRX and TRC20 tokens).</li>
+    <li>Solana through Phantom wallet (only SOL).</li>
+  </ul>
+  <p class="mt-3">
+    When a deposit is made using one of the above methods, it will be automatically completed in a short period of time after the transaction is confirmed by the blockchain.
+    The user account in the application will be credited automatically.
+  </p>
+  <p>
+    The casino admin can also process withdrawals using the above methods (wallets).
+    In this case, the admin is expected to complete the payment on the withdrawal page by signing the transaction from their wallet, which can be done with just a few clicks.
+  </p>
+</div>
+
+<div id="payments-q18" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to integrate PayPal?</h6>
+  <ul>
+    <li>Log in to your PayPal account</li>
+    <li>Move your mouse over the <b>Tools</b> menu in top navigation. Find <b>More Tools</b> within that. And click it.</li>
+    <li>Scroll the page till you see a box with <b>API credentials</b> written. Click on it.</li>
+    <li>Shortcut: click on <a href="https://www.paypal.com/businessexp/tools" target="_blank">this link</a> to directly open Tools page in your PayPal account.</li>
+    <li>Once on the API credentials page, click on the last option for <b>NVP/SOAP API integration</b>.</li>
+    <li>If this is the first time you are creating API credentials, complete the API Credential Request form.</li>
+    <li>
+      Once you’ve created the API credentials, you will see <b>View API Signature</b> option under NVP / SOAP API integration.
+      Clicking on that will bring you to a page like the following screenshot.
+      Click on each <b>Show</b> link to see API username, password and signature.
+    </li>
+    <li>Input these keys in <b>Backend</b> » <b>Settings</b> » <b>Add-on: Payments</b> » <b>Paypal</b>.</li>
+    <li>
+      Go to <b>Backend</b> » <b>Deposit methods</b>, find the deposit method linked to the Paypal gateway, click
+      <b>Edit</b>, change its status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+  </ul>
+</div>
+
+<div id="payments-q17" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to integrate Stripe?</h6>
+  <ul>
+    <li>Sign up at <a href="https://stripe.com" target="_blank">stripe.com</a> and log in to your account.</li>
+    <li>
+      Open <b>Developers</b> » <b>API keys</b> page and create a new set of API keys.
+    </li>
+    <li>
+      Copy <b>Public key</b> and <b>Secret key</b>.
+      Input these keys in <b>Backend</b> » <b>Settings</b> » <b>Add-on: Payments</b> » <b>Stripe</b>.
+    </li>
+  </ul>
+</div>
+
+<div id="payments-q19" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to integrate Freekassa?</h6>
+  <ul>
+    <li>Sign up at <a href="https://freekassa.ru/auth/registration" target="_blank">freekassa.ru</a> and log in to your account.</li>
+    <li>Add a new merchant (website) and note the <b>Merchant ID</b>.</li>
+    <li>
+      Go to <b>Settings</b> page, generate <b>Merchant API key</b>, <b>Secret word 1</b> and <b>Secret word 2</b>
+      and enable <b>Payment verification</b> checkbox.
+    </li>
+    <li>
+      Input your <b>Merchant ID</b>, <b>Merchant API key</b>, <b>Secret word 1</b> and <b>Secret word 2</b>
+      in <b>Backend</b> » <b>Settings</b> » <b>Add-on: Payments</b> » <b>Freekassa</b>.
+    </li>
+    <li>
+      Copy <b>Notification URL</b>, <b>Successful payment return URL</b> and <b>Error payment return URL</b>
+      from the app settings page and paste them on the Freekassa settings page.
+    </li>
+    <li><b>Notification URL</b> method should be set to <b>POST</b>.</li>
+    <li>
+      Go to <b>Backend</b> » <b>Deposit Methods</b> page, find <b>Freekassa</b> method and click <b>Edit</b>.
+      Fill <b>Reference currency</b> and <b>Reference exchange rate</b>.
+      Change the deposit method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+    <li>
+      To enable withdrawals go to <b>Backend</b> » <b>Withdrawal Methods</b> page, find <b>Freekassa</b> method and click <b>Edit</b>.
+      Fill <b>Reference currency</b>, <b>Reference exchange rate</b> and choose one of the supported payment methods.
+      Change the withdrawal method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+  </ul>
+</div>
+
+<div id="payments-q03" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to integrate coinpayments.net?</h6>
+  <ul>
+    <li>Sign up at <a href="https://www.coinpayments.net/" target="_blank">coinpayments.net</a>.</li>
+    <li>
+      Open <b>Account</b> » <b>Coin Acceptance Settings</b> page and select coins that you would like to accept
+      (these coins will be available for deposits and withdrawals).
+    </li>
+    <li>
+      Open <b>Account</b> » <b>Account Settings</b> page, select <b>Merchant Settings</b> tab and fill <b>IPN Secret</b> field.
+      It can be any random alphanumeric string.
+      Do <b>not</b> fill <b>IPN URL</b>, leave it blank.
+    </li>
+    <li>
+      Open <b>Account</b> » <b>API keys</b> page and click <b>Generate new key</b> button.
+      After it is generated click <b>Edit Permissions</b> button and enable the following permissions:
+      <ul>
+        <li>get_basic_info</li>
+        <li>create_transaction</li>
+        <li>get_tx_info</li>
+        <li>balances</li>
+        <li>create_withdrawal</li>
+        <li>Allow auto_confirm = 1 in create_withdrawal (only in case you like to enable auto confirmation of withdrawals)</li>
+        <li>get_withdrawal_info</li>
+        <li>rates</li>
+      </ul>
+    </li>
+    <li>
+      Copy <b>Merchant ID</b>, <b>Public key</b>, <b>Private key</b> and <b>IPN Secret</b>.
+      Input these keys in <b>Backend</b> » <b>Settings</b> » <b>Add-on: Payments</b> » <b>Coinpayments</b>.
+    </li>
+    <li>
+      Open <b>Backend</b> » <b>Deposit Methods</b> page, find Coinpayments method and click <b>Edit</b>.
+      Fill <b>Reference currency</b> and <b>Reference exchange rate</b> fields. <b>Reference currency</b>
+      can be any supported coin or fiat currency, e.g. USD or EUR. Change the deposit method status to <b>Enabled</b>
+      and click <b>Save</b>.
+    </li>
+    <li>
+      Open <b>Backend</b> » <b>Withdrawal Methods</b> page and complete the same steps as in the previous point.
+    </li>
+  </ul>
+  <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text mt-5">
+    <div class="v-alert__wrapper">
+      <div class="v-alert__content">
+        If you use a firewall or some external security service such as Cloudflare make sure to white list
+        all GET / POST requests to all URLs that start with <b>/api/webhooks</b>, otherwise instant payment notification (IPN)
+        messages will not reach your website and hence deposits / withdrawals will stuck in <b>Pending</b> status.
+      </div>
+      <div class="v-alert__border v-alert__border--left"></div>
+    </div>
+  </div>
+</div>
+
+<div id="payments-q12" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to integrate cryptapi.io?</h6>
+  <ul>
+    <li>
+      Open <b>Backend</b> » <b>Settings</b> » <b>Add-on: Payments</b> » <b>CryptAPI</b> and input a secret key. It can be any alphanumeric string (without spaces).
+    </li>
+    <li>
+      Open <b>Backend</b> » <b>Deposit Methods</b> page, choose one of the methods linked to CryptAPI gateway and click <b>Edit</b>.
+    </li>
+    <li>
+      Fill in the <b>Deposit Address</b>, where users will send their coins.
+    </li>
+    <li>
+      Fill in the <b>Reference currency</b> and <b>Reference exchange rate</b> fields.
+      <b>Reference currency</b> can be the coin itself (fixed conversion rate) or one of the supported fiat currencies, e.g. USD or EUR (dynamic conversion rate).
+    </li>
+    <li>
+      In case of an ERC20, BEP20, or TRC20 token fill in the <b>Ticker</b> field. List of <a href="https://cryptapi.io/cryptocurrencies/" target="_blank">supported token tickers</a> (symbols).
+    </li>
+    <li>Optionally fill in or change the fields <b>Number of confirmations</b>, <b>Email</b> and <b>Payment priority</b>.</li>
+    <li>Change the deposit method status to <b>Enabled</b> and click <b>Save</b>.</li>
+  </ul>
+</div>
+
+<div id="payments-q04" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to set up payments on Ethereum, BSC, Polygon, smartBCH chains through Metamask?</h6>
+  <p>
+    Deposit and withdrawal methods for Ethereum, BSC, Polygon and smartBCH chains are already predefined.
+    To enable deposits for one of the above chains (in the main coin or token) please do the following:
+  </p>
+  <ul>
+    <li>
+      Go to <b>Backend</b> » <b>Deposit Methods</b>.
+    </li>
+    <li>
+      Choose one of the predefined deposit methods (for the chain you are interested in) that is linked to <b>EVM Blockchain</b> payment gateway and click <b>Edit</b>.
+    </li>
+    <li>
+      Set the <b>Deposit Address</b>, where users will send their coins to.
+    </li>
+    <li>
+      If necessary, change the <b>Reference currency</b> and <b>Reference exchange rate</b>.
+    </li>
+    <li>
+      For deposit methods where the <b>Payment method</b> is set to <b>Coin</b> the <b>Reference currency</b> can be set to either the main coin (ETH, BNB, MATIC etc)
+      for a fixed exchange rate, or <b>USD</b> for a dynamic exchange rate.
+      If it is set to <b>USD</b> the payment amount will be calculated automatically based
+      on the internal <b>USD / credits</b> rate and the market rate against USD
+      (pulled from the crypto API defined in <b>Backend</b> » <b>Settings</b> » <b>Services</b> » <b>Crypto API</b>).
+    </li>
+    <li>
+      Irrespective of the <b>Reference currency</b> value the <b>Base coin</b> must always be set to the main coin (ETH, BNB, MATIC etc).
+      Please note that the auto conversion feature is only available for coins, not tokens.
+    </li>
+    <li>
+      Change the deposit method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+  </ul>
+  <p class="mt-5">
+    Go to <b>Backend</b> » <b>Withdrawal Methods</b> to set up the corresponding withdrawal methods accordingly.
+    Please note that in order to complete a withdrawal request using this method the admin is expected to make the payment using their Metamask wallet.
+    This can be done on the withdrawal request page.
+  </p>
+  <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text mt-5">
+    <div class="v-alert__wrapper">
+      <div class="v-alert__content">
+        To make payments using this method users need to install
+        <a href="https://metamask.io/" target="_blank">Metamask browser extension</a>.
+        Please note that this extension works only in desktop browsers.
+        To make payments on mobile phones users need to use a DApp browser,
+        e.g. the one provided by <a href="https://trustwallet.com/" target="_blank">Trust Wallet</a>.
+      </div>
+      <div class="v-alert__border v-alert__border--left"></div>
+    </div>
+  </div>
+</div>
+
+<div id="payments-q15" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to set up payments on other EVM chains through Metamask?</h6>
+  <p>
+    The below approach allows to set up deposits and withdrawals for any EVM blockchain (in the main coin or token).
+    All you need to know is the <b>RPC node URL</b>.
+    You can use a public node or set up your own.
+    The application communicates with the node to pull address balances and transactions.
+  </p>
+  <p>
+    To set up a deposit method for an arbitrary EVM chain, follow these steps:
+  </p>
+  <ul>
+    <li>
+      Go to <b>Backend</b> » <b>Deposit Methods</b>.
+    </li>
+    <li>
+      Click <b>Create deposit method</b>.
+    </li>
+    <li>
+      Choose <b>EVM Blockchain</b> as the <b>Payment gateway</b>.
+    </li>
+    <li>
+      Choose <b>Coin</b> or <b>Token</b> as the <b>Payment method</b>.
+    </li>
+    <li>
+      Input any alpha numeric identifier as the method <b>Code</b> and enter the method <b>Name</b>.
+    </li>
+    <li>
+      Specify <b>JSON-RPC URL</b>. You can use services like <a href="https://infura.io/" target="_blank">Infura</a>, <a href="https://www.alchemy.com" target="_blank">Alchemy</a> and the like.
+    </li>
+    <li>
+      Set the <b>Deposit Address</b>, where users will send their coins to.
+    </li>
+    <li>
+      Set the <b>Reference currency</b> and <b>Reference exchange rate</b>.
+    </li>
+    <li>
+      For deposit methods where the <b>Payment method</b> is set to <b>Coin</b> the <b>Reference currency</b> can be set to either the main coin (ETH, BNB, MATIC etc)
+      for a fixed exchange rate, or <b>USD</b> for a dynamic exchange rate.
+      If it is set to <b>USD</b> the payment amount will be calculated automatically based
+      on the internal <b>USD / credits</b> rate and the market rate against USD
+      (pulled from the crypto API defined in <b>Backend</b> » <b>Settings</b> » <b>Services</b> » <b>Crypto API</b>).
+    </li>
+    <li>
+      Irrespective of the <b>Reference currency</b> value the <b>Base coin</b> must always be set to the main coin (ETH, BNB, MATIC etc).
+      Please note that the auto conversion feature is only available for coins, not tokens.
+    </li>
+    <li>
+      Change the deposit method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+  </ul>
+  <p class="mt-5">
+    Go to <b>Backend</b> » <b>Withdrawal Methods</b> to set up the corresponding withdrawal methods accordingly.
+    Please note that in order to complete a withdrawal request using this method the admin is expected to make the payment using their Metamask wallet.
+    This can be done on the withdrawal request page.
+  </p>
+  <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text mt-5">
+    <div class="v-alert__wrapper">
+      <div class="v-alert__content">
+        To make payments using this method users need to install
+        <a href="https://metamask.io/" target="_blank">Metamask browser extension</a>.
+        Please note that this extension works only in desktop browsers.
+        To make payments on mobile phones users need to use a DApp browser,
+        e.g. the one provided by <a href="https://trustwallet.com/" target="_blank">Trust Wallet</a>.
+      </div>
+      <div class="v-alert__border v-alert__border--left"></div>
+    </div>
+  </div>
+</div>
+
+<div id="payments-q16" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to enable auto withdrawals for the EVM chain?</h6>
+  <p>
+    If a withdrawal method is linked to an EVM gateway it's possible to configure automatic withdrawals,
+    which do not require an administrator to complete them manually.
+    For automatic withdrawals to work, you will need to provide the private key of the wallet from which funds are to be sent and the URL of the RPC node.
+    Every five minutes the application will select withdrawals requests that should be processed automatically.
+    It will then send transactions to the blockchain and sign them on behalf of the wallet (address) owner.
+  </p>
+  <p>
+    To enable automatic withdrawals, follow these steps:
+  </p>
+  <ul>
+    <li>
+      Go to <b>Backend</b> » <b>Withdrawal Methods</b>.
+    </li>
+    <li>
+      Find the corresponding withdrawal method and click <b>Edit</b>.
+    </li>
+    <li>
+      Make sure to fill <b>JSON-RPC URL</b>. You can use services like <a href="https://infura.io/" target="_blank">Infura</a>, <a href="https://www.alchemy.com" target="_blank">Alchemy</a> and the like.
+    </li>
+    <li>
+      Activate the switch <b>Auto process</b>.
+    </li>
+    <li>
+      Input the <b>Primary key</b> of the address, where the coins or tokens should be sent from.
+      <a href="https://metamask.zendesk.com/hc/en-us/articles/360015289632" target="_blank">How to export an account's private key from Metamask?</a>
+    </li>
+    <li>
+      Optionally specify the auto withdrawal <b>Limit</b>.
+    </li>
+    <li>
+      Click <b>Save</b>.
+    </li>
+  </ul>
+  <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text mt-5">
+    <div class="v-alert__wrapper">
+      <div class="v-alert__content">
+        The application stores the private key in the database.
+        Please be careful when providing access to your server or the app backend to other people,
+        because this can lead to the loss of funds in the wallet.
+        It's recommended to set up a separate wallet for automatic withdrawals and replenish it when necessary.
+      </div>
+      <div class="v-alert__border v-alert__border--left"></div>
+    </div>
+  </div>
+</div>
+
+<div id="payments-q07" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to set up payments on the Tron network through Tronlink?</h6>
+  <ul>
+    <li>
+      Go to <b>Backend</b> » <b>Settings</b> » <b>Add-on: Payments</b> » <b>Tron</b> and choose the network.
+    </li>
+    <li>
+      Go to <b>Backend</b> » <b>Deposit Methods</b>, find <b>TRX</b> or <b>TRC20</b> method and click <b>Edit</b>.
+      Fill <b>Reference currency</b>, <b>Reference exchange rate</b> and <b>Deposit Address</b> (where users will send their coins to) fields.
+      For payments in <b>TRX</b> the <b>Reference currency</b> can be set either to <b>TRX</b> (fixed exchange rate) or <b>USD</b> (dynamic exchange rate).
+      If it is set to <b>USD</b> the payment amount in TRX will be calculated automatically based
+      on the internal <b>USD / credits</b> rate and the market <b>TRX / USD</b> rate
+      (pulled from the crypto API defined in <b>Backend</b> » <b>Settings</b> » <b>Services</b> » <b>Crypto API</b>).
+      Change the deposit method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+    <li>
+      Go to <b>Backend</b> » <b>Withdrawal Methods</b> and complete the same steps as in the previous point.
+    </li>
+  </ul>
+  <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text mt-5">
+    <div class="v-alert__wrapper">
+      <div class="v-alert__content">
+        To make payments using this method users need to install
+        <a href="https://www.tronlink.org/" target="_blank">Tronlink browser extension</a>.
+        Please note that this extension works only in desktop browsers.
+        To make payments on mobile phones users need to use a DApp browser,
+        e.g. the one provided by Tronlink mobile app.
+      </div>
+      <div class="v-alert__border v-alert__border--left"></div>
+    </div>
+  </div>
+</div>
+
+<div id="payments-q11" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to set up payments on the Solana network via Phantom?</h6>
+  <ul>
+    <li>
+      Go to <b>Backend</b> » <b>Deposit Methods</b>, find <b>SOL</b> method and click <b>Edit</b>.
+      Fill <b>Reference currency</b>, <b>Reference exchange rate</b> and <b>Deposit Address</b> (where users will send their coins to) fields.
+      For payments in <b>SOL</b> the <b>Reference currency</b> can be set either to <b>SOL</b> (fixed exchange rate) or <b>USD</b> (dynamic exchange rate).
+      If it is set to <b>USD</b> the payment amount in SOL will be calculated automatically based
+      on the internal <b>USD / credits</b> rate and the market <b>SOL / USD</b> rate
+      (pulled from the crypto API defined in <b>Backend</b> » <b>Settings</b> » <b>Services</b> » <b>Crypto API</b>).
+      Change the deposit method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+    <li>
+      Go to <b>Backend</b> » <b>Withdrawal Methods</b> and complete the same steps as in the previous point.
+    </li>
+  </ul>
+  <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text mt-5">
+    <div class="v-alert__wrapper">
+      <div class="v-alert__content">
+        To make payments using this method users need to install
+        <a href="https://phantom.app/download" target="_blank">Phantom browser extension</a>.
+        Please note that this extension works only in desktop browsers.
+        To make payments on mobile phones, users need to use the in-app browser.
+      </div>
+      <div class="v-alert__border v-alert__border--left"></div>
+    </div>
+  </div>
+</div>
+
+<div id="payments-q05" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">How to set up a manual payment method?</h6>
+  <ul>
+    <li>
+      Open <b>Backend</b> » <b>Deposit Methods</b> page, click <b>Create deposit method</b>.
+    </li>
+    <li>
+      Fill <b>Code</b>, <b>Name</b>, <b>Description</b>, <b>Reference currency</b> and <b>Reference exchange rate</b> fields.
+    </li>
+    <li>
+      Add any number of extra fields that users will require to fill when submitting a deposit request. For example,
+      you might want users to fill some wallet ID that they will send the funds from.
+    </li>
+    <li>
+      Change the method status to <b>Enabled</b> and click <b>Save</b>.
+    </li>
+    <li>Open <b>Backend</b> » <b>Withdrawal Methods</b> page and complete the same steps.</li>
+  </ul>
+  <p class="mt-3">
+    Manual deposits and withdrawals are not automatically completed and the administrator is expected to complete them manually one by one.
+  </p>
+</div>
+
+<div id="payments-q09" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">Why deposits are stuck in Pending state?</h6>
+  <p>
+    Make sure that the cron job specified on <b>Backend</b> » <b>Maintenance</b> page is added to your server.
+    Please check the installation guide for more info how to set up a cron job.
+  </p>
+</div>
+
+<div id="payments-q08" style="padding-top: 90px;">
+  <h6 class="text-h6 mb-3">I get a 500 server error after completing a deposit</h6>
+  <p>
+    Go to <b>Backend</b> » <b>Settings</b> » <b>Email</b> » <b>Driver</b> and double check
+    that correct SMTP server credentials are specified.
+    If the error persists enable <b>Debug mode</b> (<b>Backend</b> » <b>Settings</b> » <b>Logging</b>) to get
+    more info about the error.
+  </p>
+</div>
