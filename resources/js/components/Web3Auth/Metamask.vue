@@ -69,7 +69,7 @@ export default {
         //
       }
     },
-    async sign (nonce) { console.log(nonce)
+    async sign (nonce) {
       const web3 = new Web3(Web3.givenProvider)
 
       try {

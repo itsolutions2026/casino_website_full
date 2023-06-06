@@ -72,7 +72,7 @@ export default {
 
       // dynamically load game component
       const module = await import(/* webpackChunkName: 'packages/[request]' */`packages/${gamePackageId}/resources/js/pages/game`)
-      console.log(module)
+
       !config(`${gamePackageId}`, false) || (this.gameComponent = module.default)
       this.gameBackgroundImageUrl = this.getGameBackgroundImageUrl(gamePackageId, slug)
     }

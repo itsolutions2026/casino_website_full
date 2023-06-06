@@ -373,10 +373,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
                 return __webpack_require__("./packages lazy recursive ^\\.\\/.*\\/resources\\/js\\/pages\\/game$")("./".concat(gamePackageId, "/resources/js/pages/game"));
               case 3:
                 module = _context.sent;
-                console.log(module);
                 !(0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(gamePackageId), false) || (_this.gameComponent = module["default"]);
                 _this.gameBackgroundImageUrl = _this.getGameBackgroundImageUrl(gamePackageId, slug);
-              case 7:
+              case 6:
               case "end":
                 return _context.stop();
             }

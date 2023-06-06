@@ -216,6 +216,21 @@ class WithdrawalMethodSeeder extends Seeder
                 'parameters' => []
             ],
             [
+                'payment_method_code' => 'ripple_coin',
+                'name' => 'XRP (XUMM)',
+                'currency' => 'XRPL',
+                'rate' => 10000,
+                'decimal_places' => 6,
+                'payment_method_parameters' => [
+                    'coin' => 'XRP',
+                    'url' => 'https://s2.ripple.com:51234/',
+                    'auto' => 0,
+                    'primary_key' => '',
+                    'limit' => 0,
+                ],
+                'parameters' => []
+            ],
+            [
                 'payment_method_code' => 'evm_token',
                 'name' => 'ERC20 Polygon Token',
                 'currency' => 'TST',
@@ -325,6 +340,7 @@ class WithdrawalMethodSeeder extends Seeder
             'TRX' => '/images/payments/tronlink.jpg',
             'TRC20 Token' => '/images/payments/tronlink.jpg',
             'SOL' => '/images/payments/solana.jpg',
+            'XRP (XUMM)' => '/images/payments/xumm.png',
             'smartBCH' => '/images/payments/smart-bch.jpg',
             'smartBCH Token' => '/images/payments/smart-bch.jpg',
             'Freekassa Wallet USD' => '/images/payments/freekassa.jpg',

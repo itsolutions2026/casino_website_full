@@ -50,9 +50,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 2:
               _yield$axios$get = _context.sent;
               data = _yield$axios$get.data;
-              console.log(data);
               _this.data = data;
-            case 6:
+            case 5:
             case "end":
               return _context.stop();
           }

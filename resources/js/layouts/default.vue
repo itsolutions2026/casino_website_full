@@ -73,9 +73,9 @@
         <v-btn :to="{ name: 'login' }" class="secondary">
           {{ $t('Log in') }}
         </v-btn>
-        <v-btn :to="{ name: 'register' }" class="primary ml-2">
-          {{ $t('Sign up') }}
-        </v-btn>
+<!--        <v-btn :to="{ name: 'register' }" class="primary ml-2">-->
+<!--          {{ $t('Sign up') }}-->
+<!--        </v-btn>-->
       </template>
       <template v-else-if="authenticated">
         <account-menu />

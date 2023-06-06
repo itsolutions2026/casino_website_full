@@ -21,11 +21,11 @@ class XrplSigner
 
         $xumm_credential = config('payments.xrpl');
 
-        if(!empty($xumm_credential['api_key']) && !empty($xumm_credential['api_secret']) && config('auth.web3.xumm.enabled')){
+        if(!empty($xumm_credential['api_key']) && !empty($xumm_credential['api_secret'])){
+            Log::error(print_r('test', 1));
             $sdk = new XummSdk($xumm_credential['api_key'], $xumm_credential['api_secret']);
             $payload = $sdk->getPayload($signature);
 
-            Log::error(print_r($payload, 1));
             if (!empty($payload->payload) && $payload->payload->txType == "SignIn"){
                 return true;
             }

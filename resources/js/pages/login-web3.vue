@@ -24,6 +24,7 @@
 
 <script>
 
+
 import Metamask from '~/components/Web3Auth/Metamask'
 import Phantom from '~/components/Web3Auth/Phantom'
 import Tronlink from '~/components/Web3Auth/Tronlink'
@@ -49,7 +50,6 @@ export default {
 
   computed: {
     appLogoUrl () {
-      console.log(this.componentName)
       return config('app.logo')
     },
     componentName () {

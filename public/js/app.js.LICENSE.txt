@@ -1,10 +1,4 @@
 /*!
-  * Bootstrap v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
-
-/*!
  *  Spatial Plugin - Adds support for stereo and 3D audio where Web Audio is supported.
  *  
  *  howler.js v2.2.3
@@ -100,12 +94,6 @@
  * http://adamwdraper.github.com/Numeral-js/
  */
 
-/*! WOW wow.js - v1.3.0 - 2016-10-04
-* https://wowjs.uk
-* Copyright (c) 2016 Thomas Grainger; Licensed MIT */
-
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-/*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
 
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */

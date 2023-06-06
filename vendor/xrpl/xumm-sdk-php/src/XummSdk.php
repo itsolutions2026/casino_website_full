@@ -30,6 +30,8 @@ use Xrpl\XummSdkPhp\Response\XummResponse;
 use Xrpl\XummSdkPhp\ValueObject\Http\Request;
 use Xrpl\XummSdkPhp\ValueObject\Http\UriParams;
 
+
+
 final class XummSdk
 {
     private const XUMM_BASE_URI = 'https://xumm.app/api/v1/platform/';
@@ -40,6 +42,7 @@ final class XummSdk
 
     public function __construct(string $apiKey = null, string $apiSecret = null)
     {
+
         $this->serializer = new XummSerializer();
         $this->configure($apiKey, $apiSecret);
     }

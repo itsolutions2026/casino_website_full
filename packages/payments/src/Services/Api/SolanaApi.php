@@ -72,7 +72,7 @@ class SolanaApi extends Api implements BlockchainApi
 
         return !is_null($balance) ? self::fromUnits($balance->value) : NULL;
     }
-
+    
     
     public function fetchVersion(): string
     {

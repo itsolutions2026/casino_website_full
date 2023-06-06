@@ -110,7 +110,7 @@ async function afterEach (to, from, next) {
  */
 function callMiddleware (middleware, to, from, next) {
   const stack = middleware.reverse()
-
+  
   const _next = (...args) => {
     // Stop if "_next" was called with an argument or the stack is empty.
     if (args.length > 0 || stack.length === 0) {

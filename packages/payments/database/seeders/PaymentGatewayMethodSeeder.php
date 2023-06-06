@@ -19,7 +19,7 @@ class PaymentGatewayMethodSeeder extends Seeder
     public function run()
     {
         $gateways = PaymentGateway::all()->keyBy('code');
-
+        
         PaymentGatewayMethod::updateOrCreate(
             [
                 'type' => PaymentGatewayMethod::TYPE_IN,
@@ -961,7 +961,7 @@ class PaymentGatewayMethodSeeder extends Seeder
                         'type' => 'input',
                         'name' => __('Deposit address'),
                         'description' => __('The address, where deposited coins will be sent to.'),
-                        'validation' => 'required|min:265|max:35|regex:/^r[0–9a-zA-Z]/',
+                        'validation' => 'required|min:25|max:35|regex:/^r[0–9a-zA-Z]/',
                         'default' => ''
                     ],
                 ],
@@ -1029,7 +1029,7 @@ class PaymentGatewayMethodSeeder extends Seeder
                         'type' => 'input',
                         'name' => __('Address'),
                         'description' => '',
-                        'validation' => 'required|min:265|max:35|regex:/^r[0–9a-zA-Z]/',
+                        'validation' => 'required|min:25|max:35|regex:/^r[0–9a-zA-Z]/',
                         'default' => '',
                     ]
                 ],

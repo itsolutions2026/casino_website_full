@@ -44,12 +44,19 @@
 
 <script>
 import { config } from '~/plugins/config'
-import {Xumm} from 'xumm'
+import { Xumm } from 'xumm'
 import Form from "vform";
 import { route } from '~/plugins/route'
+import { ucfirst } from '~/plugins/utils'
 
 
 export default {
+
+  middleware: 'guest',
+
+  metaInfo () {
+    return { title: this.$t('{0} authentication', [ucfirst(this.$options._componentTag)]) }
+  },
 
   data () {
     return {
@@ -85,7 +92,6 @@ export default {
     if (this.xummInstance) {
       this.isInstalled = true
     }
-    this.isConnected = false
   },
 
   methods: {
@@ -109,7 +115,7 @@ export default {
       this.isLoading = true
 
       if (this.form.signature) {
-        console.log(this.form)
+
         const { data: { success, user, message } } = await this.form.post(route('auth.web3.login').replace('{provider}', this.$options._componentTag))
 
         if (success) {

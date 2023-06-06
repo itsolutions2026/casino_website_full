@@ -8,7 +8,7 @@ return [
     'default_bet_amount'    => env('GAME_DICE_HEADS_OR_TAILS_DEFAULT_BET_AMOUNT', 1), // how much in credits to bet
     'house_edge'            => env('GAME_DICE_HEADS_OR_TAILS_HOUSE_EDGE', 5), // house edge in %
     'banner'                => env('GAME_DICE_HEADS_OR_TAILS_BANNER', '/images/games/heads-or-tails.jpg'),
-    'background'            => env('GAME_DICE_HEADS_OR_TAILS_BACKGROUND', '/images/games/heads-or-tails/background.png'),
+    'background'            => env('GAME_DICE_HEADS_OR_TAILS_BACKGROUND', '/images/games/heads-or-tails/background.jpg'),
     'images' => [
         'heads' => env('GAME_DICE_HEADS_OR_TAILS_IMAGES_HEADS', '/storage/games/heads-or-tails/heads.jpg'),
         'tails' => env('GAME_DICE_HEADS_OR_TAILS_IMAGES_TAILS', '/storage/games/heads-or-tails/tails.jpg'),

@@ -442,22 +442,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var vuetify_lib_components_VAvatar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VAvatar */ "./node_modules/vuetify/lib/components/VAvatar/VAvatar.js");
-/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/VBtn.js");
 /* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/VCard.js");
 /* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
-/* harmony import */ var vuetify_lib_components_VCheckbox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VCheckbox */ "./node_modules/vuetify/lib/components/VCheckbox/VCheckbox.js");
 /* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VCol.js");
 /* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VContainer.js");
-/* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/VForm.js");
 /* harmony import */ var vuetify_lib_components_VImg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VImg */ "./node_modules/vuetify/lib/components/VImg/VImg.js");
 /* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VRow.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/VTextField.js");
 /* harmony import */ var vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VToolbar */ "./node_modules/vuetify/lib/components/VToolbar/VToolbar.js");
 /* harmony import */ var vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VToolbar */ "./node_modules/vuetify/lib/components/VToolbar/index.js");
-
-
-
-
 
 
 
@@ -511,121 +503,7 @@ var render = function render() {
     }
   })], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__.VToolbarTitle, {
     staticClass: "ml-2"
-  }, [_vm._v("\n            " + _vm._s(_vm.$t("Authentication")) + "\n          ")])], 1), _vm._v(" "), _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_8__.VCardText, [_c("oauth"), _vm._v(" "), _c("web3-auth"), _vm._v(" "), _c(vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    on: {
-      submit: function submit($event) {
-        $event.preventDefault();
-        return _vm.login.apply(null, arguments);
-      }
-    },
-    model: {
-      value: _vm.formIsValid,
-      callback: function callback($$v) {
-        _vm.formIsValid = $$v;
-      },
-      expression: "formIsValid"
-    }
-  }, [_c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    attrs: {
-      label: _vm.$t("Email"),
-      type: "email",
-      name: "email",
-      rules: [_vm.validationRequired, _vm.validationEmail],
-      error: _vm.form.errors.has("email"),
-      "error-messages": _vm.form.errors.get("email"),
-      outlined: ""
-    },
-    on: {
-      keydown: _vm.clearFormErrors
-    },
-    model: {
-      value: _vm.form.email,
-      callback: function callback($$v) {
-        _vm.$set(_vm.form, "email", $$v);
-      },
-      expression: "form.email"
-    }
-  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    attrs: {
-      label: _vm.$t("Password"),
-      "append-icon": _vm.showPassword ? "mdi-eye" : "mdi-eye-off",
-      type: _vm.showPassword ? "text" : "password",
-      name: "password",
-      rules: [_vm.validationRequired],
-      error: _vm.form.errors.has("password"),
-      "error-messages": _vm.form.errors.get("password"),
-      outlined: "",
-      counter: true
-    },
-    on: {
-      "click:append": function clickAppend($event) {
-        _vm.showPassword = !_vm.showPassword;
-      },
-      keydown: _vm.clearFormErrors
-    },
-    model: {
-      value: _vm.form.password,
-      callback: function callback($$v) {
-        _vm.$set(_vm.form, "password", $$v);
-      },
-      expression: "form.password"
-    }
-  }), _vm._v(" "), _c(vuetify_lib_components_VCheckbox__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    attrs: {
-      name: "remember",
-      label: _vm.$t("Remember me"),
-      color: "primary",
-      "true-value": "1",
-      "false-value": ""
-    },
-    model: {
-      value: _vm.form.remember,
-      callback: function callback($$v) {
-        _vm.$set(_vm.form, "remember", $$v);
-      },
-      expression: "form.remember"
-    }
-  }), _vm._v(" "), _vm.recaptchaPublicKey ? _c("vue-recaptcha", {
-    ref: "recaptcha",
-    staticClass: "mb-3",
-    attrs: {
-      sitekey: _vm.recaptchaPublicKey,
-      loadRecaptchaScript: true,
-      theme: this.$vuetify.theme.isDark ? "dark" : "light"
-    },
-    on: {
-      verify: function verify(token) {
-        return _vm.form.recaptcha = token;
-      }
-    }
-  }) : _vm._e(), _vm._v(" "), _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    attrs: {
-      align: "center"
-    }
-  }, [_c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    staticClass: "text-center text-md-left"
-  }, [_c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    attrs: {
-      type: "submit",
-      color: "primary",
-      disabled: !_vm.formIsValid || _vm.loading || !!_vm.recaptchaPublicKey && !_vm.form.recaptcha,
-      loading: _vm.loading
-    }
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Log in")) + "\n                ")])], 1), _vm._v(" "), _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    staticClass: "d-flex flex-column text-center text-md-right"
-  }, [_c("router-link", {
-    attrs: {
-      to: {
-        name: "register"
-      }
-    }
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Not signed up?")) + "\n                ")]), _vm._v(" "), _c("router-link", {
-    attrs: {
-      to: {
-        name: "password.email"
-      }
-    }
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Forgot password?")) + "\n                ")])], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1);
+  }, [_vm._v("\n            " + _vm._s(_vm.$t("Authentication")) + "\n          ")])], 1), _vm._v(" "), _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_8__.VCardText, [_c("oauth"), _vm._v(" "), _c("web3-auth")], 1)], 1)], 1)], 1)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

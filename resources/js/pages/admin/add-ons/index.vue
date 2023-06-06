@@ -154,7 +154,6 @@ export default {
 
   async created () {
     const { data } = await axios.get('/api/admin/add-ons')
-    console.log(data)
     this.data = data
   },
 
