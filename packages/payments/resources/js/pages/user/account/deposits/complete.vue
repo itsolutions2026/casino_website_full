@@ -241,6 +241,41 @@
                 {{ $t('Pay') }}
               </v-btn>
             </template>
+            <template v-else-if="get(deposit, 'method.payment_method.gateway.code') === 'xrpl'">
+              <v-text-field
+                  ref="address"
+                  :label="$t('Address from')"
+                  :value="get(deposit, 'parameters.addressFrom')"
+                  outlined
+                  readonly
+              />
+
+              <v-text-field
+                  ref="address"
+                  :label="$t('Address to')"
+                  :value="get(deposit, 'parameters.addressTo')"
+                  outlined
+                  readonly
+              />
+
+              <v-text-field
+                  ref="address"
+                  :label="$t('Amount')"
+                  :value="float(get(deposit, 'payment_amount'))"
+                  :suffix="get(deposit, 'payment_currency')"
+                  outlined
+                  readonly
+              />
+
+              <v-btn
+                  color="primary"
+                  :disabled="transactionInProgress"
+                  :loading="transactionInProgress"
+                  @click="createXrplTransaction"
+              >
+                {{ $t('Pay') }}
+              </v-btn>
+            </template>
             <component :is="component" v-else-if="component" :deposit="deposit" />
           </v-card-text>
         </v-card>
@@ -263,6 +298,8 @@ import { clusterApiUrl, Connection, SystemProgram, Transaction, PublicKey } from
 import chains from 'packages/payments/resources/js/static/chains.json'
 import Paytm from 'packages/payments/resources/js/components/Deposits/Paytm'
 import Smartfastpay from 'packages/payments/resources/js/components/Deposits/Smartfastpay'
+import { Xumm } from 'xumm'
+
 
 export default {
   components: { CountdownTimer, Preloader, Paytm, Smartfastpay },
@@ -282,7 +319,8 @@ export default {
       updateInterval: null,
       modal: false,
       deposit: null,
-      transactionInProgress: false
+      transactionInProgress: false,
+      connectedWallet: null
     }
   },
 
@@ -302,6 +340,14 @@ export default {
       this.updateInterval = setInterval(() => {
         this.fetchDeposit()
       }, 30000)
+    }
+    if(this.deposit.payment_currency === "XRP"){
+      this.xummInstance = new Xumm(config('payments.xrpl.api_key'))
+      this.xummInstance.user.account.then(account => {
+        if(account){
+          this.connectedWallet = account
+        }
+      })
     }
   },
 
@@ -487,6 +533,59 @@ export default {
       }
 
       this.transactionInProgress = false
+    },
+    async createXrplTransaction () {
+      if (!this.connectedWallet) {
+        this.$store.dispatch('message/error', { text: this.$t('Xumm Wallet is not connected. Please connect your xumm mobile wallet by scanning QR code') })
+        return false
+      }
+
+      if (this.connectedWallet !== this.deposit.parameters.addressFrom) {
+        this.$store.dispatch('message/error', {
+          text: this.$t('Access to your account is not authorized')
+        })
+        return false
+      }
+      this.transactionInProgress = true
+      let transaction
+
+      let payload = {
+        txjson: {
+          TransactionType: 'Payment',
+          Destination: this.deposit.parameters.addressTo,
+          Amount: this.deposit.payment_amount_in_units // Drops, so: 0.001337 XRP
+        }
+      }
+
+      let self = this
+      this.xummInstance.payload.createAndSubscribe(
+          payload, function(payloadEvent){
+            if (typeof payloadEvent.data.signed !== 'undefined') {
+              // What we return here will be the resolved value of the `resolved` property
+              return payloadEvent.data
+            }
+          }
+      ).then(function ({created, resolved}) {
+        let msg = created.pushed
+            ? 'Now check your Xumm wallet, there should be a push notification + sign request in your event list waiting for you ;)'
+            : 'Now check your Xumm wallet, there should be a sign request in your event list waiting for you. This would have been pushed, but it seems you did not grant Xumm the push permission)';
+
+        self.$store.dispatch('message/success', {
+          text: self.$t(msg)
+        })
+
+        return resolved.then(function (payloadOutcome) {
+          if (payloadOutcome.signed) {
+            self.updateTransactionId(payloadOutcome.txid)
+            self.transactionInProgress = false
+          } else {
+            self.$store.dispatch('message/error', {
+              text: self.$t('You rejected the payment in your wallet')
+            })
+            self.transactionInProgress = false
+          }
+        })
+      })
     },
     async updateTransactionId (transactionId) {
       await axios.patch(`/api/deposits/methods/${this.deposit.method.id}/${this.id}`, { transaction_id: transactionId })

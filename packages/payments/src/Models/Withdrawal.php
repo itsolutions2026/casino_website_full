@@ -117,7 +117,7 @@ class Withdrawal extends Model
             })
             ->whereHas('method.paymentMethod', function ($query) {
                 $query->where('type', PaymentGatewayMethod::TYPE_OUT)
-                    ->whereIn('code', ['coinpayments', 'evm_coin', 'evm_token', 'freekassa', 'smartfastpay_bank', 'smartfastpay_pix', 'easywire']);
+                    ->whereIn('code', ['coinpayments', 'evm_coin', 'evm_token', 'ripple_coin', 'freekassa', 'smartfastpay_bank', 'smartfastpay_pix', 'easywire']);
             });
     }
 

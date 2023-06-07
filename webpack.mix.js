@@ -153,7 +153,7 @@ mix
     .js('resources/js/app.js', 'public/js')
     .browserSync({proxy: process.env.APP_URL})
     .vuetify('vuetify-loader')
-    .vue().version()
+    .vue()
 
 if (mix.inProduction()) {
     mix.version()

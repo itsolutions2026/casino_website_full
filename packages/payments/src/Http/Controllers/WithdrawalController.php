@@ -33,7 +33,6 @@ class WithdrawalController extends Controller
             'items' => $items
         ];
     }
-
     
     public function store(StoreWithdrawal $request, WithdrawalMethod $withdrawalMethod)
     {

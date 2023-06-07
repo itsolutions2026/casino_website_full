@@ -601,7 +601,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   beforeMount: function beforeMount() {
-    console.log('test');
     if (!this.componentExists || !(0,_plugins_config__WEBPACK_IMPORTED_MODULE_4__.config)("auth.web3.".concat(this.provider, ".enabled"))) {
       this.$router.replace({
         name: 'login'

@@ -938,7 +938,7 @@ class PaymentGatewayMethodSeeder extends Seeder
             ],
             [
                 'payment_gateway_id' => $gateways['xrpl']->id,
-                'name' => 'Coin',
+                'name' => 'XRPL',
                 'parameters' => [
                     [
                         'id' => 'coin',
@@ -961,7 +961,7 @@ class PaymentGatewayMethodSeeder extends Seeder
                         'type' => 'input',
                         'name' => __('Deposit address'),
                         'description' => __('The address, where deposited coins will be sent to.'),
-                        'validation' => 'required|min:25|max:35|regex:/^r[0–9a-zA-Z]/',
+                        'validation' => 'required|min:25|max:35|regex:/^r[0-9a-zA-Z]{25,35}$/',
                         'default' => ''
                     ],
                 ],
@@ -977,7 +977,7 @@ class PaymentGatewayMethodSeeder extends Seeder
             ],
             [
                 'payment_gateway_id' => $gateways['xrpl']->id,
-                'name' => 'Coin',
+                'name' => 'XRPL',
                 'parameters' => [
                     [
                         'id' => 'coin',
@@ -1029,7 +1029,7 @@ class PaymentGatewayMethodSeeder extends Seeder
                         'type' => 'input',
                         'name' => __('Address'),
                         'description' => '',
-                        'validation' => 'required|min:25|max:35|regex:/^r[0–9a-zA-Z]/',
+                        'validation' => 'required|min:25|max:35|regex:/^r[0-9a-zA-Z]{25,35}$/',
                         'default' => '',
                     ]
                 ],

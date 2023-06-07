@@ -12,6 +12,7 @@
 namespace Packages\Payments\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Facades\Log;
 use Packages\Payments\Services\CryptoDepositService;
 
 class BlockchainAddressBalanceIsSufficient implements Rule
@@ -31,6 +32,7 @@ class BlockchainAddressBalanceIsSufficient implements Rule
     public function passes($attribute, $depositAmount)
     {
         $this->balance = $this->depositService->fetchAddressBalance($this->address);
+
         return $this->balance >= $this->depositService->calculatePaymentAmount($depositAmount);
     }
 

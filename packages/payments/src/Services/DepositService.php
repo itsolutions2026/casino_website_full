@@ -13,6 +13,7 @@ namespace Packages\Payments\Services;
 
 use App\Helpers\Api\Api;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Packages\Payments\Models\Deposit;
 use Packages\Payments\Models\DepositMethod;

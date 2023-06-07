@@ -26,44 +26,36 @@ class XrplTransaction extends Transaction
 
     public function getInput(): string
     {
-        return $this->transaction->input;
+        return '';
     }
 
 
     public function isSuccessful(): bool
     {
-        return $this->transaction->blockNumber && $this->transaction->blockHash;
+        return $this->transaction->status === 'success' && $this->transaction->meta->TransactionResult === 'tesSUCCESS';
     }
 
 
     public function isTokenTransfer(): bool
     {
-        $input = $this->getInput();
-
-        return strlen($input) == 138 && substr($input, 0, 10) == (new XrplSigner)->getMethodSignature('transfer(address,uint256)');
+        return false;
     }
 
 
     public function getSenderAddress(): string
     {
-        return Str::lower($this->transaction->from);
+        return Str::lower($this->transaction->Account);
     }
 
 
     public function getRecepientAddress(): string
     {
-        $address = $this->isTokenTransfer()
-            ? Str::of($this->getInput())->substr(10, 64)->ltrim('0')->padLeft(40, '0')
-            : $this->transaction->to;
-
-        return Str::of($address)->lower()->start('0x');
+        return Str::lower($this->transaction->Destination);
     }
 
 
     public function getAmountInUnits(): string
     {
-        return $this->isTokenTransfer()
-            ? Utils::bchexdec(Str::of($this->getInput())->substr(74, 64)->ltrim('0'))
-            : Utils::bchexdec($this->transaction->value);
+        return $this->transaction->Amount;
     }
 }

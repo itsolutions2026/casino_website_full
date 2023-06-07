@@ -29,7 +29,6 @@ class GameService extends MultiroomMultiplayerGameService
 
     public function makeSecret(): string
     {
-        Log::error(print_r($this->deck->shuffle()->get()));
         return implode(',', $this->deck->shuffle()->get());
     }
 

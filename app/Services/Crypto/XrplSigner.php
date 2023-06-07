@@ -22,7 +22,6 @@ class XrplSigner
         $xumm_credential = config('payments.xrpl');
 
         if(!empty($xumm_credential['api_key']) && !empty($xumm_credential['api_secret'])){
-            Log::error(print_r('test', 1));
             $sdk = new XummSdk($xumm_credential['api_key'], $xumm_credential['api_secret']);
             $payload = $sdk->getPayload($signature);
 

@@ -13,14 +13,15 @@ namespace Packages\Payments\Services\Api;
 
 use App\Helpers\Api\Api;
 use App\Helpers\Utils;
+use Illuminate\Support\Facades\Log;
 use Packages\Payments\Helpers\Blockchain\XrplTransaction;
 use Packages\Payments\Helpers\Blockchain\Transaction;
 
 class XrplApi extends Api implements BlockchainApi
 {
     protected const METHOD_NET_VERSION = 'getVersion';
-    protected const METHOD_GET_BALANCE = 'getBalance';
-    protected const METHOD_GET_TRANSACTION = 'getTransaction';
+    protected const METHOD_GET_BALANCE = 'account_info';
+    protected const METHOD_GET_TRANSACTION = 'tx';
 
     protected $url;
     protected $tag = 'latest';
@@ -36,12 +37,12 @@ class XrplApi extends Api implements BlockchainApi
         $this->url = $url;
     }
 
-    public static function fromUnits($value, int $decimals = 9): string
+    public static function fromUnits($value, int $decimals = 6): string
     {
         return Utils::fromUnits($value, $decimals, 8);
     }
 
-    public static function toUnits($value, int $decimals = 9): string
+    public static function toUnits($value, int $decimals = 6): string
     {
         return Utils::toUnits($value, $decimals);
     }
@@ -67,16 +68,17 @@ class XrplApi extends Api implements BlockchainApi
     {
         $balance = $this->makeRequest([
             'method' => self::METHOD_GET_BALANCE,
-            'params' => [$address]
+            'params' => [
+                array(
+                    'account' => $address,
+                    'strict' => true,
+                    'ledger_index' => 'current',
+                    'queue' => true
+                )
+            ]
         ]);
 
-        return !is_null($balance) ? self::fromUnits($balance->value) : NULL;
-    }
-
-
-    public function fetchVersion(): string
-    {
-        return $this->makeRequest(['method' => self::METHOD_NET_VERSION])->{'Ripple-core'};
+        return !is_null($balance) && !empty($balance->account_data) ? self::fromUnits($balance->account_data->Balance) : NULL;
     }
 
 
@@ -84,7 +86,12 @@ class XrplApi extends Api implements BlockchainApi
     {
         $tx = $this->makeRequest([
             'method' => self::METHOD_GET_TRANSACTION,
-            'params' => [$hash]
+            'params' => [
+                array(
+                    "transaction" => $hash,
+                    "binary" => false
+                )
+            ]
         ]);
 
         return optional($tx, function ($tx) {

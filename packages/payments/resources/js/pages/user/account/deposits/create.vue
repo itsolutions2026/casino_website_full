@@ -244,6 +244,56 @@
                 </v-alert>
               </template>
 
+              <template v-else-if="get(method, 'payment_method.gateway.code') === 'xrpl'">
+                <v-text-field
+                    v-show="xrpl.xumm.isConnected"
+                    v-model="form.parameters.address"
+                    :label="$t('Your address')"
+                    :rules="[validationRequired]"
+                    :error="form.errors.has('parameters.address')"
+                    :error-messages="form.errors.get('parameters.address')"
+                    :readonly="true"
+                    outlined
+                    @change="clearFormErrors($event,'parameters.address')"
+                >
+                  <template v-slot:append-outer>
+                    <v-btn
+                        class="mt-n2"
+                        :disabled="xrplAddressIsConfirmed || !form.parameters.address || xrpl.confirmedAddresses === null || xrpl.addressConfirmationInProgress"
+                        :loading="xrpl.addressConfirmationInProgress"
+                        @click="confirmBlockchainAddress"
+                    >
+                      {{ $t('Confirm') }}
+                    </v-btn>
+                  </template>
+                </v-text-field>
+
+                <template v-if="xrpl.xumm.isInstalled">
+                  <div v-if="!xrpl.xumm.isConnected" class="mb-5">
+                    <v-btn color="secondary" @click="connectXumm()">
+                      {{ $t('Connect Xumm wallet') }}
+                    </v-btn>
+                  </div>
+                  <div v-else class="mb-5">
+                    <v-btn color="secondary" @click="disconnectXumm()">
+                      {{ $t('Disconnect wallet') }}
+                    </v-btn>
+                  </div>
+                </template>
+                <v-alert
+                    v-else
+                    dense
+                    outlined
+                    text
+                    type="warning"
+                    class="justify-center align-center align-content-center"
+                >
+                  <p>
+                    {{ $t('Xumm wallet is not detected.') }}
+                  </p>
+                </v-alert>
+              </template>
+
               <template v-if="method.payment_method">
                 <form-parameter
                   v-for="parameter in method.payment_method.input_parameters"
@@ -298,6 +348,7 @@ import Web3 from 'web3'
 import FormParameter from '~/components/FormParameter'
 import bs58 from 'bs58'
 import chains from 'packages/payments/resources/js/static/chains'
+import { Xumm } from 'xumm'
 
 export default {
   components: { FormParameter },
@@ -349,6 +400,16 @@ export default {
           isConnected: false
         }
       },
+      xrpl: {
+        confirmedAddresses: null,
+        addressConfirmationInProgress: false,
+        xumm: {
+          signature: null,
+          isInstalled: false,
+          isConnected: false
+        }
+      },
+      xummInstance: null,
       stripe: {
         instance: null,
         elements: null,
@@ -371,7 +432,6 @@ export default {
     },
     paymentAmount () {
       const decimalPlaces = get(this.method, 'decimal_places')
-
       return this.rate > 0 && this.form.amount > 0
         ? decimal(this.form.amount / this.rate, decimalPlaces || 8)
         : 0
@@ -396,6 +456,9 @@ export default {
     },
     solanaAddressIsConfirmed () {
       return this.solana.confirmedAddresses && !!this.solana.confirmedAddresses.find(item => item.address === this.form.parameters.address)
+    },
+    xrplAddressIsConfirmed () {
+      return this.xrpl.confirmedAddresses && !!this.xrpl.confirmedAddresses.find(item => item.address === this.form.parameters.address)
     },
     evmChainName () {
       return Web3.givenProvider ? (chains[Web3.givenProvider.networkVersion] || this.$t('Unknown chain')) : null
@@ -454,6 +517,24 @@ export default {
           this.solana.phantom.isInstalled = window.solana && window.solana.isPhantom
           this.connectPhantom(true)
         }
+      } else if (code === 'xrpl') {
+
+        this.xummInstance = new Xumm(config('payments.xrpl.api_key'))
+
+        this.xummInstance.on('success', async () =>{
+          const { payload_uuidv4 } = await this.xummInstance.environment.jwt
+          this.xrpl.xumm.signature = payload_uuidv4
+          this.xummInstance.user.account.then(account => {
+            if(account){
+              this.$set(this.form.parameters, 'address', account)
+              this.xrpl.xumm.isConnected = true
+              this.fetchConfirmedBlockchainAddresses('xrpl')
+            }
+          })
+        })
+        if (this.xummInstance) {
+          this.xrpl.xumm.isInstalled = true
+        }
       }
 
       this.form.payment_currency = this.paymentCurrencies ? Object.keys(this.paymentCurrencies)[0] : null
@@ -473,7 +554,6 @@ export default {
     this.$store.dispatch('auth/fetchUser')
 
     const { data } = await axios.get('/api/deposit-methods')
-
     this.methods = data
   },
 
@@ -566,6 +646,21 @@ export default {
       this.$set(this.form.parameters, 'address', window.solana.publicKey.toString())
       this.fetchConfirmedBlockchainAddresses('solana')
     },
+    async connectXumm(){
+      try {
+        this.xummInstance.authorize()
+      } catch (err) {
+        this.$store.dispatch('message/error', { text: err.message })
+        this.formIsValid = false
+        return false
+      }
+    },
+    async disconnectXumm(){
+      await this.xummInstance.logout()
+      this.xrpl.xumm.isConnected = false
+      this.xrpl.xumm.signature = null
+      this.$set(this.form.parameters, 'address', '')
+    },
     async fetchConfirmedBlockchainAddresses (blockchain) {
       if (!this[blockchain].confirmedAddresses) {
         const { data } = await axios.get(`/api/blockchains/${blockchain}/addresses`)
@@ -590,7 +685,10 @@ export default {
         } else if (blockchain === 'solana') {
           const response = await window.solana.signMessage(new TextEncoder().encode(address.message), 'utf8')
           signature = bs58.encode(response.signature)
-        } else {
+        } else if (blockchain === 'xrpl') {
+          signature = this.xrpl.xumm.signature
+        }
+        else {
           signature = await web.eth.personal.sign(address.message, this.form.parameters.address)
         }
       } catch (error) {
@@ -655,6 +753,7 @@ export default {
         })
 
       // data will be undefined in case of any form errors (422 HTTP code)
+
       if (data) {
         if (data.success) {
           if (data.redirect) {
