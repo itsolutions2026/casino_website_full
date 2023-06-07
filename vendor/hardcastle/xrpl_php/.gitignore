@@ -1,0 +1,11 @@
+/.idea
+
+/.env
+/composer.lock
+/docker-compose.override.yml
+
+/_java/
+/_js/
+/_py/
+/_private_scripts/
+/vendor/

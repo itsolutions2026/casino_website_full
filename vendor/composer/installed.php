@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'financialplugins/stake',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '32533836a6f83e8c8e710f132f851c7044e380e9',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,11 +38,20 @@
             'dev_requirement' => true,
         ),
         'brick/math' => array(
-            'pretty_version' => '0.9.3',
-            'version' => '0.9.3.0',
-            'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
+            'pretty_version' => '0.10.1',
+            'version' => '0.10.1.0',
+            'reference' => 'de846578401f4e58f911b3afeb62ced56365ed87',
             'type' => 'library',
             'install_path' => __DIR__ . '/../brick/math',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'brick/money' => array(
+            'pretty_version' => '0.7.0',
+            'version' => '0.7.0.0',
+            'reference' => '3cac1b014e91718f02724c54c08a2bdcd7cd2340',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brick/money',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -284,9 +293,9 @@
             'dev_requirement' => false,
         ),
         'financialplugins/stake' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '32533836a6f83e8c8e710f132f851c7044e380e9',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -354,6 +363,17 @@
             'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'hardcastle/xrpl_php' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '02049567b6bfc800b1013fe0400318a4231484d2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hardcastle/xrpl_php',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
         ),
         'iexbase/tron-api' => array(
             'pretty_version' => 'v5.0',
@@ -868,6 +888,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'php-ds/php-ds' => array(
+            'pretty_version' => 'v1.4.1',
+            'version' => '1.4.1.0',
+            'reference' => '43d2df301a9e2017f67b8c11d94a5222f9c00fd1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-ds/php-ds',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'php-http/async-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
@@ -1126,8 +1155,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(

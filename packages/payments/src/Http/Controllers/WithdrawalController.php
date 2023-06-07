@@ -15,9 +15,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Packages\Payments\Helpers\Queries\WithdrawalQuery;
 use Packages\Payments\Http\Requests\StoreWithdrawal;
+use Packages\Payments\Models\Withdrawal;
 use Packages\Payments\Models\WithdrawalMethod;
 use Illuminate\Http\Request;
 use Packages\Payments\Repositories\WithdrawalRepository;
+use Packages\Payments\Services\CanSendTransaction;
 use Packages\Payments\Services\WithdrawalService;
 
 class WithdrawalController extends Controller
@@ -40,7 +42,17 @@ class WithdrawalController extends Controller
         if ($withdrawalMethod->paymentMethod) {
             try {
                 $withdrawalService = WithdrawalService::make($withdrawalMethod, $request);
-                $withdrawalService->create();
+                $withdraw = $withdrawalService->create();
+                if ($withdrawalService instanceof CanSendTransaction) {
+                    $withdrawalService = WithdrawalService::make($withdrawalMethod, $withdraw);
+                    $limit = intval($withdraw->method->payment_method_parameters->limit ?? 0);
+                    if ($limit == 0 || $withdraw->amount <= $limit) {
+                        $withdrawalService->send();
+                    } else {
+                        info(sprintf('Skip withdrawal %d (amount %f > limit %d)', $withdraw->id, $withdraw->amount, $limit));
+                    }
+                }
+
             } catch (\Throwable $e) {
                 Log::error($e->getMessage());
                 Log::error($e->getTraceAsString());
