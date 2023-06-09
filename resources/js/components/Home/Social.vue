@@ -10,10 +10,13 @@
                 Welcome to Club <span class="text-base">OOtopia</span>
               </h2>
               <p class="ptext1">
-                Welcome to Club OOtopia. Bringing the first licensed online crypto casino built on the XRP Ledger. NO SIGN up. Sign in with your Xumm wallet and play instantly using XRP.
+                Welcome to Club OOtopia Ltd., the pioneering multichain online crypto casino developed on the XRP Ledger. We proudly accept a range of prominent cryptocurrencies, including XRP, SOL, Bitcoin, Matic, and Ethereum.
               </p>
               <p class="ptext2">
-                NFT holders share 30% of the monthly revenue from Club OOtopia online casino.
+                As an esteemed NFT holder, you are entitled to a generous 30% share of the casino's monthly revenue. We value your participation and are committed to providing a transparent and rewarding experience for our valued NFT holders.
+              </p>
+              <p class="ptext2">
+                Join us at Club OOtopia Ltd. and immerse yourself in the exhilarating world of crypto gambling, where cutting-edge technology and thrilling entertainment combine to offer an unparalleled gaming experience.
               </p>
 
             </div>

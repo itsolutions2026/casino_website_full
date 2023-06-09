@@ -62,7 +62,13 @@
         </v-row>
         <div class="footer__bottom" style="text-align: center;">
           <p class="text-white">
-            Copyright © 2023, <a href="#about" class="text-base" style="font-weight: 700">OOtopia</a> - All Right Reserved
+            Copyright © 2023, <a href="#about" class="text-base" style="font-weight: 700">Club OOtopia</a> - All Right Reserved
+          </p>
+          <p class="text-white">
+            <span class="text-base">Club OOtopia Ltd</span> is a duly registered company in Costa Rica, authorized to operate an online crypto casino. San Jose, Montes De Oca, San Pedro, Office 3.
+          </p>
+          <p class="text-white">
+            <span class="text-base">NRC Number</span>: 6636252-2023
           </p>
         </div>
         <div class="shape__right">

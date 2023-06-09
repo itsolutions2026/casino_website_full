@@ -1110,6 +1110,7 @@ export default {
     right: 0;
     bottom: 30px;
     width: 380px;
+    opacity: 0.4;
   }
   .contact__section .l__shape img {
     width: 100%;

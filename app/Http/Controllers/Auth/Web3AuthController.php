@@ -50,8 +50,7 @@ class Web3AuthController extends Controller
 
                 $user = UserRepository::create([
                     'name'              => $faker->name,
-                    'email'             => $faker->email,
-                    'email_verified_at' => Carbon::now()
+                    'email'             => $faker->email
                 ]);
 
                 $user->profiles()->create(['provider_name' => $provider, 'provider_user_id' => $request->address]);

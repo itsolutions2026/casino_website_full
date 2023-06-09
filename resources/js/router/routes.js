@@ -64,17 +64,17 @@ export default [
     ]
   },
 
-  {
-    path: '/user/affiliate',
-    name: 'user.affiliate',
-    redirect: { name: 'user.affiliate.info' },
-    component: page('user/affiliate'),
-    children: [
-      { path: 'info', name: 'user.affiliate.info', component: page('user/affiliate/info') },
-      { path: 'commissions', name: 'user.affiliate.commissions', component: page('user/affiliate/commissions') },
-      { path: 'stats', name: 'user.affiliate.stats', component: page('user/affiliate/stats') }
-    ]
-  },
+  // {
+  //   path: '/user/affiliate',
+  //   name: 'user.affiliate',
+  //   redirect: { name: 'user.affiliate.info' },
+  //   component: page('user/affiliate'),
+  //   children: [
+  //     { path: 'info', name: 'user.affiliate.info', component: page('user/affiliate/info') },
+  //     { path: 'commissions', name: 'user.affiliate.commissions', component: page('user/affiliate/commissions') },
+  //     { path: 'stats', name: 'user.affiliate.stats', component: page('user/affiliate/stats') }
+  //   ]
+  // },
 
   { path: '/user/account/transactions', name: 'user.account.transactions', component: page('user/account/transactions') },
   { path: '/user/account/faucet', name: 'user.account.faucet', component: page('user/account/faucet') },

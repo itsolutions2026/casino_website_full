@@ -139,7 +139,13 @@
   </section>
   <!-- FAQ start -->
 
-  <section class="faq__section pt-120 pb-120 overflow-hidden" id="faq">
+  <section class="faq__section contact__section pt-120 pb-120 overflow-hidden" id="faq">
+    <div class="c__shpae">
+      <img :src="cshape" alt="c-shape">
+    </div>
+    <div class="king__ludu">
+      <img :src="king" alt="king">
+    </div>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-7 col-xl-6">
@@ -245,7 +251,7 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingten">
-              <button class="accordion-button" :class="{'collapsed' : !expanded.ten}" @click="show(10)"  type="button"  aria-controls="flush-collapseten">
+              <button class="accordion-button" :class="{'collapsed' : !expanded.ten}" @click="show('ten')"  type="button"  aria-controls="flush-collapseten">
                 What happens if I encounter an error or game freeze?
               </button>
             </h2>
@@ -256,77 +262,7 @@
         </div>
       </div>
     </div>
-    <div class="shapes">
-      <img :src="mainshape" alt="faq" class="shape shape1">
-    </div>
-  </section>
-  <!-- FAQ End -->
 
-  <!--Contact Start-->
-  <section class="contact__section pt-120 pb-120">
-    <div class="c__shpae">
-      <img :src="cshape" alt="c-shape">
-    </div>
-    <div class="king__ludu">
-      <img :src="king" alt="king">
-    </div>
-    <div class="container">
-      <div class="row justify-content-between align-items-end">
-        <div class="col-xl-6 col-lg-6">
-          <div class="form__area__left">
-            <div class="section-header pb-60 ">
-              <h2>Get In Touch</h2>
-              <p>
-                We are here for you! How can we help?
-              </p>
-            </div>
-            <form id="form">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-control form__items">
-                    <input type="text" id="Name" placeholder="Enter your name">
-                    <small>Error message</small>
-                  </div>
-                </div>
-                <div class="col-lg-12 wow fadeInUp" >
-                  <div class="form-control form__items">
-                    <input type="text" id="email" placeholder="Enter your email address">
-                    <small>Error message</small>
-                  </div>
-                </div>
-                <div class="col-lg-12 wow fadeInUp" >
-                  <div class="form-control form__items">
-                    <textarea name="message" id="message" cols="10" rows="7" placeholder="Go ahead, we are listening..."></textarea>
-                    <small>Error message</small>
-                  </div>
-                </div>
-              </div>
-              <button type="submit" class="cmn--btn2"><span>Submit</span></button>
-              <div class="thank_you">
-                <p>Your Message is successfully sent !</p>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6">
-          <div class="right__contact">
-            <ul class="contact">
-
-              <li class="wow fadeInDown" >
-                <div class="phone-icon">
-                  <img :src="email" alt="img">
-                </div>
-                <div class="email-part">
-                  <h5>Email</h5>
-                  <p>clubootopia@gmail.com</p>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="l__shape">
       <img :src="lsharp" alt="l-shape">
     </div>
@@ -334,6 +270,7 @@
       <img :src="king" alt="king">
     </div>
   </section>
+  <!-- FAQ End -->
   </div>
 </template>
 
@@ -341,7 +278,6 @@
 
 export default {
   computed: {
-
   },
   data() {
     return {

@@ -1,138 +1,18 @@
-[2023-06-07 20:12:16] production.ERROR:
-[2023-06-07 20:12:45] production.ERROR: Array
-(
-    [result] => Array
-        (
-            [accepted] => 1
-            [account_sequence_available] => 38441086
-            [account_sequence_next] => 38441086
-            [applied] => 1
-            [broadcast] => 1
-            [engine_result] => tesSUCCESS
-            [engine_result_code] => 0
-            [engine_result_message] => The transaction was applied. Only final in a validated ledger.
-            [kept] => 1
-            [open_ledger_cost] => 10
-            [queued] =>
-            [status] => success
-            [tx_blob] => 12000024024A907D201B024AEF9061400000000000963268400000000000000C7321EDBECEDF446BB9D74A5781089EB9B26597D24A15541AA30A223D126D8D134091777440470E2429A426A20BD613A2C50E0346BEA5432FE08F6450A943478369B818527E15EAA250451B3BADE572768C85C1D7D2C8F9A5D797F67B47E701616F6A7C49058114336B7299DC81C19B1F717059F7DAE255B47C19778314E6A7E2EC286B91A29C01D31E016518372AB95FEB
-            [tx_json] => Array
-                (
-                    [Account] => rngtB4u7sAr7EW8B2rBfDgZ4m9E4vipwtP
-                    [Amount] => 38450
-                    [Destination] => r4pbYnGijgRd6WsZ1FDrQ5usgrXVdd4J8N
-                    [Fee] => 12
-                    [LastLedgerSequence] => 38465424
-                    [Sequence] => 38441085
-                    [SigningPubKey] => EDBECEDF446BB9D74A5781089EB9B26597D24A15541AA30A223D126D8D13409177
-                    [TransactionType] => Payment
-                    [TxnSignature] => 470E2429A426A20BD613A2C50E0346BEA5432FE08F6450A943478369B818527E15EAA250451B3BADE572768C85C1D7D2C8F9A5D797F67B47E701616F6A7C4905
-                    [hash] => 5CD92C1A784409EAD476BB2D34657EEFC4DCD204609CEFEBA8E3A4607C7823C7
-                )
-
-            [validated_ledger_index] => 38465404
-        )
-
-)
-
-[2023-06-07 20:14:02] production.ERROR: Attempt to read property "result" on array
-[2023-06-07 20:14:02] production.ERROR: #0 /Applications/MAMP/htdocs/packages/payments/src/Services/XrplWithdrawalService.php(70): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'Attempt to read...', '/Applications/M...', 70)
-#1 /Applications/MAMP/htdocs/packages/payments/src/Http/Controllers/WithdrawalController.php(48): Packages\Payments\Services\XrplWithdrawalService->send()
-#2 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): Packages\Payments\Http\Controllers\WithdrawalController->store(Object(Packages\Payments\Http\Requests\StoreWithdrawal), Object(Packages\Payments\Models\WithdrawalMethod))
-#3 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('store', Array)
-#4 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Route.php(262): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Packages\Payments\Http\Controllers\WithdrawalController), 'store')
-#5 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\Routing\Route->runController()
-#6 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\Routing\Route->run()
-#7 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#8 /Applications/MAMP/htdocs/app/Http/Middleware/BlockConcurrentRequests.php(38): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#9 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\Http\Middleware\BlockConcurrentRequests->handle(Object(Illuminate\Http\Request), Object(Closure))
-#10 /Applications/MAMP/htdocs/app/Http/Middleware/UpdateLastSeen.php(31): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#11 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\Http\Middleware\UpdateLastSeen->handle(Object(Illuminate\Http\Request), Object(Closure))
-#12 /Applications/MAMP/htdocs/app/Http/Middleware/TwoFactorAuthentication.php(35): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#13 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\Http\Middleware\TwoFactorAuthentication->handle(Object(Illuminate\Http\Request), Object(Closure))
-#14 /Applications/MAMP/htdocs/app/Http/Middleware/LogoutIfBlocked.php(28): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#15 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\Http\Middleware\LogoutIfBlocked->handle(Object(Illuminate\Http\Request), Object(Closure))
-#16 /Applications/MAMP/htdocs/app/Http/Middleware/EnsureEmailIsVerified.php(29): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#17 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\Http\Middleware\EnsureEmailIsVerified->handle(Object(Illuminate\Http\Request), Object(Closure))
-#18 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#19 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#20 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#21 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(103): Illuminate\Routing\Middleware\ThrottleRequests->handleRequest(Object(Illuminate\Http\Request), Object(Closure), Array)
-#22 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(55): Illuminate\Routing\Middleware\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\Http\Request), Object(Closure), 'api', Object(Closure))
-#23 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Routing\Middleware\ThrottleRequests->handle(Object(Illuminate\Http\Request), Object(Closure), 'api')
-#24 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(44): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#25 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'sanctum')
-#26 /Applications/MAMP/htdocs/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#27 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful->Laravel\Sanctum\Http\Middleware\{closure}(Object(Illuminate\Http\Request))
-#28 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#29 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
-#30 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#31 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Session\Middleware\StartSession->handleStatefulRequest(Object(Illuminate\Http\Request), Object(Illuminate\Session\Store), Object(Closure))
-#32 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#33 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#34 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
-#35 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#36 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#37 /Applications/MAMP/htdocs/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(26): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#38 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(149): Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful->Laravel\Sanctum\Http\Middleware\{closure}(Object(Illuminate\Http\Request), Object(Closure))
-#39 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#40 /Applications/MAMP/htdocs/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(34): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#41 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful->handle(Object(Illuminate\Http\Request), Object(Closure))
-#42 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#43 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#44 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
-#45 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
-#46 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
-#47 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#48 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
-#49 /Applications/MAMP/htdocs/app/Http/Middleware/SetLocale.php(25): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#50 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\Http\Middleware\SetLocale->handle(Object(Illuminate\Http\Request), Object(Closure))
-#51 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#52 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#53 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
-#54 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#55 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#56 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#57 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#58 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
-#59 /Applications/MAMP/htdocs/vendor/fruitcake/laravel-cors/src/HandleCors.php(37): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#60 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\Cors\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
-#61 /Applications/MAMP/htdocs/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#62 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\Proxy\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#63 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#64 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#65 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
-#66 /Applications/MAMP/htdocs/public/index.php(60): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
-#67 {main}
-[2023-06-07 20:15:35] production.ERROR: Array
-(
-    [accepted] => 1
-    [account_sequence_available] => 38441088
-    [account_sequence_next] => 38441088
-    [applied] => 1
-    [broadcast] => 1
-    [engine_result] => tesSUCCESS
-    [engine_result_code] => 0
-    [engine_result_message] => The transaction was applied. Only final in a validated ledger.
-    [kept] => 1
-    [open_ledger_cost] => 10
-    [queued] =>
-    [status] => success
-    [tx_blob] => 12000024024A907F201B024AEFC9614000000000004B1068400000000000000C7321EDBECEDF446BB9D74A5781089EB9B26597D24A15541AA30A223D126D8D134091777440F9AD6284AE3AD22D7F1F1D021202C0AD808370FB583D93977CB1C5D41C749403FE0EABA2DD32A52C3032F9D6AF698B67AA037D2385575396913750FAF28089098114336B7299DC81C19B1F717059F7DAE255B47C19778314E6A7E2EC286B91A29C01D31E016518372AB95FEB
-    [tx_json] => Array
-        (
-            [Account] => rngtB4u7sAr7EW8B2rBfDgZ4m9E4vipwtP
-            [Amount] => 19216
-            [Destination] => r4pbYnGijgRd6WsZ1FDrQ5usgrXVdd4J8N
-            [Fee] => 12
-            [LastLedgerSequence] => 38465481
-            [Sequence] => 38441087
-            [SigningPubKey] => EDBECEDF446BB9D74A5781089EB9B26597D24A15541AA30A223D126D8D13409177
-            [TransactionType] => Payment
-            [TxnSignature] => F9AD6284AE3AD22D7F1F1D021202C0AD808370FB583D93977CB1C5D41C749403FE0EABA2DD32A52C3032F9D6AF698B67AA037D2385575396913750FAF2808909
-            [hash] => CE20912C08ECADCB012AF1F0808BE6D1AA6B7B5E861245CE621F29F31C7F79E4
-        )
-
-    [validated_ledger_index] => 38465461
-)
-
+[2023-06-09 07:30:14] production.ERROR: 63  
+[2023-06-09 07:30:14] production.ERROR: -------  
+[2023-06-09 07:30:14] production.ERROR: 4  
+[2023-06-09 07:30:32] production.ERROR: 112  
+[2023-06-09 07:30:32] production.ERROR: -------  
+[2023-06-09 07:30:32] production.ERROR: 7  
+[2023-06-09 07:30:43] production.ERROR: 83  
+[2023-06-09 07:30:43] production.ERROR: -------  
+[2023-06-09 07:30:43] production.ERROR: 5  
+[2023-06-09 07:30:54] production.ERROR: 81  
+[2023-06-09 07:30:54] production.ERROR: -------  
+[2023-06-09 07:30:54] production.ERROR: 5  
+[2023-06-09 07:31:03] production.ERROR: 60  
+[2023-06-09 07:31:03] production.ERROR: -------  
+[2023-06-09 07:31:03] production.ERROR: 4  
+[2023-06-09 07:31:12] production.ERROR: 2  
+[2023-06-09 07:31:12] production.ERROR: -------  
+[2023-06-09 07:31:12] production.ERROR: 0  
