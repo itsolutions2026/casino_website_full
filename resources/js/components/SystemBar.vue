@@ -1,12 +1,12 @@
 <template>
   <v-system-bar
     app
-    :height="isMobile ? 60 : 30"
+    :height="isMobile ? 80 : 40"
     :color="background"
     :dark="isDark"
   >
     <v-row>
-      <v-col cols="12" md="6" class="text-center text-md-left py-0 mb-1 mb-md-0">
+      <v-col cols="12" md="3" class="text-center text-md-left py-0 mb-1 mb-md-0">
         <template v-if="lastWinGame.id">
           <v-icon>mdi-star</v-icon>
           <span class="text-uppercase">{{ $t('Last win') }}</span>
@@ -19,7 +19,10 @@
           <span class="ml-1">{{ $t('in') }} {{ lastWinGame.title }}</span>
         </template>
       </v-col>
-      <v-col cols="12" md="6" class="text-center text-md-right py-0">
+      <v-col cols="12" md="6" class="text-center text-md-center py-0">
+        <span class="warning--text">10% bonus</span> on your first deposit. <span class="warning--text">5% bonus</span> bonus on all deposits in the month of June
+      </v-col>
+      <v-col cols="12" md="3" class="text-center text-md-right py-0">
         <v-icon>mdi-account-multiple</v-icon>
         <span class="text-uppercase">{{ $t('Online') }}</span>
         <span class="ml-1 warning--text">{{ onlineUsersCount }}</span>

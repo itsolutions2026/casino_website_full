@@ -22,33 +22,33 @@
                 @keydown="clearFormErrors($event,'name')"
               />
 
-              <v-text-field
-                v-model="form.email"
-                :label="$t('Email')"
-                type="email"
-                name="email"
-                :rules="[validationRequired, validationEmail]"
-                :error="form.errors.has('email')"
-                :error-messages="form.errors.get('email')"
-                :disabled="!!user.email_verified_at"
-                outlined
-                @keydown="clearFormErrors($event,'email')"
-              >
-                <template #append>
-                  <v-icon v-if="user.email_verified_at" color="success" >
-                    mdi-check
-                  </v-icon>
-                  <v-btn
-                    v-else
-                    text
-                    class="mt-n2"
-                    :loading="emailVerificationForm.busy"
-                    @click="verifyEmail"
-                  >
-                    {{ $t('Verify') }}
-                  </v-btn>
-                </template>
-              </v-text-field>
+<!--              <v-text-field-->
+<!--                v-model="form.email"-->
+<!--                :label="$t('Email')"-->
+<!--                type="email"-->
+<!--                name="email"-->
+<!--                :rules="[validationRequired, validationEmail]"-->
+<!--                :error="form.errors.has('email')"-->
+<!--                :error-messages="form.errors.get('email')"-->
+<!--                :disabled="!!user.email_verified_at"-->
+<!--                outlined-->
+<!--                @keydown="clearFormErrors($event,'email')"-->
+<!--              >-->
+<!--                <template #append>-->
+<!--                  <v-icon v-if="user.email_verified_at" color="success" >-->
+<!--                    mdi-check-->
+<!--                  </v-icon>-->
+<!--                  <v-btn-->
+<!--                    v-else-->
+<!--                    text-->
+<!--                    class="mt-n2"-->
+<!--                    :loading="emailVerificationForm.busy"-->
+<!--                    @click="verifyEmail"-->
+<!--                  >-->
+<!--                    {{ $t('Verify') }}-->
+<!--                  </v-btn>-->
+<!--                </template>-->
+<!--              </v-text-field>-->
 
               <image-upload
                 :label="$t('Avatar')"

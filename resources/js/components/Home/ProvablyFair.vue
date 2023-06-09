@@ -164,7 +164,7 @@
               </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-body accordion-collapse collapse"  :class="{'show': expanded.one }" aria-labelledby="flush-headingOne" >
-              <p>We currently only accept XRP.</p>
+              <p>We currently only accept XRP, SOL, ETH, BTC.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -174,7 +174,7 @@
               </button>
             </h2>
             <div id="flush-collapseTwo" class="accordion-body accordion-collapse collapse"  :class="{'show': expanded.two}" aria-labelledby="flush-headingTwo" >
-              <p>Go to the games rule tab at the top of the homepage.</p>
+              <p>Bottom left tab on game screen, 'i' icon.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -194,7 +194,7 @@
               </button>
             </h2>
             <div id="flush-collapseseven" class="accordion-body accordion-collapse collapse"  :class="{'show': expanded.seven}" aria-labelledby="flush-headingThree" >
-              <p>There is no sign up, registration, or KYC. Sign in with your Xumm wallet and begin play.</p>
+              <p>Log in, top right corner with designated wallet.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -216,7 +216,7 @@
               </button>
             </h2>
             <div id="flush-collapsefour" class="accordion-body accordion-collapse collapse"  :class="{'show': expanded.four}" aria-labelledby="flush-headingOne" >
-              <p>This is the Test contents</p>
+              <p>Yes, for every wallet address you can have an account linked.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -226,7 +226,7 @@
               </button>
             </h2>
             <div id="flush-collapsefive" class=" accordion-body accordion-collapse collapse"  :class="{'show': expanded.five}" aria-labelledby="flush-headingTwo" >
-              <p>No, there is no limits on deposits or withdrawals.</p>
+              <p>Deposit, 100 credits minimum. Withdrawl, 5000 credits maximum daily.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -236,7 +236,7 @@
               </button>
             </h2>
             <div id="flush-collapsesix" class="accordion-body accordion-collapse collapse"  :class="{'show': expanded.six}" aria-labelledby="flush-headingThree" >
-              <p>Within 10 seconds your withdrawal/deposit will be credited.</p>
+              <p>We guarantee the XUMM/XRP process to be completed within a few minutes. However, delays may be experienced with SQL, BTC and ETH.</p>
             </div>
           </div>
           <div class="accordion-item">

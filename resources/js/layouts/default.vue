@@ -26,7 +26,7 @@
 
     <chat v-if="authenticated && chatEnabled" v-model="chatDrawer" @message="setUnreadChatMessagesCount" />
 
-    <template v-if="isMobile && (isGamePage || isPredictionPage || isProviderGamePage)">
+    <template v-if="isMobile && (isGamePage || isPredictionPage || isProviderGamePage)" :style="'margin-top: 80'">
       <v-speed-dial fixed top left>
         <template #activator>
           <v-btn small outlined icon @click.stop="navigationDrawer = !navigationDrawer">
