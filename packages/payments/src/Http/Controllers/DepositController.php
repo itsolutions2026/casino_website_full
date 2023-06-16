@@ -20,6 +20,8 @@ use Packages\Payments\Models\Deposit;
 use Packages\Payments\Models\DepositMethod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Packages\Payments\Services\Api\XrplApi;
+use Packages\Payments\Services\CryptoDepositService;
 use Packages\Payments\Services\DepositService;
 use Packages\Payments\Repositories\DepositRepository;
 
@@ -44,7 +46,7 @@ class DepositController extends Controller
             $request->user()->account->id != $deposit->account_id
             || !($deposit->is_created || $deposit->is_completed)
             || !$deposit->method->paymentMethod
-            || !in_array($deposit->method->paymentMethod->gateway->code, ['coinpayments', 'evm', 'tron', 'solana', 'cryptapi', 'paytm', 'smartfastpay']),
+            || !in_array($deposit->method->paymentMethod->gateway->code, ['coinpayments', 'evm', 'tron', 'solana', 'xrpl', 'cryptapi', 'paytm', 'smartfastpay']),
             404
         );
 
@@ -63,7 +65,6 @@ class DepositController extends Controller
                 $depositService = DepositService::make($depositMethod, $request);
                 $deposit = $depositService->create();
                 $redirectUrl = $depositService->getRedirectUrl();
-
                 return $redirectUrl
                     ? $this->successResponse([
                         'redirect' => [
@@ -96,11 +97,19 @@ class DepositController extends Controller
     }
 
     public function update(UpdateDeposit $request, DepositMethod $depositMethod, Deposit $deposit)
+
     {
         $deposit->update([
             'external_id'   => $request->transaction_id,
             'status'        => Deposit::STATUS_PENDING
         ]);
+
+        if ($depositMethod->paymentMethod) {
+            $depositService = DepositService::make($depositMethod, $deposit);
+            if ($depositService instanceof CryptoDepositService) {
+                $depositService->complete();
+            }
+        }
 
         return $this->successResponse();
     }

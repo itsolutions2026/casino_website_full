@@ -452,6 +452,26 @@
             />
           </v-expansion-panel-content>
         </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>{{ $t('XRPL') }}</v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-text-field
+                v-model="form.PAYMENTS_XRPL_APIKEY"
+                :label="$t('API KEY')"
+                :error="form.errors.has('PAYMENTS_XRPL_APIKEY')"
+                :error-messages="form.errors.get('PAYMENTS_XRPL_APIKEY')"
+                outlined
+            />
+
+            <v-text-field
+                v-model="form.PAYMENTS_XRPL_APISECRET"
+                :label="$t('API SECRET')"
+                :error="form.errors.has('PAYMENTS_XRPL_APISECRET')"
+                :error-messages="form.errors.get('PAYMENTS_XRPL_APISECRET')"
+                outlined
+            />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
       </v-expansion-panels>
     </v-card-text>
   </v-card>
@@ -505,6 +525,8 @@ export default {
         PAYMENTS_SMARTFASTPAY_LIVE: '' + config(`${this.packageId}.smartfastpay.live`),
         PAYMENTS_EASYWIRE_USER: config(`${this.packageId}.easywire.user`),
         PAYMENTS_EASYWIRE_PASSWORD: config(`${this.packageId}.easywire.password`),
+        PAYMENTS_XRPL_APIKEY: config(`${this.packageId}.xrpl.api_key`),
+        PAYMENTS_XRPL_APISECRET: config(`${this.packageId}.xrpl.api_secret`),
         PAYMENTS_COINPAYMENTS_MERCHANT_ID: config(`${this.packageId}.coinpayments.merchant_id`),
         PAYMENTS_COINPAYMENTS_PUBLIC_KEY: config(`${this.packageId}.coinpayments.public_key`),
         PAYMENTS_COINPAYMENTS_PRIVATE_KEY: config(`${this.packageId}.coinpayments.private_key`),

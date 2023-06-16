@@ -25,7 +25,7 @@ class VerifyBlockchainAddress extends FormRequest
     public function rules()
     {
         return [
-            'signature' => 'required|min:50|max:150'
+            'signature' => 'required|min:30|max:150'
         ];
     }
 }

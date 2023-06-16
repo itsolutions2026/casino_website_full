@@ -285,6 +285,20 @@ class DepositMethodSeeder extends Seeder
                 'parameters' => []
             ],
             [
+                'payment_method_code' => 'ripple_coin',
+                'name' => 'XRP (XUMM)',
+                'description' => '<p>Before making a deposit please check that XUMM is installed in your mobile wallet (<a href="https://xumm.app/">read more</a>). </p>',
+                'currency' => 'XRPL',
+                'rate' => 10000,
+                'decimal_places' => 6,
+                'payment_method_parameters' => [
+                    'coin' => 'XRP',
+                    'url' => 'https://s2.ripple.com:51234/',
+                    'address' => 'rD6tSocv4fjQ3XL5w6s7djMRGxbwng7V5E'
+                ],
+                'parameters' => []
+            ],
+            [
                 'payment_method_code' => 'evm_token',
                 'name' => 'ERC20 Polygon Token (Metamask)',
                 'description' => '<p>Before making a deposit please check that Metamask is connected to Polygon network (<a href="https://academy.binance.com/en/articles/how-to-add-polygon-to-metamask">read more</a>). </p>',
@@ -400,6 +414,7 @@ class DepositMethodSeeder extends Seeder
             'BEP20 Token (CryptAPI)' => '/images/payments/bep20.jpg',
             'TRC20 Token (CryptAPI)' => '/images/payments/trc20.jpg',
             'SOL (Phantom)' => '/images/payments/solana.jpg',
+            'XRP (XUMM)' => '/images/payments/xumm.png',
             'smartBCH (Metamask)' => '/images/payments/smart-bch.jpg',
             'smartBCH Token (Metamask)' => '/images/payments/smart-bch.jpg',
             'Freekassa' => '/images/payments/freekassa.jpg',

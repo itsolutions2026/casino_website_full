@@ -102,7 +102,6 @@ class InstallerController extends Controller
     public function step1(Request $request, $step)
     {
         $response = $this->ls->register($request->code, $request->email);
-
         if (!$response->success) {
             return back()->withInput()->withErrors($response->message)->with('app_redirect', TRUE);
         }

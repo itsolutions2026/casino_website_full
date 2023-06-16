@@ -17,7 +17,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "php": "^7.3|^8.0",
+    "php": "^7.4|^8.0|^8.1",
     "ext-bcmath": "*",
     "ext-gmp": "*",
     "ext-json": "*",
@@ -25,12 +25,15 @@
     "ext-sodium": "*",
     "ext-zip": "*",
     "bacon/bacon-qr-code": "^2.0",
+    "brick/math": "0.10.1",
+    "brick/money": "0.7.0",
     "fideloper/proxy": "^4.0",
     "financialplugins/omnipay-cryptapi": "^1.0",
     "financialplugins/omnipay-skrill": "^1.0",
     "financialplugins/omnipay-trongrid": "^1.1",
     "fruitcake/laravel-cors": "^1.0",
     "guzzlehttp/guzzle": "^7.0.1",
+    "hardcastle/xrpl_php": "dev-master",
     "iexbase/tron-api": "5.0",
     "kornrunner/ethereum-offline-raw-tx": "^0.4.0",
     "kornrunner/keccak": "^1.1",
@@ -45,6 +48,7 @@
     "omnipay/paypal": "^3.0",
     "omnipay/stripe": "^3.1",
     "paytm/paytmchecksum": "^1.1",
+    "php-ds/php-ds": "^1.4",
     "pragmarx/google2fa": "^7.0",
     "predis/predis": "^1.1",
     "pusher/pusher-php-server": "^4.1",
@@ -52,7 +56,8 @@
     "socialiteproviders/coinbase": "^4.0",
     "socialiteproviders/yahoo": "^4.0",
     "stephenhill/base58": "^1.1",
-    "symfony/yaml": "^5.4"
+    "symfony/yaml": "^6.0",
+    "xrpl/xumm-sdk-php": "v1.0.0"
   },
   "require-dev": {
     "facade/ignition": "^2.3.6",
@@ -79,7 +84,8 @@
     "psr-4": {
       "App\\": "app/",
       "Database\\Factories\\": "database/factories/",
-      "Database\\Seeders\\": "database/seeders/"
+      "Database\\Seeders\\": "database/seeders/",
+      "Xrpl\\XummSdkPhp\\": "vendor/xrpl/xumm-sdk-php/src"
     },
     "files": [
       "app/Helpers/constants.php"

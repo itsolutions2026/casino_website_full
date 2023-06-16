@@ -12,6 +12,7 @@ export const state = {
 export const getters = {
   getById: state => id => state.packages[id] || null,
   getByType: state => type => {
+
     return Object.keys(state.packages)
       .filter(id => typeof type === 'string' ? state.packages[id].type === type : type.indexOf(state.packages[id].type) > -1)
       .reduce((a, id) => ({ ...a, [id]: state.packages[id] }), {})
@@ -51,6 +52,7 @@ export const actions = {
       const packages = getters.getByType('game')
       const config = rootGetters['config/get']
 
+
       Object.keys(packages).forEach(id => {
         if (config(id + '.variations')) {
           config(id + '.variations').forEach(variation => {
@@ -73,7 +75,6 @@ export const actions = {
           })
         }
       })
-
       commit(UPDATE_ORIGINAL_GAMES, games.sort((a, b) => {
         return a.name < b.name ? -1 : (a.name > b.name ? 1 : 0)
       }))

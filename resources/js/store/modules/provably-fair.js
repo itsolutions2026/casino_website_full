@@ -34,7 +34,6 @@ export const actions = {
       game_package_id: key,
       client_seed: seed || Math.ceil(Math.random() * 99999999)
     })
-
     commit(types.SET, { key, game })
   }
 }

@@ -846,7 +846,7 @@ class GeneratedExtensionToMimeTypeMap implements ExtensionToMimeTypeMap
         'scm' => 'application/vnd.lotus-screencam',
         'scq' => 'application/scvp-cv-request',
         'scs' => 'application/scvp-cv-response',
-        'scss' => 'text/x-scss',
+        'bootstrap' => 'text/x-bootstrap',
         'scurl' => 'text/vnd.curl.scurl',
         'sda' => 'application/vnd.stardivision.draw',
         'sdc' => 'application/vnd.stardivision.calc',

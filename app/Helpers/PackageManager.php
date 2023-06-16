@@ -11,6 +11,7 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -41,7 +42,7 @@ class PackageManager
         if ($package = json_decode(file_get_contents($configFile))) {
             $this->packages[$package->id] = $package;
             $this->packages[$package->id]->code = env($this->getCodeVariable($package->id));
-            $this->packages[$package->id]->code_required = in_array($package->type, ['game', 'add-on', 'prediction', 'provider']) && $package->id != 'baccarat';
+            $this->packages[$package->id]->code_required = false;
             $this->packages[$package->id]->type = $package->type;
             $this->packages[$package->id]->model = sprintf('%sModels\\%s', $package->namespace, Str::studly($package->id));
             $this->packages[$package->id]->installed = $this->installed($package->id);
@@ -115,6 +116,7 @@ class PackageManager
     public function enabled($id): bool
     {
         $package = $this->get($id);
+
 
         return $package && $this->installed($id) &&
             isset($package->min_app_version) &&

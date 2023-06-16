@@ -10,7 +10,7 @@
 */
 
 
-
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 

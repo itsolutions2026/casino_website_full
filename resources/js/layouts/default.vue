@@ -26,7 +26,7 @@
 
     <chat v-if="authenticated && chatEnabled" v-model="chatDrawer" @message="setUnreadChatMessagesCount" />
 
-    <template v-if="isMobile && (isGamePage || isPredictionPage || isProviderGamePage)">
+    <template v-if="isMobile && (isGamePage || isPredictionPage || isProviderGamePage)" :style="'margin-top: 80'">
       <v-speed-dial fixed top left>
         <template #activator>
           <v-btn small outlined icon @click.stop="navigationDrawer = !navigationDrawer">
@@ -58,7 +58,7 @@
 
       <v-toolbar-title class="header-logo d-flex align-center">
         <router-link :to="{ name: 'home' }">
-          <v-avatar size="40" tile>
+          <v-avatar size="100" tile>
             <v-img :src="appLogoUrl" :alt="appName" />
           </v-avatar>
         </router-link>
@@ -73,9 +73,9 @@
         <v-btn :to="{ name: 'login' }" class="secondary">
           {{ $t('Log in') }}
         </v-btn>
-        <v-btn :to="{ name: 'register' }" class="primary ml-2">
-          {{ $t('Sign up') }}
-        </v-btn>
+<!--        <v-btn :to="{ name: 'register' }" class="primary ml-2">-->
+<!--          {{ $t('Sign up') }}-->
+<!--        </v-btn>-->
       </template>
       <template v-else-if="authenticated">
         <account-menu />
@@ -227,6 +227,9 @@ body {
     .v-card .headline,
     .v-card .v-toolbar__title {
       font-family: var(--heading-font), sans-serif !important;
+    }
+    .v-image__image--cover {
+      background-size: contain !important;
     }
   }
 }

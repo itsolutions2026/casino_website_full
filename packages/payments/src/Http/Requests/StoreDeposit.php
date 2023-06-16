@@ -11,7 +11,9 @@
 
 namespace Packages\Payments\Http\Requests;
 
+use App\Rules\ReCaptchaValidationPassed;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 use Packages\Payments\Helpers\Blockchain;
 use Packages\Payments\Rules\BlockchainAddressBalanceIsSufficient;
 use Packages\Payments\Rules\BlockchainAddressConfirmed;
@@ -46,6 +48,7 @@ class StoreDeposit extends FormRequest
             ]
         ];
 
+
         
         if (!empty($depositMethod->parameters)) {
             foreach ($depositMethod->parameters as $parameter) {
@@ -54,6 +57,7 @@ class StoreDeposit extends FormRequest
                 }
             }
         }
+
 
         
         if ($paymentMethod) {
@@ -66,7 +70,7 @@ class StoreDeposit extends FormRequest
 
             $depositService = DepositService::make($depositMethod, $this);
 
-            
+
             if ($depositService instanceof CanFetchPaymentCurrencies) {
                 $rules['payment_currency'] = 'required|in:' . $depositService->fetchPaymentCurrencies()->keys()->implode(',');
             }
@@ -76,9 +80,9 @@ class StoreDeposit extends FormRequest
                 
                 $rules['parameters.address'] = [new BlockchainAddressConfirmed($this->user(), Blockchain::getAddressModelClassById($depositService->getPaymentGateway()->code))];
 
-                
                 $rules['amount'][] = new BlockchainAddressBalanceIsSufficient($depositService, $this->parameters['address']);
             }
+
 
             if ($depositService instanceof ShouldValidateAmount) {
                 $rules['amount'][] = new AmountIsWithinLimits($depositService);
@@ -88,6 +92,9 @@ class StoreDeposit extends FormRequest
             if ($depositService->getPaymentGateway()->code == 'stripe') {
                 $rules['parameters.payment_method_id'] = 'required';
             }
+        }
+        if (config('services.recaptcha.secret_key')) {
+            $rules['recaptcha'] = ['required', new ReCaptchaValidationPassed()];
         }
 
         return $rules;

@@ -13,6 +13,7 @@ namespace App\Helpers\Api;
 
 use App\Models\Asset;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 
 abstract class AssetApi extends Api
 {
@@ -48,7 +49,6 @@ abstract class AssetApi extends Api
         $endpoint = $this->getEndpoint($type, ...$params);
         $key = $this->getDataKey($type);
         $data = $this->get($endpoint, NULL, $this->getRequestOptions());
-
         if (is_object($data) && $key) {
             $data = data_get($data, $key);
         }

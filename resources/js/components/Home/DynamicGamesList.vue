@@ -1,14 +1,14 @@
 <template>
-  <div v-if="games.length" :class="classes">
-    <v-row>
-      <v-col>
-        <h3 class="text-h5 text-sm-h4 font-weight-thin text-center">
-          {{ title }}
-        </h3>
-      </v-col>
-    </v-row>
+  <section class="game__section pt-120 pb-120" id="game">
+    <div class="container">
+      <div class="section-header max-width1 wow">
+        <h2>
+          New Club <span class="text-base">OOtopia</span> Games
+        </h2>
 
-    <v-row v-if="filter && categories.length > 1">
+      </div>
+
+    <v-row v-if="filter && categories.length > 0">
       <v-col>
         <v-chip-group
           v-model="category"
@@ -40,16 +40,19 @@
     </v-row>
 
     <v-row v-if="gamesList.length" ref="games" justify="center">
-      <v-col
-        v-for="(game, i) in gamesList"
-        :key="i"
-        class="game-card"
-        :class="cardClasses"
-        :data-name="game.name"
-        :data-groups="JSON.stringify([game.category])"
-      >
-        <component :is="`game-${displayStyle}`" :game="game" class="mx-auto" :class="`display-style-${displayStyle}`" />
-      </v-col>
+      <div v-for="(game, i) in gamesList" :key="i" class="game-card col-xl-4 col-lg-4 col-md-6 col-sm-6 wow" :data-groups="JSON.stringify([game.category])">
+        <div class="game__items">
+          <img :src="game.banner" alt="img">
+          <div class="game__overlay">
+            <div class="content">
+              <h4>{{ game.name }}</h4>
+              <router-link :to="game.route" class="cmn--btn2">
+                <span>Play</span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </v-row>
     <v-row v-else>
       <v-col v-for="(v,i) in Array(count).fill(0)" :key="i">
@@ -66,7 +69,8 @@
         </v-btn>
       </v-col>
     </v-row>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>

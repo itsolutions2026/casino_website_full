@@ -1,6 +1,6 @@
 {
     "id": "heads-or-tails",
-    "name": "Heads Or Tails",
+    "name": "Lootin Or Hootin",
     "type": "game",
     "description": "This add-on implements Heads Or Tails game.",
     "providers": [
@@ -12,5 +12,5 @@
     "static": {},
     "purchase_url": "https://codecanyon.net/user/financialtechnology",
     "min_app_version": "1.3.3",
-    "hash": ""
+    "hash": "1878d3f7bbb9ad940e66303e84ccf588"
 }

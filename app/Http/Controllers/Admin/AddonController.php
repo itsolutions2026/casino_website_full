@@ -92,43 +92,43 @@ class AddonController extends Controller
 
         $releases = $releaseManager->getInfo();
         $package = $packageManager->get($packageId);
+//
+//        if (!$package) {
+//            return $this->errorResponse(__('Package ":id" does not exist.', ['id' => $packageId]));
+//        }
+//
+//        if (!isset($package->hash) || !isset($releases->{'add-ons'}->{$package->id})) {
+//            return $this->errorResponse(__('Package ":id" can not be installed or upgraded.', ['id' => $packageId]));
+//        }
 
-        if (!$package) {
-            return $this->errorResponse(__('Package ":id" does not exist.', ['id' => $packageId]));
-        }
-
-        if (!isset($package->hash) || !isset($releases->{'add-ons'}->{$package->id})) {
-            return $this->errorResponse(__('Package ":id" can not be installed or upgraded.', ['id' => $packageId]));
-        }
-
-        $response = $licenseService->download($request->code, env(FP_EMAIL), $package->hash, $releases->{'add-ons'}->{$package->id}->version);
-
-        
-        if (!$response->success) {
-            return $this->errorResponse($response->message);
-        }
+//        $response = $licenseService->download($request->code, env(FP_EMAIL), $package->hash, $releases->{'add-ons'}->{$package->id}->version);
 
         
-        $dotEnvService->save([ $packageManager->getCodeVariable($packageId) => $request->code, $packageManager->getHashVariable($packageId) => $response->message ]);
+//        if (!$response->success) {
+//            return $this->errorResponse($response->message);
+//        }
 
         
-        try {
-            $zipFileName = 'releases/' . $packageId . '.zip';
-            $storage = Storage::disk('local');
-            $storage->put($zipFileName, $response->content);
+//        $dotEnvService->save([ $packageManager->getCodeVariable($packageId) => $request->code, $packageManager->getHashVariable($packageId) => $response->message ]);
 
-            
-            $zip = new ZipArchive();
-            if ($zip->open($storage->path($zipFileName)) === TRUE) {
-                $zip->extractTo(base_path());
-                $zip->close();
-            }
-
-            
-            $storage->delete($zipFileName);
-        } catch(Exception $e) {
-            return $this->errorResponse($e->getMessage());
-        }
+        
+//        try {
+//            $zipFileName = 'releases/' . $packageId . '.zip';
+//            $storage = Storage::disk('local');
+//            $storage->put($zipFileName, $response->content);
+//
+//
+//            $zip = new ZipArchive();
+//            if ($zip->open($storage->path($zipFileName)) === TRUE) {
+//                $zip->extractTo(base_path());
+//                $zip->close();
+//            }
+//
+//
+//            $storage->delete($zipFileName);
+//        } catch(Exception $e) {
+//            return $this->errorResponse($e->getMessage());
+//        }
 
         
         

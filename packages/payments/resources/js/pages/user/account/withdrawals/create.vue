@@ -246,11 +246,10 @@ export default {
     },
     async submit () {
       this.formIsProcessing = true
-
       const { data } = await this.form.post(`/api/withdrawals/methods/${this.method.id}`)
         .catch(() => {
           return false
-        })
+      })
 
       // data will be undefined in case of any form errors (422 HTTP code)
       if (data) {

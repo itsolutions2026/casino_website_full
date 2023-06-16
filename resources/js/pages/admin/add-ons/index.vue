@@ -64,6 +64,7 @@
                   </v-card-text>
                   <v-card-actions>
                     <template v-if="pkg.installed && pkg.min_app_version_installed">
+
                       <template v-if="pkg.update_available">
                         <v-btn
                           v-if="pkg.hash"
@@ -153,7 +154,6 @@ export default {
 
   async created () {
     const { data } = await axios.get('/api/admin/add-ons')
-
     this.data = data
   },
 

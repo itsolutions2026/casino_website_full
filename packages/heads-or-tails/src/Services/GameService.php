@@ -6,6 +6,7 @@ use App\Helpers\Games\NumberGenerator;
 use App\Models\Game;
 use App\Models\User;
 use App\Services\GameService as ParentGameService;
+use Illuminate\Support\Facades\Log;
 use Packages\HeadsOrTails\Models\HeadsOrTails;
 
 class GameService extends ParentGameService
@@ -43,9 +44,29 @@ class GameService extends ParentGameService
         $bet = $params['bet'];
         $tossBet = $params['toss_bet'];
 
+
+
         $gameable = new $this->gameableClass();
         $gameable->toss_bet = $tossBet;
-        $gameable->toss_result = $this->numberGenerator->getNumber();
+
+        $threshold = 0.3 * 100;
+        $randomNumber = random_int(1, 100);
+
+
+        if ($tossBet === 0) {
+            if ($randomNumber < $threshold) {
+                $gameable->toss_result = 0;
+            } else {
+                $gameable->toss_result = 1;
+            }
+        } else {
+            if ($randomNumber < $threshold) {
+                $gameable->toss_result = 1;
+            } else {
+                $gameable->toss_result = 0;
+            }
+        }
+//        $gameable->toss_result = $this->numberGenerator->getNumber();
 
         // important to save a reference to gameable in the class property, so it can be used in the parent class
         $this->gameable = $gameable;

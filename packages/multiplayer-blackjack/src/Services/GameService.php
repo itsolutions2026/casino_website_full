@@ -4,11 +4,12 @@ namespace Packages\MultiplayerBlackjack\Services;
 
 use App\Helpers\Games\CardDeck;
 use App\Models\User;
-use App\Services\MultiplayerGameService;
+use App\Services\MultiroomMultiplayerGameService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use Packages\MultiplayerBlackjack\Models\MultiplayerBlackjack;
 
-class GameService extends MultiplayerGameService
+class GameService extends MultiroomMultiplayerGameService
 {
     protected $gameableClass = MultiplayerBlackjack::class;
 
@@ -31,7 +32,7 @@ class GameService extends MultiplayerGameService
         return implode(',', $this->deck->shuffle()->get());
     }
 
-    protected function createGameable(): MultiplayerGameService
+    protected function createGameable(): MultiroomMultiplayerGameService
     {
         $provablyFairGame = $this->getProvablyFairGame();
 
@@ -62,7 +63,7 @@ class GameService extends MultiplayerGameService
         return $this;
     }
 
-    public function action(string $action): MultiplayerGameService
+    public function action(string $action): MultiroomMultiplayerGameService
     {
         $gameable = $this->getGameable();
         // initialize the saved deck
@@ -359,5 +360,10 @@ class GameService extends MultiplayerGameService
         }
 
         return $result;
+    }
+
+    public function getGameActionData(string $action, array $request = []): array
+    {
+        // TODO: Implement getGameActionData() method.
     }
 }

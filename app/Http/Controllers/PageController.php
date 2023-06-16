@@ -19,11 +19,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class PageController extends Controller
 {
     public function index(Request $request, OauthService $OAuthService, PackageManager $packageManager, string $path = NULL)
     {
+
         $variables = [
             'config' => array_merge(
                 $this->mapConfigVariables('app', ['name', 'version', 'logo', 'banner', 'url', 'locale', 'default_locale', 'translation_files_folder']),
@@ -144,6 +146,7 @@ class PageController extends Controller
 
             $variables['config'][$package->id] = $packageConfig;
         }
+
 
         return view('index', $variables);
     }

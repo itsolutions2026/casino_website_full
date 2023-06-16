@@ -18,6 +18,7 @@ use Database\Seeders\AssetSeeder;
 use Illuminate\Database\Console\Seeds\SeedCommand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 
 class SettingController extends Controller
 {
@@ -25,7 +26,7 @@ class SettingController extends Controller
     {
         $config = collect(['app', 'auth', 'broadcasting', 'database', 'logging', 'mail', 'oauth', 'queue', 'settings', 'services', 'session'])
             ->mapWithKeys(function ($item, $key) {
-                
+
                 return [$item => config($item)];
             });
 

@@ -8,6 +8,7 @@ return [
     'action_duration'       => env('GAME_MULTIPLAYER_BLACKJACK_ACTION_DURATION', 15), // in seconds
     'final_hit_threshold'   => env('GAME_MULTIPLAYER_BLACKJACK_FINAL_HIT_THRESHOLD', 5), // in seconds
     'cancel_threshold'      => env('GAME_MULTIPLAYER_BLACKJACK_CANCEL_THRESHOLD', 30), // in seconds
+    'banner'                => env('GAME_DICE_HEADS_OR_TAILS_BANNER', '/images/games/multiplayer-blackjack/banner.jpg'),
     'parameters' => [
         [
             'id' => 'bet',
