@@ -10,10 +10,7 @@
     "source_path": "src",
     "namespace": "Packages\\MultiplayerBlackjack\\",
     "static": {},
-    "system_requirements": [
-        "Pusher integration"
-    ],
-    "purchase_url": "https://codecanyon.net/item/multiplayer-blackjack-addon-for-stake-casino-gaming-platform/26635626",
-    "min_app_version": "1.19.0",
-    "hash": "84029c2d1c8b54a1a7afea39bc6550c4"
+    "purchase_url": "https://codecanyon.net/user/financialtechnology/portfolio",
+    "min_app_version": "1.3.6",
+    "hash": ""
 }
