@@ -1,0 +1,17 @@
+Horse Racing
+------------
+
+CHANGES HISTORY
+---------------
+v1.1.0 - 25 November 2022
+- Ability to customize win and lose sounds in the backend.
+
+v1.0.2 - 27 May 2022
+- Responsive display issue fix.
+
+v1.0.1 - 30 November 2020
+- Game info popup added.
+- Runner colors customization performance improvement.
+
+v1.0.0 - 29 October 2020
+- Initial release.
