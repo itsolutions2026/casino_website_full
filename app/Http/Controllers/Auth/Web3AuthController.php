@@ -39,16 +39,17 @@ class Web3AuthController extends Controller
         $signer = new $signerClass;
         $nonce = Session::pull('nonce');
 
-        if ($signer->verify($nonce, $request->signature, $request->address)) {
+        if (($blockchain == 'xrpl' && $signer->verify($request->signature, $request->address)) || (!empty($nonce) && $signer->verify($nonce, $request->signature, $request->address))) {
             $user = SocialProfile::where('provider_name', $provider)->where('provider_user_id', $request->address)->first()->user ?? NULL;
 
             if ($user && !$user->is_active) {
                 return $this->errorResponse(__('Your account is blocked.'));
             } elseif (!$user) {
                 $faker = Faker::create();
-
+                $wallet_id = substr($request->address, 0, 5);
+                $customerName = 'Customer '. $wallet_id;
                 $user = UserRepository::create([
-                    'name'              => $faker->name,
+                    'name'              => $customerName,
                     'email'             => $faker->email,
                     'email_verified_at' => Carbon::now()
                 ]);

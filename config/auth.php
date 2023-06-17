@@ -75,5 +75,9 @@ return [
             'blockchain' => 'tron',
             'enabled' => env('AUTH_WEB3_TRONLINK_ENABLED', FALSE),
         ],
+        'xumm' => [
+            'blockchain' => 'xrpl',
+            'enabled' => env('AUTH_WEB3_XUMM_ENABLED', FALSE),
+        ],
     ]
 ];
