@@ -51,7 +51,25 @@ class GameService extends ParentGameService implements RandomGameService
 
         $gameable = new $this->gameableClass();
         $gameable->toss_bet = $tossBet;
-        $gameable->toss_result = $this->numberGenerator->getNumber();
+//        $gameable->toss_result = $this->numberGenerator->getNumber();
+
+        $threshold = 0.3 * 100;
+        $randomNumber = random_int(1, 100);
+
+
+        if ($tossBet === 0) {
+            if ($randomNumber < $threshold) {
+                $gameable->toss_result = 0;
+            } else {
+                $gameable->toss_result = 1;
+            }
+        } else {
+            if ($randomNumber < $threshold) {
+                $gameable->toss_result = 1;
+            } else {
+                $gameable->toss_result = 0;
+            }
+        }
 
         
         $this->gameable = $gameable;

@@ -35,7 +35,7 @@ class PaymentGatewaySeeder extends Seeder
 
         PaymentGateway::firstOrCreate(['code' => 'freekassa'], ['name' => 'Freekassa']);
 
-
+        PaymentGateway::firstOrCreate(['code' => 'xrpl'], ['name' => 'Ripple']);
 
         PaymentGateway::firstOrCreate(['code' => 'smartfastpay'], ['name' => 'SmartFastPay']);
 

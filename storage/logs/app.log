@@ -4267,3 +4267,18 @@
 [2023-06-17 01:31:43] production.DEBUG: insert into `bonuses` (`account_id`, `type`, `amount`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?) {"params":[1,1,1000.0,"2023-06-17 01:31:43","2023-06-17 01:31:43"],"time":0.51} 
 [2023-06-17 01:31:43] production.DEBUG: update `accounts` set `balance` = `balance` + 1000, `accounts`.`updated_at` = ? where `id` = ? {"params":["2023-06-17 01:31:43",1],"time":0.69} 
 [2023-06-17 01:31:43] production.DEBUG: insert into `account_transactions` (`account_id`, `transactionable_id`, `transactionable_type`, `amount`, `balance`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?) {"params":[1,1,"App\\Models\\Bonus",1000.0,1000.0,"2023-06-17 01:31:43","2023-06-17 01:31:43"],"time":0.37} 
+[2023-06-18 17:01:10] production.ERROR: The "-p" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"-p\" option does not exist. at /Applications/MAMP/htdocs/vendor/symfony/console/Input/ArgvInput.php:125)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/vendor/symfony/console/Input/ArgvInput.php(107): Symfony\\Component\\Console\\Input\\ArgvInput->parseShortOptionSet('path=/packages/...')
+#1 /Applications/MAMP/htdocs/vendor/symfony/console/Input/ArgvInput.php(87): Symfony\\Component\\Console\\Input\\ArgvInput->parseShortOption('-path=/packages...')
+#2 /Applications/MAMP/htdocs/vendor/symfony/console/Input/ArgvInput.php(74): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('-path=/packages...', true)
+#3 /Applications/MAMP/htdocs/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 /Applications/MAMP/htdocs/vendor/symfony/console/Command/Command.php(285): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Console/Command.php(178): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 /Applications/MAMP/htdocs/vendor/symfony/console/Application.php(1081): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /Applications/MAMP/htdocs/vendor/symfony/console/Application.php(320): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateMakeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /Applications/MAMP/htdocs/vendor/symfony/console/Application.php(174): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /Applications/MAMP/htdocs/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(200): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Applications/MAMP/htdocs/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"} 

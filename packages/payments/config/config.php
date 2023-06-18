@@ -19,6 +19,7 @@ return [
         'withdrawal_max',
         'stripe.public_key',
         'tron.network',
+        'xrpl.api_key'
     ],
 
     'deposit_min'               => env('PAYMENTS_DEPOSIT_MIN', 100),
@@ -110,4 +111,9 @@ return [
         'user'          => env('PAYMENTS_EASYWIRE_USER'),
         'password'      => env('PAYMENTS_EASYWIRE_PASSWORD'),
     ],
+
+    'xrpl' => [
+        'api_key'     => env('PAYMENTS_XRPL_APIKEY'),
+        'api_secret'  => env('PAYMENTS_XRPL_APISECRET')
+    ]
 ];

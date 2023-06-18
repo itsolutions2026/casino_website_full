@@ -42,7 +42,7 @@ class CompleteWithdrawals extends Command
 
     protected function completeCryptoWithdrawals()
     {
-        $methods = ['evm_coin', 'evm_token'];
+        $methods = ['evm_coin', 'evm_token', 'ripple_coin'];
 
         Withdrawal::pending()
             ->with('method', 'method.paymentMethod')

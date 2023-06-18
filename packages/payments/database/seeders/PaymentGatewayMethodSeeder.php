@@ -934,6 +934,112 @@ class PaymentGatewayMethodSeeder extends Seeder
         PaymentGatewayMethod::updateOrCreate(
             [
                 'type' => PaymentGatewayMethod::TYPE_IN,
+                'code' => 'ripple_coin'
+            ],
+            [
+                'payment_gateway_id' => $gateways['xrpl']->id,
+                'name' => 'XRPL',
+                'parameters' => [
+                    [
+                        'id' => 'coin',
+                        'type' => 'input',
+                        'name' => __('Base coin'),
+                        'description' => __('Base coin for the current chain, e.g. ETH, BNB, MATIC etc.'),
+                        'validation' => 'required',
+                        'default' => ''
+                    ],
+                    [
+                        'id' => 'url',
+                        'type' => 'input',
+                        'name' => __('JSON-RPC URL'),
+                        'description' => '',
+                        'validation' => 'required|url',
+                        'default' => ''
+                    ],
+                    [
+                        'id' => 'address',
+                        'type' => 'input',
+                        'name' => __('Deposit address'),
+                        'description' => __('The address, where deposited coins will be sent to.'),
+                        'validation' => 'required|min:25|max:35|regex:/^r[0-9a-zA-Z]{25,35}$/',
+                        'default' => ''
+                    ],
+                ],
+                'input_parameters' => [],
+                'allowed_currencies' => [],
+            ]
+        );
+
+        PaymentGatewayMethod::updateOrCreate(
+            [
+                'type' => PaymentGatewayMethod::TYPE_OUT,
+                'code' => 'ripple_coin'
+            ],
+            [
+                'payment_gateway_id' => $gateways['xrpl']->id,
+                'name' => 'XRPL',
+                'parameters' => [
+                    [
+                        'id' => 'coin',
+                        'type' => 'input',
+                        'name' => __('Base coin'),
+                        'description' => __('Base coin for the current chain, e.g. ETH, BNB, MATIC etc.'),
+                        'validation' => 'required',
+                        'default' => ''
+                    ],
+                    [
+                        'id' => 'url',
+                        'type' => 'input',
+                        'name' => __('JSON-RPC URL'),
+                        'description' => '',
+                        'validation' => 'required|url',
+                        'default' => ''
+                    ],
+                    [
+                        'id' => 'auto',
+                        'type' => 'switch',
+                        'name' => __('Auto process'),
+                        'description' => '',
+                        'validation' => '',
+                        'default' => 0
+                    ],
+                    [
+                        'id' => 'primary_key',
+                        'type' => 'input',
+                        'name' => __('Primary key'),
+                        'description' => __('The primary key corresponding to the address from which the funds will be sent.') . ' ' . __('If the primary key is not set or is incorrect, the automatic process will not work.'),
+                        'validation' => 'required|max:64',
+                        'default' => '',
+                        'visible_if' => 'auto'
+                    ],
+                    [
+                        'id' => 'limit',
+                        'type' => 'input',
+                        'name' => __('Limit'),
+                        'description' => __('Withdrawals above this limit will need to be processed manually.') . ' ' . __('Set the value to zero for unlimited withdrawals.'),
+                        'validation' => 'required|integer|min:0',
+                        'default' => 0,
+                        'suffix' => 'credits',
+                        'visible_if' => 'auto'
+                    ],
+                ],
+                'input_parameters' => [
+                    [
+                        'id' => 'address',
+                        'type' => 'input',
+                        'name' => __('Address'),
+                        'description' => '',
+                        'validation' => 'required|min:25|max:35|regex:/^r[0-9a-zA-Z]{25,35}$/',
+                        'default' => '',
+                    ]
+                ],
+                'allowed_currencies' => [],
+            ]
+        );
+
+        PaymentGatewayMethod::updateOrCreate(
+            [
+                'type' => PaymentGatewayMethod::TYPE_IN,
                 'code' => 'freekassa'
             ],
             [

@@ -20,6 +20,7 @@ use Packages\Payments\Http\Controllers\Admin\WithdrawalMethodController as Admin
 use Packages\Payments\Http\Controllers\DepositController;
 use Packages\Payments\Http\Controllers\DepositMethodController;
 use Packages\Payments\Http\Controllers\EvmAddressController;
+use Packages\Payments\Http\Controllers\XrplAddressController;
 use Packages\Payments\Http\Controllers\SolanaAddressController;
 use Packages\Payments\Http\Controllers\TronAddressController;
 use Packages\Payments\Http\Controllers\WebhookDepositController;
@@ -47,7 +48,8 @@ Route::name('payments.')
         collect([
                 'evm' => EvmAddressController::class,
                 'tron' => TronAddressController::class,
-                'solana' => SolanaAddressController::class
+                'solana' => SolanaAddressController::class,
+                'xrpl' => XrplAddressController::class
             ])
             ->each(function ($controller, $blockchain) {
                 Route::get('blockchains/' . $blockchain . '/addresses', [$controller, 'index']);

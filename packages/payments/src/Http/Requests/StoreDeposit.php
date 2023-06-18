@@ -11,6 +11,7 @@
 
 namespace Packages\Payments\Http\Requests;
 
+use App\Rules\ReCaptchaValidationPassed;
 use Illuminate\Foundation\Http\FormRequest;
 use Packages\Payments\Helpers\Blockchain;
 use Packages\Payments\Rules\BlockchainAddressBalanceIsSufficient;
@@ -88,6 +89,10 @@ class StoreDeposit extends FormRequest
             if ($depositService->getPaymentGateway()->code == 'stripe') {
                 $rules['parameters.payment_method_id'] = 'required';
             }
+        }
+
+        if (config('services.recaptcha.secret_key')) {
+            $rules['recaptcha'] = ['required', new ReCaptchaValidationPassed()];
         }
 
         return $rules;
