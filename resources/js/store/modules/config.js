@@ -7,6 +7,7 @@ export const state = {
   config: window.config || {}
 }
 
+
 // getters
 export const getters = {
   get: state => param => get(state.config, param),
@@ -26,7 +27,6 @@ export const actions = {
   // fetch global config from server and merge it into current config
   async fetch ({ commit }) {
     const { data } = await axios.get('/api/admin/settings')
-
     commit(SET, { config: data.config })
   }
 }

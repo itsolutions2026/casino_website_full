@@ -1075,7 +1075,42 @@
                       </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
-                      <v-expansion-panel-header>{{ $t('Faucet') }}</v-expansion-panel-header>
+                      <v-expansion-panel-header>{{ $t('Facuet') }}</v-expansion-panel-header>
+                      <v-expansion-panel-content>
+                        <v-row>
+                          <v-col cols="12" md="6">
+                            <v-text-field
+                              v-model.number="form.BONUSES_FAUCET_AMOUNT"
+                              :label="$t('Faucet amount')"
+                              :prefix="$t('Allow to claim')"
+                              :suffix="$t('credits')"
+                              :rules="[validationNonNegativeInteger]"
+                              :error="form.errors.has('BONUSES_FAUCET_AMOUNT')"
+                              :error-messages="form.errors.get('BONUSES_FAUCET_AMOUNT')"
+                              :hint="$t('Set amount to zero to disable faucet.')"
+                              persistent-hint
+                              class="text-center"
+                              outlined
+                            />
+                          </v-col>
+                          <v-col cols="12" md="6">
+                            <v-text-field
+                              v-model.number="form.BONUSES_FAUCET_INTERVAL"
+                              :label="$t('Faucet interval')"
+                              :prefix="$t('every')"
+                              :suffix="$t('hours')"
+                              :rules="[validationPositiveInteger]"
+                              :error="form.errors.has('BONUSES_FAUCET_INTERVAL')"
+                              :error-messages="form.errors.get('BONUSES_FAUCET_INTERVAL')"
+                              class="text-center"
+                              outlined
+                            />
+                          </v-col>
+                        </v-row>
+                      </v-expansion-panel-content>
+                    </v-expansion-panel>
+                    <v-expansion-panel>
+                      <v-expansion-panel-header>{{ $t('Tips') }}</v-expansion-panel-header>
                       <v-expansion-panel-content>
                         <v-row>
                           <v-col cols="12" md="6">
@@ -1304,17 +1339,7 @@
                     <v-expansion-panel>
                       <v-expansion-panel-header>{{ $t('Pusher') }}</v-expansion-panel-header>
                       <v-expansion-panel-content>
-                        <v-switch
-                          v-model="form.BROADCAST_DRIVER"
-                          :label="$t('Enabled')"
-                          color="primary"
-                          false-value="null"
-                          true-value="pusher"
-                          class="mb-5"
-                        />
-
                         <v-text-field
-                          v-show="form.BROADCAST_DRIVER !== 'null'"
                           v-model="form.PUSHER_APP_ID"
                           :label="$t('Pusher app ID')"
                           :error="form.errors.has('PUSHER_APP_ID')"
@@ -1324,7 +1349,6 @@
                         />
 
                         <v-text-field
-                          v-show="form.BROADCAST_DRIVER !== 'null'"
                           v-model="form.PUSHER_APP_KEY"
                           :label="$t('Pusher app key')"
                           :error="form.errors.has('PUSHER_APP_KEY')"
@@ -1334,7 +1358,6 @@
                         />
 
                         <v-text-field
-                          v-show="form.BROADCAST_DRIVER !== 'null'"
                           v-model="form.PUSHER_APP_SECRET"
                           :label="$t('Pusher app secret')"
                           :error="form.errors.has('PUSHER_APP_SECRET')"
@@ -1344,7 +1367,6 @@
                         />
 
                         <v-text-field
-                          v-show="form.BROADCAST_DRIVER !== 'null'"
                           v-model="form.PUSHER_APP_CLUSTER"
                           :label="$t('Pusher app cluster')"
                           :error="form.errors.has('PUSHER_APP_CLUSTER')"
@@ -1700,11 +1722,11 @@
                   />
 
                   <v-select
-                    v-model="form.LOG_LEVEL"
+                    v-model="form.APP_LOG_LEVEL"
                     :items="logLevels"
                     :label="$t('Log level')"
-                    :error="form.errors.has('LOG_LEVEL')"
-                    :error-messages="form.errors.get('LOG_LEVEL')"
+                    :error="form.errors.has('APP_LOG_LEVEL')"
+                    :error-messages="form.errors.get('APP_LOG_LEVEL')"
                     outlined
                   />
 
@@ -1863,7 +1885,6 @@ export default {
         GTM_CONTAINER_ID: config('services.gtm.container_id'),
         RECAPTCHA_PUBLIC_KEY: config('services.recaptcha.public_key'),
         RECAPTCHA_SECRET_KEY: config('services.recaptcha.secret_key'),
-        BROADCAST_DRIVER: config('broadcasting.default') || 'null',
         PUSHER_APP_ID: config('broadcasting.connections.pusher.app_id'),
         PUSHER_APP_KEY: config('broadcasting.connections.pusher.key'),
         PUSHER_APP_SECRET: config('broadcasting.connections.pusher.secret'),
@@ -1885,7 +1906,7 @@ export default {
         GAMES_PLAYING_CARDS_FRONT_IMAGE: config('settings.games.playing_cards.front_image'),
         GAMES_PLAYING_CARDS_BACK_IMAGE: config('settings.games.playing_cards.back_image'),
         LOG_CHANNEL: config('logging.default'),
-        LOG_LEVEL: config(`logging.channels.${config('logging.default')}.level`),
+        APP_LOG_LEVEL: config(`logging.channels.${config('logging.default')}.level`),
         APP_LOG_DAYS: parseInt(config('logging.channels.daily.days'), 10),
         MAIL_MAILER: config('mail.default'),
         MAIL_HOST: config('mail.mailers.smtp.host'),

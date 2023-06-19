@@ -1,1 +1,329 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[1018],{63051:(e,A,r)=>{r.r(A),r.d(A,{default:()=>K});var a=r(85893),_=r(5255),o=r(91232),t=r(44557),s=r(94694),n=r(86131),l=r(82674),c=r(84002),C=r(80010),E=r(74944);const i={components:{FileUpload:r(79143).Z},mixins:[E.Z],props:{packageId:{type:String,required:!0},form:{type:Object,required:!0}},data:function(){return{variables:{GAME_BLACKJACK_CATEGORIES:(0,C.v)("".concat(this.packageId,".categories")),GAME_BLACKJACK_BANNER:(0,C.v)("".concat(this.packageId,".banner")),GAME_BLACKJACK_MIN_BET:(0,C.v)("".concat(this.packageId,".min_bet")),GAME_BLACKJACK_MAX_BET:(0,C.v)("".concat(this.packageId,".max_bet")),GAME_BLACKJACK_BET_CHANGE_AMOUNT:(0,C.v)("".concat(this.packageId,".bet_change_amount")),GAME_BLACKJACK_DEFAULT_BET_AMOUNT:(0,C.v)("".concat(this.packageId,".default_bet_amount")),GAME_BLACKJACK_SOUNDS_WIN:(0,C.v)("".concat(this.packageId,".sounds.win")),GAME_BLACKJACK_SOUNDS_LOSE:(0,C.v)("".concat(this.packageId,".sounds.lose")),GAME_BLACKJACK_SOUNDS_PUSH:(0,C.v)("".concat(this.packageId,".sounds.push"))}}},created:function(){this.$emit("input",this.variables)}};const K=(0,r(51900).Z)(i,(function(){var e=this,A=e._self._c;return A(a.Z,{attrs:{flat:""}},[A(_.ZB,[A(l.Z,[A(t.Z,[A(n.Z,[e._v(e._s(e.$t("General")))]),e._v(" "),A(s.Z,[A(o.Z,{attrs:{label:e.$t("Categories"),multiple:"",outlined:"",chips:"","small-chips":"","deletable-chips":"","hide-selected":"","no-filter":""},model:{value:e.form.GAME_BLACKJACK_CATEGORIES,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_CATEGORIES",A)},expression:"form.GAME_BLACKJACK_CATEGORIES"}}),e._v(" "),A("file-upload",{attrs:{label:e.$t("Banner"),name:"banner",folder:"games/".concat(e.packageId)},model:{value:e.form.GAME_BLACKJACK_BANNER,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_BANNER",A)},expression:"form.GAME_BLACKJACK_BANNER"}}),e._v(" "),A(c.Z,{attrs:{label:e.$t("Min bet"),rules:[e.validationInteger,e.validationPositiveNumber],error:e.form.errors.has("GAME_BLACKJACK_MIN_BET"),"error-messages":e.form.errors.get("GAME_BLACKJACK_MIN_BET"),outlined:"",suffix:e.$t("credits")},on:{keydown:function(A){return e.clearFormErrors(A,"GAME_BLACKJACK_MIN_BET")}},model:{value:e.form.GAME_BLACKJACK_MIN_BET,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_MIN_BET",e._n(A))},expression:"form.GAME_BLACKJACK_MIN_BET"}}),e._v(" "),A(c.Z,{attrs:{label:e.$t("Max bet"),rules:[e.validationInteger,e.validationPositiveNumber],error:e.form.errors.has("GAME_BLACKJACK_MAX_BET"),"error-messages":e.form.errors.get("GAME_BLACKJACK_MAX_BET"),outlined:"",suffix:e.$t("credits")},on:{keydown:function(A){return e.clearFormErrors(A,"GAME_BLACKJACK_MAX_BET")}},model:{value:e.form.GAME_BLACKJACK_MAX_BET,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_MAX_BET",e._n(A))},expression:"form.GAME_BLACKJACK_MAX_BET"}}),e._v(" "),A(c.Z,{attrs:{label:e.$t("Bet increment / decrement amount"),rules:[e.validationInteger,e.validationPositiveNumber],error:e.form.errors.has("GAME_BLACKJACK_BET_CHANGE_AMOUNT"),"error-messages":e.form.errors.get("GAME_BLACKJACK_BET_CHANGE_AMOUNT"),outlined:"",suffix:e.$t("credits")},on:{keydown:function(A){return e.clearFormErrors(A,"GAME_BLACKJACK_BET_CHANGE_AMOUNT")}},model:{value:e.form.GAME_BLACKJACK_BET_CHANGE_AMOUNT,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_BET_CHANGE_AMOUNT",e._n(A))},expression:"form.GAME_BLACKJACK_BET_CHANGE_AMOUNT"}}),e._v(" "),A(c.Z,{attrs:{label:e.$t("Default bet amount"),rules:[e.validationInteger,e.validationPositiveNumber],error:e.form.errors.has("GAME_BLACKJACK_DEFAULT_BET_AMOUNT"),"error-messages":e.form.errors.get("GAME_BLACKJACK_DEFAULT_BET_AMOUNT"),outlined:"",suffix:e.$t("credits")},on:{keydown:function(A){return e.clearFormErrors(A,"GAME_BLACKJACK_DEFAULT_BET_AMOUNT")}},model:{value:e.form.GAME_BLACKJACK_DEFAULT_BET_AMOUNT,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_DEFAULT_BET_AMOUNT",e._n(A))},expression:"form.GAME_BLACKJACK_DEFAULT_BET_AMOUNT"}})],1)],1),e._v(" "),A(t.Z,[A(n.Z,[e._v(e._s(e.$t("Sounds")))]),e._v(" "),A(s.Z,[A("file-upload",{attrs:{label:e.$t("Win"),name:"win",folder:"games/".concat(e.packageId),accept:".webm,.wav,.mp3,.ogg,.m4a,.m4b,.mp4,.aac",clearable:!0},model:{value:e.form.GAME_BLACKJACK_SOUNDS_WIN,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_SOUNDS_WIN",A)},expression:"form.GAME_BLACKJACK_SOUNDS_WIN"}}),e._v(" "),A("file-upload",{attrs:{label:e.$t("Lose"),name:"lose",folder:"games/".concat(e.packageId),accept:".webm,.wav,.mp3,.ogg,.m4a,.m4b,.mp4,.aac",clearable:!0},model:{value:e.form.GAME_BLACKJACK_SOUNDS_LOSE,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_SOUNDS_LOSE",A)},expression:"form.GAME_BLACKJACK_SOUNDS_LOSE"}}),e._v(" "),A("file-upload",{attrs:{label:e.$t("Push"),name:"lose",folder:"games/".concat(e.packageId),accept:".webm,.wav,.mp3,.ogg,.m4a,.m4b,.mp4,.aac",clearable:!0},model:{value:e.form.GAME_BLACKJACK_SOUNDS_PUSH,callback:function(A){e.$set(e.form,"GAME_BLACKJACK_SOUNDS_PUSH",A)},expression:"form.GAME_BLACKJACK_SOUNDS_PUSH"}})],1)],1)],1)],1)],1)}),[],!1,null,null,null).exports}}]);
+"use strict";
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["packages/blackjack-resources-js-pages-admin-settings"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _plugins_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~/plugins/config */ "./resources/js/plugins/config.js");
+/* harmony import */ var _mixins_Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/mixins/Form */ "./resources/js/mixins/Form.vue");
+/* harmony import */ var _components_Admin_FileUpload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/components/Admin/FileUpload */ "./resources/js/components/Admin/FileUpload.vue");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    FileUpload: _components_Admin_FileUpload__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  mixins: [_mixins_Form__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  props: {
+    packageId: {
+      type: String,
+      required: true
+    },
+    form: {
+      type: Object,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      variables: {
+        GAME_BLACKJACK_CATEGORIES: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".categories")),
+        GAME_BLACKJACK_BANNER: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".banner")),
+        GAME_BLACKJACK_MIN_BET: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".min_bet")),
+        GAME_BLACKJACK_MAX_BET: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".max_bet")),
+        GAME_BLACKJACK_BET_CHANGE_AMOUNT: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".bet_change_amount")),
+        GAME_BLACKJACK_DEFAULT_BET_AMOUNT: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".default_bet_amount")),
+        GAME_BLACKJACK_SOUNDS_WIN: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".sounds.win")),
+        GAME_BLACKJACK_SOUNDS_LOSE: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".sounds.lose")),
+        GAME_BLACKJACK_SOUNDS_PUSH: (0,_plugins_config__WEBPACK_IMPORTED_MODULE_0__.config)("".concat(this.packageId, ".sounds.push"))
+      }
+    };
+  },
+  created: function created() {
+    this.$emit('input', this.variables);
+  }
+});
+
+/***/ }),
+
+/***/ "./packages/blackjack/resources/js/pages/admin/settings.vue":
+/*!******************************************************************!*\
+  !*** ./packages/blackjack/resources/js/pages/admin/settings.vue ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _settings_vue_vue_type_template_id_2725b525___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./settings.vue?vue&type=template&id=2725b525& */ "./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=template&id=2725b525&");
+/* harmony import */ var _settings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./settings.vue?vue&type=script&lang=js& */ "./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _settings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _settings_vue_vue_type_template_id_2725b525___WEBPACK_IMPORTED_MODULE_0__.render,
+  _settings_vue_vue_type_template_id_2725b525___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "packages/blackjack/resources/js/pages/admin/settings.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_settings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./settings.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_settings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=template&id=2725b525&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=template&id=2725b525& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/VCard.js");
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
+/* harmony import */ var vuetify_lib_components_VCombobox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VCombobox */ "./node_modules/vuetify/lib/components/VCombobox/VCombobox.js");
+/* harmony import */ var vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuetify/lib/components/VExpansionPanel */ "./node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js");
+/* harmony import */ var vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VExpansionPanel */ "./node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanelContent.js");
+/* harmony import */ var vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VExpansionPanel */ "./node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanelHeader.js");
+/* harmony import */ var vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/lib/components/VExpansionPanel */ "./node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanels.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/VTextField.js");
+
+
+
+
+
+
+
+
+
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    attrs: {
+      flat: ""
+    }
+  }, [_c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_1__.VCardText, [_c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_2__["default"], [_c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_4__["default"], [_vm._v(_vm._s(_vm.$t("General")))]), _vm._v(" "), _c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_5__["default"], [_c(vuetify_lib_components_VCombobox__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    attrs: {
+      label: _vm.$t("Categories"),
+      multiple: "",
+      outlined: "",
+      chips: "",
+      "small-chips": "",
+      "deletable-chips": "",
+      "hide-selected": "",
+      "no-filter": ""
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_CATEGORIES,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_CATEGORIES", $$v);
+      },
+      expression: "form.GAME_BLACKJACK_CATEGORIES"
+    }
+  }), _vm._v(" "), _c("file-upload", {
+    attrs: {
+      label: _vm.$t("Banner"),
+      name: "banner",
+      folder: "games/".concat(_vm.packageId)
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_BANNER,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_BANNER", $$v);
+      },
+      expression: "form.GAME_BLACKJACK_BANNER"
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    attrs: {
+      label: _vm.$t("Min bet"),
+      rules: [_vm.validationInteger, _vm.validationPositiveNumber],
+      error: _vm.form.errors.has("GAME_BLACKJACK_MIN_BET"),
+      "error-messages": _vm.form.errors.get("GAME_BLACKJACK_MIN_BET"),
+      outlined: "",
+      suffix: _vm.$t("credits")
+    },
+    on: {
+      keydown: function keydown($event) {
+        return _vm.clearFormErrors($event, "GAME_BLACKJACK_MIN_BET");
+      }
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_MIN_BET,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_MIN_BET", _vm._n($$v));
+      },
+      expression: "form.GAME_BLACKJACK_MIN_BET"
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    attrs: {
+      label: _vm.$t("Max bet"),
+      rules: [_vm.validationInteger, _vm.validationPositiveNumber],
+      error: _vm.form.errors.has("GAME_BLACKJACK_MAX_BET"),
+      "error-messages": _vm.form.errors.get("GAME_BLACKJACK_MAX_BET"),
+      outlined: "",
+      suffix: _vm.$t("credits")
+    },
+    on: {
+      keydown: function keydown($event) {
+        return _vm.clearFormErrors($event, "GAME_BLACKJACK_MAX_BET");
+      }
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_MAX_BET,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_MAX_BET", _vm._n($$v));
+      },
+      expression: "form.GAME_BLACKJACK_MAX_BET"
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    attrs: {
+      label: _vm.$t("Bet increment / decrement amount"),
+      rules: [_vm.validationInteger, _vm.validationPositiveNumber],
+      error: _vm.form.errors.has("GAME_BLACKJACK_BET_CHANGE_AMOUNT"),
+      "error-messages": _vm.form.errors.get("GAME_BLACKJACK_BET_CHANGE_AMOUNT"),
+      outlined: "",
+      suffix: _vm.$t("credits")
+    },
+    on: {
+      keydown: function keydown($event) {
+        return _vm.clearFormErrors($event, "GAME_BLACKJACK_BET_CHANGE_AMOUNT");
+      }
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_BET_CHANGE_AMOUNT,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_BET_CHANGE_AMOUNT", _vm._n($$v));
+      },
+      expression: "form.GAME_BLACKJACK_BET_CHANGE_AMOUNT"
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    attrs: {
+      label: _vm.$t("Default bet amount"),
+      rules: [_vm.validationInteger, _vm.validationPositiveNumber],
+      error: _vm.form.errors.has("GAME_BLACKJACK_DEFAULT_BET_AMOUNT"),
+      "error-messages": _vm.form.errors.get("GAME_BLACKJACK_DEFAULT_BET_AMOUNT"),
+      outlined: "",
+      suffix: _vm.$t("credits")
+    },
+    on: {
+      keydown: function keydown($event) {
+        return _vm.clearFormErrors($event, "GAME_BLACKJACK_DEFAULT_BET_AMOUNT");
+      }
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_DEFAULT_BET_AMOUNT,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_DEFAULT_BET_AMOUNT", _vm._n($$v));
+      },
+      expression: "form.GAME_BLACKJACK_DEFAULT_BET_AMOUNT"
+    }
+  })], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_4__["default"], [_vm._v(_vm._s(_vm.$t("Sounds")))]), _vm._v(" "), _c(vuetify_lib_components_VExpansionPanel__WEBPACK_IMPORTED_MODULE_5__["default"], [_c("file-upload", {
+    attrs: {
+      label: _vm.$t("Win"),
+      name: "win",
+      folder: "games/".concat(_vm.packageId),
+      accept: ".webm,.wav,.mp3,.ogg,.m4a,.m4b,.mp4,.aac",
+      clearable: true
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_SOUNDS_WIN,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_SOUNDS_WIN", $$v);
+      },
+      expression: "form.GAME_BLACKJACK_SOUNDS_WIN"
+    }
+  }), _vm._v(" "), _c("file-upload", {
+    attrs: {
+      label: _vm.$t("Lose"),
+      name: "lose",
+      folder: "games/".concat(_vm.packageId),
+      accept: ".webm,.wav,.mp3,.ogg,.m4a,.m4b,.mp4,.aac",
+      clearable: true
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_SOUNDS_LOSE,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_SOUNDS_LOSE", $$v);
+      },
+      expression: "form.GAME_BLACKJACK_SOUNDS_LOSE"
+    }
+  }), _vm._v(" "), _c("file-upload", {
+    attrs: {
+      label: _vm.$t("Push"),
+      name: "lose",
+      folder: "games/".concat(_vm.packageId),
+      accept: ".webm,.wav,.mp3,.ogg,.m4a,.m4b,.mp4,.aac",
+      clearable: true
+    },
+    model: {
+      value: _vm.form.GAME_BLACKJACK_SOUNDS_PUSH,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "GAME_BLACKJACK_SOUNDS_PUSH", $$v);
+      },
+      expression: "form.GAME_BLACKJACK_SOUNDS_PUSH"
+    }
+  })], 1)], 1)], 1)], 1)], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=template&id=2725b525&":
+/*!*************************************************************************************************!*\
+  !*** ./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=template&id=2725b525& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_settings_vue_vue_type_template_id_2725b525___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_settings_vue_vue_type_template_id_2725b525___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_settings_vue_vue_type_template_id_2725b525___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./settings.vue?vue&type=template&id=2725b525& */ "./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/blackjack/resources/js/pages/admin/settings.vue?vue&type=template&id=2725b525&");
+
+
+/***/ })
+
+}]);

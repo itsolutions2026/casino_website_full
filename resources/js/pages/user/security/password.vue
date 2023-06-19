@@ -31,7 +31,7 @@
                 :append-icon="showPassword2 ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="showPassword2 ? 'text' : 'password'"
                 name="password"
-                :rules="[validationRequired, v => validationMinLength(v,8)]"
+                :rules="[validationRequired, v => validationMinLength(v,6)]"
                 :error="form.errors.has('password')"
                 :error-messages="form.errors.get('password')"
                 outlined

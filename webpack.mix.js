@@ -187,8 +187,13 @@ mix.options({
 })
 
 mix
-  .js('resources/js/app.js', 'public/js')
-  .vuetify('vuetify-loader')
-  .vue()
-  .version()
-  // .sourceMaps()
+    .js('resources/js/app.js', 'public/js')
+    .browserSync({proxy: process.env.APP_URL})
+    .vuetify('vuetify-loader')
+    .vue()
+
+mix.version()
+
+if (mix.inProduction()) {
+  mix.version()
+}

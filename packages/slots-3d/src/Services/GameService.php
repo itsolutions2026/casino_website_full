@@ -17,6 +17,7 @@ use App\Services\GameService as ParentGameService;
 use App\Services\RandomGameService;
 use Exception;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 use Packages\Slots3D\Helpers\SlotMachine;
 use Packages\Slots3D\Models\Slots3D;
 
@@ -53,19 +54,53 @@ class GameService extends ParentGameService implements RandomGameService
         $provablyFairGame = $this->getProvablyFairGame();
 
         
-        $this->slotMachine
-            ->setReels($this->reels)
-
-            ->setPositions(explode(',', $provablyFairGame->secret))
-            ->shift($provablyFairGame->shift_value);
+//        $this->slotMachine
+//            ->setReels($this->reels)
+//            ->setPositions(explode(',', $provablyFairGame->secret))
+//            ->shift($provablyFairGame->shift_value);
 
         $bet = $params['bet'];
-        $positions = $this->slotMachine->getPositions();
+//        $positions = $this->slotMachine->getPositions();
 
+
+        $randomNumber = random_int(1, 700);
+
+        if($randomNumber< 96){
+            $positions_array = [ 0 , 5 , ''];
+        }
+        else if($randomNumber >= 96 && $randomNumber< 144){
+            $positions_array = [ 1 , 0 , 5];
+        }
+        else if($randomNumber >= 144 && $randomNumber< 176){
+            $positions_array = [ 2 , 1 , 0];
+        }
+        else if($randomNumber >= 176 && $randomNumber< 189){
+            $positions_array = [ 3 , 2 , 1];
+        }
+        else if($randomNumber >= 189 && $randomNumber< 198){
+            $positions_array = [ 5 , 4 , 3];
+        }
+        else if($randomNumber >= 198 && $randomNumber< 202){
+            $positions_array = [ 4 , 3 , 2];
+        }
+        else {
+            $first_number = random_int(0, 5);
+            $second_number = ($first_number + 1) % 6;
+            $third_number = ($first_number + 2) % 6;
+
+            $positions_array = [$first_number, $second_number, $third_number];
+        }
+
+        $this->slotMachine
+            ->setReels($this->reels)
+            ->setPositions($positions_array);
+
+
+        $positions = collect($positions_array);
         $gameable = new $this->gameableClass();
         $gameable->positions = $positions;
 
-        
+
         $this->gameable = $gameable;
 
         $win = 0;

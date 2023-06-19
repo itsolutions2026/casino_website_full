@@ -15,8 +15,9 @@ export default [
   // authentication
   { path: '/login', name: 'login', component: page('login'), meta: { layout: 'auth' } },
   { path: '/login/web3/:provider', name: 'login.web3', component: page('login-web3'), meta: { layout: 'auth' }, props: true },
+  { path: '/login/admin', name: 'login.admin', component: page('login-admin'), meta: { layout: 'auth' }, props: true },
   { path: '/2fa', name: '2fa', component: page('2fa'), meta: { layout: 'auth' } },
-  { path: '/register', name: 'register', component: page('register'), meta: { layout: 'auth' } },
+  // { path: '/register', name: 'register', component: page('register'), meta: { layout: 'auth' } },
   { path: '/password/reset', name: 'password.email', component: page('password/email'), meta: { layout: 'auth' } },
   { path: '/password/reset/:token', name: 'password.reset', component: page('password/reset'), meta: { layout: 'auth' } },
   { path: '/email', name: 'verification.index', component: page('email') },
@@ -63,17 +64,17 @@ export default [
     ]
   },
 
-  {
-    path: '/user/affiliate',
-    name: 'user.affiliate',
-    redirect: { name: 'user.affiliate.info' },
-    component: page('user/affiliate'),
-    children: [
-      { path: 'info', name: 'user.affiliate.info', component: page('user/affiliate/info') },
-      { path: 'commissions', name: 'user.affiliate.commissions', component: page('user/affiliate/commissions') },
-      { path: 'stats', name: 'user.affiliate.stats', component: page('user/affiliate/stats') }
-    ]
-  },
+  // {
+  //   path: '/user/affiliate',
+  //   name: 'user.affiliate',
+  //   redirect: { name: 'user.affiliate.info' },
+  //   component: page('user/affiliate'),
+  //   children: [
+  //     { path: 'info', name: 'user.affiliate.info', component: page('user/affiliate/info') },
+  //     { path: 'commissions', name: 'user.affiliate.commissions', component: page('user/affiliate/commissions') },
+  //     { path: 'stats', name: 'user.affiliate.stats', component: page('user/affiliate/stats') }
+  //   ]
+  // },
 
   { path: '/user/account/transactions', name: 'user.account.transactions', component: page('user/account/transactions') },
   { path: '/user/account/faucet', name: 'user.account.faucet', component: page('user/account/faucet') },
@@ -127,8 +128,6 @@ export default [
   { path: '/admin/users/:id/edit', name: 'admin.users.edit', component: page('admin/users/edit'), props: true },
   { path: '/admin/users/:id/delete', name: 'admin.users.delete', component: page('admin/users/delete'), props: true },
   { path: '/admin/users/:id/mail', name: 'admin.users.mail', component: page('admin/users/mail'), props: true },
-  { path: '/admin/users/:id/tokens', name: 'admin.users.tokens.index', component: () => import(/* webpackChunkName: 'packages/[request]' */ `packages/${packageGameProvidersId}/resources/js/pages/admin/users/tokens`), props: true },
-  { path: '/admin/users/:id/tokens/create', name: 'admin.users.tokens.create', component: () => import(/* webpackChunkName: 'packages/[request]' */ `packages/${packageGameProvidersId}/resources/js/pages/admin/users/tokens/create`), props: true },
 
   { path: '/admin/accounts', name: 'admin.accounts.index', component: page('admin/accounts/index') },
   { path: '/admin/accounts/:id', name: 'admin.accounts.show', component: page('admin/accounts/show'), props: true },

@@ -1,5 +1,5 @@
 <template>
-  <v-parallax src="/images/home/celebration.jpg" height="400" class="home-page-biggest-win mt-10">
+  <v-parallax :src="background" height="400" class="home-page-biggest-win mt-10">
     <div class="d-flex justify-center fill-height darken-50">
       <div class="align-self-center">
         <v-row>
@@ -45,6 +45,11 @@ import UserAvatar from '~/components/UserAvatar'
 import { decimal } from '~/plugins/format'
 
 export default {
+  data (){
+    return{
+      background: require("../../../img/bg3.jpg")
+    }
+  },
   components: { UserAvatar },
 
   computed: {

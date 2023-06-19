@@ -56,74 +56,12 @@ class GameService extends ParentGameService implements RandomGameService
         $gameable->dealer_hand = [$this->deck->getCard(2)->code, $this->deck->getCard(4)->code];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         $gameable->dealer_score = $this->calculateScore($gameable->dealer_hand);
         $gameable->player_score = $this->calculateScore($gameable->player_hand);
 
-        
         $this->gameable = $gameable;
 
-        
-        
-        
+
         if ($gameable->dealer_hand[0][1] != 'A' || $this->getUserAccountBalance() < 1.5 * $gameable->bet) {
             
             if ($gameable->player_score == 21 && $gameable->dealer_score != 21) {
@@ -289,7 +227,6 @@ class GameService extends ParentGameService implements RandomGameService
             
             $gameable->insurance_bet = $gameable->bet / 2;
 
-            
             if ($gameable->player_score == 21 && $gameable->dealer_score != 21) {
                 $gameable->player_blackjack = TRUE;
                 $gameable->insurance_win = 0;
@@ -307,8 +244,7 @@ class GameService extends ParentGameService implements RandomGameService
                 $gameable->win = $gameable->bet; 
             } else {
                 $this->addActions($gameable, ['hit', 'stand']);
-                
-                
+
                 if ($this->getUserAccountBalance() >= $gameable->insurance_bet + $gameable->bet) {
                     $this->addActions($gameable, ['double']);
                     if ($gameable->player_hand[0][1] == $gameable->player_hand[1][1]) {

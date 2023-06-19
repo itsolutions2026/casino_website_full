@@ -23,14 +23,17 @@
 </template>
 
 <script>
+
+
 import Metamask from '~/components/Web3Auth/Metamask'
 import Phantom from '~/components/Web3Auth/Phantom'
 import Tronlink from '~/components/Web3Auth/Tronlink'
+import Xumm from '~/components/Web3Auth/Xumm'
 import { config } from '~/plugins/config'
 import { ucfirst } from '~/plugins/utils'
 
 export default {
-  components: { Metamask, Phantom, Tronlink },
+  components: { Metamask, Phantom, Tronlink , Xumm },
 
   middleware: 'guest',
 

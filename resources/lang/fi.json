@@ -947,7 +947,7 @@
     "Yes": "Kyllä",
     "You are receiving this email because we received a password reset request for your account.": "Saat tämän sähköpostin, koska saimme salasanan pyyntö tilisi.",
     "You can choose how many paylines to play in each round - from 1 to 20.": "Voit valita kuinka monta voittolinjaa haluat pelata kaikissa kierros 1. 20.",
-    "You can enable maintenance mode while updating the application or performing other maintenance tasks so that no one except administrators can use the site.": "Voit ottaa käyttöön ylläpito-tilassa aikana sovellus päivittää tai kun teet muut palvelun tehtävät, joten kukaan paitsi järjestelmänvalvojat voivat käyttää verkkosivuilla.",
+    "You can enable maintenance mode during application upgrade or when doing other service tasks, so nobody except administrators can use the website.": "Voit ottaa käyttöön ylläpito-tilassa aikana sovellus päivittää tai kun teet muut palvelun tehtävät, joten kukaan paitsi järjestelmänvalvojat voivat käyttää verkkosivuilla.",
     "You can have no more than :n open rooms at the same time.": "Sinulla voi olla enintään :n avoimet huoneet samaan aikaan.",
     "You can mark withdrawal request as completed.": "Voit merkitä nostopyynnön valmiiksi.",
     "You can not delete currently logged user.": "Et voi poistaa tällä hetkellä kirjautunut käyttäjä.",

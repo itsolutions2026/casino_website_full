@@ -11,20 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('xrpl_addresses', function (Blueprint $table) {
+        if(!Schema::hasTable('xrpl_addresses')){
+            Schema::create('xrpl_addresses', function (Blueprint $table) {
 
-            $table->id();
-            $table->foreignId('user_id');
-            $table->string('address', 44);
-            $table->string('message', 50);
-            $table->boolean('confirmed')->default(FALSE);
-            $table->timestamps();
+                $table->id();
+                $table->foreignId('user_id');
+                $table->string('address', 44);
+                $table->string('message', 50);
+                $table->boolean('confirmed')->default(FALSE);
+                $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+                $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->unique(['user_id', 'address']);
-            $table->index('confirmed');
-        });
+                $table->unique(['user_id', 'address']);
+                $table->index('confirmed');
+            });
+        }
     }
 
     /**

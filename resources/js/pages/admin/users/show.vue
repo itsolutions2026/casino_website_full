@@ -25,7 +25,7 @@
                 </router-link>
               </template>
               <template #fields="{ item: user }">
-                <template v-if="Object.keys(user.fields).length">
+                <template v-if="user.fields.length">
                   <div v-for="(value, key) in user.fields" :key="key" class="d-flex justify-space-between">
                     <div class="my-2">
                       {{ key }}
@@ -84,7 +84,6 @@ export default {
     headers () {
       return [
         { text: this.$t('ID'), value: 'id' },
-        { text: this.$t('Code'), value: 'code' },
         { text: this.$t('Auth profiles'), value: 'profiles' },
         { text: this.$t('Referrer'), value: 'referrer' },
         { text: this.$t('Avatar'), value: 'avatar' },

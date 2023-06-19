@@ -450,7 +450,7 @@ RECAPTCHA_SECRET_KEY
   </p>
   <pre>
     cd /var/www/stake
-    php artisan queue:work --queue=provider-games,multiplayer-games,default
+    php artisan queue:work --queue=multiplayer-games,default
   </pre>
   <div role="alert" class="v-alert v-alert--dense v-sheet v-sheet--outlined v-alert--border v-alert--outlined v-alert--border-left warning--text">
     <div class="v-alert__wrapper">
@@ -495,7 +495,7 @@ RECAPTCHA_SECRET_KEY
   </p>
   <pre>[program:stake-worker]
 process_name=%(program_name)s_%(process_num)02d
-command=php /var/www/stake/artisan queue:work --queue=provider-games,multiplayer-games,default
+command=php /var/www/stake/artisan queue:work --queue=multiplayer-games,default
 autostart=true
 autorestart=true
 stopasgroup=true
@@ -542,7 +542,7 @@ Tasks: 2 (limit: 101102)
 Memory: 68.6M
 CGroup: /system.slice/supervisord.service
        ├─1119950 /usr/bin/python3.6 /usr/bin/supervisord -c /etc/supervisord.conf
-       └─1119951 /usr/bin/php /var/www/stake/artisan queue:work --queue=provider-games,multiplayer-games,default
+       └─1119951 /usr/bin/php /var/www/stake/artisan queue:work --queue=multiplayer-games,default
 
 </pre>
   <p>

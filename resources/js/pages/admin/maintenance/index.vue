@@ -61,10 +61,11 @@
                   </v-card-title>
                   <v-card-text>
                     <p>
-                      {{ $t('Some application tasks should be run on a regular basis.') }}
-                      {{ $t('To automatically execute these tasks, add the following system cron job.') }}
-                      {{ $t('If you are adding a cron job via cPanel, you will need to omit the leading asterisk characters.') }}
-                      {{ $t('Please refer to the installation guide for more information on how to add a cron job.') }}
+                      {{ $t('Certain application tasks are supposed to run automatically on a regular basis.') }}
+                      {{ $t('To make it work please add the following system cron job.') }}
+                      {{ $t('Please note that the command-line (cli) PHP version on your server should also meet the minimum PHP version requirements, otherwise the cron job will fail to execute.') }}
+                      {{ $t('If you add the cron job via cPanel you need to omit the leading asterisk symbols.') }}
+                      {{ $t('Please refer to the installation guide for more information how to add a cron job.') }}
                     </p>
                     <v-form @submit.prevent="cron">
                       <v-text-field
@@ -183,9 +184,19 @@
                   </v-card-title>
                   <v-card-text>
                     <p>
-                      {{ $t('You can enable maintenance mode while updating the application or performing other maintenance tasks so that no one except administrators can use the site.') }}
+                      {{ $t('You can enable maintenance mode during application upgrade or when doing other service tasks, so nobody except administrators can use the website.') }}
                     </p>
                     <v-form v-model="maintenanceFormIsValid" class="mt-5" @submit.prevent="switchMaintenanceMode">
+                      <v-text-field
+                        v-model="maintenanceForm.message"
+                        :label="$t('Message')"
+                        :rules="[validationRequired]"
+                        :error="maintenanceForm.errors.has('message')"
+                        :error-messages="maintenanceForm.errors.get('message')"
+                        :disabled="typeof data.maintenance_mode === 'undefined' || data.maintenance_mode"
+                        outlined
+                      />
+
                       <v-skeleton-loader type="button" :loading="!dataLoaded">
                         <v-btn type="submit" color="primary" :disabled="!maintenanceFormIsValid || maintenanceForm.busy" :loading="maintenanceForm.busy">
                           <template v-if="data.maintenance_mode">
@@ -310,7 +321,9 @@ export default {
     return {
       data: {},
       maintenanceFormIsValid: null,
-      maintenanceForm: new Form(),
+      maintenanceForm: new Form({
+        message: this.$t('Sorry, we are doing some maintenance. Please check back soon.')
+      }),
       commandFormIsValid: null,
       commandForm: new Form({
         command: null,

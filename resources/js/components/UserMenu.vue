@@ -17,7 +17,7 @@
 
           <v-list-item-content>
             <v-list-item-title>{{ user.name }}</v-list-item-title>
-            <v-list-item-subtitle>{{ user.email }}</v-list-item-subtitle>
+<!--            <v-list-item-subtitle>{{ user.email }}</v-list-item-subtitle>-->
           </v-list-item-content>
 
           <v-list-item-action class="flex-row">
@@ -37,14 +37,14 @@
               </template>
               <span>{{ $t('Security') }}</span>
             </v-tooltip>
-            <v-tooltip bottom>
-              <template #activator="{ on }">
-                <v-btn icon :to="{ name: 'user.affiliate' }" @click="userMenu = false" v-on="on">
-                  <v-icon>mdi-link</v-icon>
-                </v-btn>
-              </template>
-              <span>{{ $t('Affiliate program') }}</span>
-            </v-tooltip>
+<!--            <v-tooltip bottom>-->
+<!--              <template #activator="{ on }">-->
+<!--                <v-btn icon :to="{ name: 'user.affiliate' }" @click="userMenu = false" v-on="on">-->
+<!--                  <v-icon>mdi-link</v-icon>-->
+<!--                </v-btn>-->
+<!--              </template>-->
+<!--              <span>{{ $t('Affiliate program') }}</span>-->
+<!--            </v-tooltip>-->
           </v-list-item-action>
         </v-list-item>
       </v-list>

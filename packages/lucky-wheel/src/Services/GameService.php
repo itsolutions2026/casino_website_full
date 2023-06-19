@@ -51,35 +51,50 @@ class GameService extends ParentGameService implements RandomGameService
 
         $bet = $params['bet'];
 
-        $randomNumber = random_int(1, 115);
+        $randomNumber = random_int(1, 1000);
 
         $gameable = new $this->gameableClass();
         $gameable->variation = $variation;
 //        $gameable->position = $this->numberGenerator->getNumber();
 
-        if($randomNumber< 19){
+        if($randomNumber< 99){
             $gameable->position = 0;
         }
-        else if($randomNumber >= 20 && $randomNumber< 29){
+        else if($randomNumber >= 100 && $randomNumber< 196){
             $gameable->position = 1;
         }
-        else if($randomNumber >= 30 && $randomNumber< 49){
+        else if($randomNumber >= 196 && $randomNumber< 297){
             $gameable->position = 2;
         }
-        else if($randomNumber >= 50 && $randomNumber< 59){
+        else if($randomNumber >= 297 && $randomNumber< 345){
             $gameable->position = 3;
         }
-        else if($randomNumber >= 60 && $randomNumber< 79){
+        else if($randomNumber >= 345 && $randomNumber< 444){
             $gameable->position = 4;
         }
-        else if($randomNumber >= 80 && $randomNumber< 89){
+        else if($randomNumber >= 444 && $randomNumber< 456){
             $gameable->position = 5;
         }
-        else if($randomNumber >= 90 && $randomNumber< 109){
+        else if($randomNumber >= 456 && $randomNumber< 555){
             $gameable->position = 6;
         }
-        else{
+        else if($randomNumber >= 555 && $randomNumber< 654){
             $gameable->position = 7;
+        }
+        else if($randomNumber >= 654 && $randomNumber< 670){
+            $gameable->position = 8;
+        }
+        else if($randomNumber >= 670 && $randomNumber< 769){
+            $gameable->position = 9;
+        }
+        else{
+            $randomNumber1 = random_int(1, 4);
+            if($randomNumber1 <=2){
+                $gameable->position = 0;
+            }
+            else{
+                $gameable->position = 9;
+            }
         }
 
         

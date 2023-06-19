@@ -947,7 +947,7 @@
     "Yes": "Ja",
     "You are receiving this email because we received a password reset request for your account.": "Du modtager denne email, fordi vi har modtaget en anmode om nulstilling af adgangskoden til din konto.",
     "You can choose how many paylines to play in each round - from 1 to 20.": "Du kan vælge, hvor mange betalingslinjer at spille i hver runde fra 1 til 20.",
-    "You can enable maintenance mode while updating the application or performing other maintenance tasks so that no one except administrators can use the site.": "Du kan aktivere vedligeholdelse tilstand under anvendelse opgradering eller når de udfører andre opgaver, så ingen undtagen administratorer kan bruge hjemmesiden.",
+    "You can enable maintenance mode during application upgrade or when doing other service tasks, so nobody except administrators can use the website.": "Du kan aktivere vedligeholdelse tilstand under anvendelse opgradering eller når de udfører andre opgaver, så ingen undtagen administratorer kan bruge hjemmesiden.",
     "You can have no more than :n open rooms at the same time.": "Du kan ikke have mere end :n åbne rum på samme tid.",
     "You can mark withdrawal request as completed.": "Du kan markere anmodning om udbetaling som afsluttet.",
     "You can not delete currently logged user.": "Du kan ikke slette aktuelt er logget på brugeren.",

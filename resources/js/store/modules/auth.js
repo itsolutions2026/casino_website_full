@@ -2,13 +2,15 @@ import axios from 'axios'
 import {
   AUTH_CLEAR_USER,
   AUTH_UPDATE_USER_ACCOUNT_BALANCE,
-  AUTH_UPDATE_USER
+  AUTH_UPDATE_USER,
+  AUTH_UPDATE_USER_XUMM_INSTANCE
 } from '../mutation-types'
 
 // state
 export const state = {
   user: window.user,
-  account: window.user ? window.user.account : null
+  account: window.user ? window.user.account : null,
+  xummInstance: null
 }
 
 // getters
@@ -21,6 +23,15 @@ export const mutations = {
   [AUTH_CLEAR_USER] (state) {
     state.user = null
     state.account = null
+
+    try{
+      state.xummInstance && state.xummInstance.instance === '1'?state.xummInstance.logout():''
+    }
+    catch (e){
+      //
+    }
+
+    state.xummInstance = null
   },
 
   [AUTH_UPDATE_USER] (state, user) {
@@ -30,6 +41,10 @@ export const mutations = {
 
   [AUTH_UPDATE_USER_ACCOUNT_BALANCE] (state, balance) {
     state.account.balance = balance
+  },
+
+  [AUTH_UPDATE_USER_XUMM_INSTANCE](state, instance){
+    state.xummInstance = instance
   }
 }
 
@@ -57,13 +72,16 @@ export const actions = {
     commit(AUTH_UPDATE_USER_ACCOUNT_BALANCE, balance)
   },
 
+  updateXummInstance ({commit}, instance){
+    commit(AUTH_UPDATE_USER_XUMM_INSTANCE, instance)
+  },
+
   async logout ({ commit }) {
     try {
       await axios.post('/api/auth/logout')
     } catch (e) {
       //
     }
-
     commit(AUTH_CLEAR_USER)
   }
 }

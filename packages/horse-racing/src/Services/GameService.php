@@ -16,6 +16,7 @@ use App\Models\Game;
 use App\Models\User;
 use App\Services\GameService as ParentGameService;
 use App\Services\RandomGameService;
+use Illuminate\Support\Facades\Log;
 use Packages\HorseRacing\Helpers\RaceResult;
 use Packages\HorseRacing\Helpers\RaceBet;
 use Packages\HorseRacing\Models\HorseRacing;
@@ -37,11 +38,33 @@ class GameService extends ParentGameService implements RandomGameService
     {
         $provablyFairGame = $this->getProvablyFairGame();
 
-        $raceResult = (new RaceResult())
-            ->set($provablyFairGame->secret) 
-            ->shift($provablyFairGame->shift_value); 
+//        $raceResult = (new RaceResult())
+//            ->set($provablyFairGame->secret)
+//            ->shift($provablyFairGame->shift_value);
 
-        $raceBet = new RaceBet($raceResult, config('horse-racing.paytable'), $params['bets']);
+        $randomNumber = random_int(1, 100);
+
+
+        while (true) {
+            $raceResult = (new RaceResult())->generate(count(config('horse-racing.runners')));
+            $raceBet = new RaceBet($raceResult, config('horse-racing.paytable'), $params['bets']);
+            $temp_win_amount = $raceBet->getWinAmount();
+            $temp_bet_amount = $raceBet->getBetAmount();
+            if($randomNumber < 32){
+                if( $temp_win_amount > $temp_bet_amount) {
+                    break;
+                }
+            }
+            else{
+                if( $temp_win_amount <= $temp_bet_amount) {
+                    break;
+                }
+            }
+        }
+
+        Log::error(print_r($randomNumber, 1));
+        Log::error(print_r($raceResult->get(), 1));
+
 
         $gameable = new $this->gameableClass();
         $gameable->bets = $raceBet->getBets();

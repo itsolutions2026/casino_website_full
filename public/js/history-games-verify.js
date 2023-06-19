@@ -1,1 +1,590 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2154],{90053:(t,e,r)=>{r.r(e),r.d(e,{default:()=>$});var n=r(15537),a=r(85893),o=r(5255),i=r(17024),s=r(66530),l=r(45578),c=r(91864),u=r(57894),h=r(22515),d=r(84002),f=r(86320),v=r(96878),p=r(73845),m=r(9669),g=r.n(m),y=r(67502),_=r(18001);function b(t){return b="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},b(t)}function w(){w=function(){return t};var t={},e=Object.prototype,r=e.hasOwnProperty,n=Object.defineProperty||function(t,e,r){t[e]=r.value},a="function"==typeof Symbol?Symbol:{},o=a.iterator||"@@iterator",i=a.asyncIterator||"@@asyncIterator",s=a.toStringTag||"@@toStringTag";function l(t,e,r){return Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}),t[e]}try{l({},"")}catch(t){l=function(t,e,r){return t[e]=r}}function c(t,e,r,a){var o=e&&e.prototype instanceof d?e:d,i=Object.create(o.prototype),s=new L(a||[]);return n(i,"_invoke",{value:C(t,r,s)}),i}function u(t,e,r){try{return{type:"normal",arg:t.call(e,r)}}catch(t){return{type:"throw",arg:t}}}t.wrap=c;var h={};function d(){}function f(){}function v(){}var p={};l(p,o,(function(){return this}));var m=Object.getPrototypeOf,g=m&&m(m(S([])));g&&g!==e&&r.call(g,o)&&(p=g);var y=v.prototype=d.prototype=Object.create(p);function _(t){["next","throw","return"].forEach((function(e){l(t,e,(function(t){return this._invoke(e,t)}))}))}function Z(t,e){function a(n,o,i,s){var l=u(t[n],t,o);if("throw"!==l.type){var c=l.arg,h=c.value;return h&&"object"==b(h)&&r.call(h,"__await")?e.resolve(h.__await).then((function(t){a("next",t,i,s)}),(function(t){a("throw",t,i,s)})):e.resolve(h).then((function(t){c.value=t,i(c)}),(function(t){return a("throw",t,i,s)}))}s(l.arg)}var o;n(this,"_invoke",{value:function(t,r){function n(){return new e((function(e,n){a(t,r,e,n)}))}return o=o?o.then(n,n):n()}})}function C(t,e,r){var n="suspendedStart";return function(a,o){if("executing"===n)throw new Error("Generator is already running");if("completed"===n){if("throw"===a)throw o;return H()}for(r.method=a,r.arg=o;;){var i=r.delegate;if(i){var s=$(i,r);if(s){if(s===h)continue;return s}}if("next"===r.method)r.sent=r._sent=r.arg;else if("throw"===r.method){if("suspendedStart"===n)throw n="completed",r.arg;r.dispatchException(r.arg)}else"return"===r.method&&r.abrupt("return",r.arg);n="executing";var l=u(t,e,r);if("normal"===l.type){if(n=r.done?"completed":"suspendedYield",l.arg===h)continue;return{value:l.arg,done:r.done}}"throw"===l.type&&(n="completed",r.method="throw",r.arg=l.arg)}}}function $(t,e){var r=e.method,n=t.iterator[r];if(void 0===n)return e.delegate=null,"throw"===r&&t.iterator.return&&(e.method="return",e.arg=void 0,$(t,e),"throw"===e.method)||"return"!==r&&(e.method="throw",e.arg=new TypeError("The iterator does not provide a '"+r+"' method")),h;var a=u(n,t.iterator,e.arg);if("throw"===a.type)return e.method="throw",e.arg=a.arg,e.delegate=null,h;var o=a.arg;return o?o.done?(e[t.resultName]=o.value,e.next=t.nextLoc,"return"!==e.method&&(e.method="next",e.arg=void 0),e.delegate=null,h):o:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,h)}function x(t){var e={tryLoc:t[0]};1 in t&&(e.catchLoc=t[1]),2 in t&&(e.finallyLoc=t[2],e.afterLoc=t[3]),this.tryEntries.push(e)}function k(t){var e=t.completion||{};e.type="normal",delete e.arg,t.completion=e}function L(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(x,this),this.reset(!0)}function S(t){if(t){var e=t[o];if(e)return e.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var n=-1,a=function e(){for(;++n<t.length;)if(r.call(t,n))return e.value=t[n],e.done=!1,e;return e.value=void 0,e.done=!0,e};return a.next=a}}return{next:H}}function H(){return{value:void 0,done:!0}}return f.prototype=v,n(y,"constructor",{value:v,configurable:!0}),n(v,"constructor",{value:f,configurable:!0}),f.displayName=l(v,s,"GeneratorFunction"),t.isGeneratorFunction=function(t){var e="function"==typeof t&&t.constructor;return!!e&&(e===f||"GeneratorFunction"===(e.displayName||e.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,v):(t.__proto__=v,l(t,s,"GeneratorFunction")),t.prototype=Object.create(y),t},t.awrap=function(t){return{__await:t}},_(Z.prototype),l(Z.prototype,i,(function(){return this})),t.AsyncIterator=Z,t.async=function(e,r,n,a,o){void 0===o&&(o=Promise);var i=new Z(c(e,r,n,a),o);return t.isGeneratorFunction(r)?i:i.next().then((function(t){return t.done?t.value:i.next()}))},_(y),l(y,s,"Generator"),l(y,o,(function(){return this})),l(y,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var e=Object(t),r=[];for(var n in e)r.push(n);return r.reverse(),function t(){for(;r.length;){var n=r.pop();if(n in e)return t.value=n,t.done=!1,t}return t.done=!0,t}},t.values=S,L.prototype={constructor:L,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(k),!t)for(var e in this)"t"===e.charAt(0)&&r.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=void 0)},stop:function(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(t){if(this.done)throw t;var e=this;function n(r,n){return i.type="throw",i.arg=t,e.next=r,n&&(e.method="next",e.arg=void 0),!!n}for(var a=this.tryEntries.length-1;a>=0;--a){var o=this.tryEntries[a],i=o.completion;if("root"===o.tryLoc)return n("end");if(o.tryLoc<=this.prev){var s=r.call(o,"catchLoc"),l=r.call(o,"finallyLoc");if(s&&l){if(this.prev<o.catchLoc)return n(o.catchLoc,!0);if(this.prev<o.finallyLoc)return n(o.finallyLoc)}else if(s){if(this.prev<o.catchLoc)return n(o.catchLoc,!0)}else{if(!l)throw new Error("try statement without catch or finally");if(this.prev<o.finallyLoc)return n(o.finallyLoc)}}}},abrupt:function(t,e){for(var n=this.tryEntries.length-1;n>=0;--n){var a=this.tryEntries[n];if(a.tryLoc<=this.prev&&r.call(a,"finallyLoc")&&this.prev<a.finallyLoc){var o=a;break}}o&&("break"===t||"continue"===t)&&o.tryLoc<=e&&e<=o.finallyLoc&&(o=null);var i=o?o.completion:{};return i.type=t,i.arg=e,o?(this.method="next",this.next=o.finallyLoc,h):this.complete(i)},complete:function(t,e){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&e&&(this.next=e),h},finish:function(t){for(var e=this.tryEntries.length-1;e>=0;--e){var r=this.tryEntries[e];if(r.finallyLoc===t)return this.complete(r.completion,r.afterLoc),k(r),h}},catch:function(t){for(var e=this.tryEntries.length-1;e>=0;--e){var r=this.tryEntries[e];if(r.tryLoc===t){var n=r.completion;if("throw"===n.type){var a=n.arg;k(r)}return a}}throw new Error("illegal catch attempt")},delegateYield:function(t,e,r){return this.delegate={iterator:S(t),resultName:e,nextLoc:r},"next"===this.method&&(this.arg=void 0),h}},t}function Z(t,e,r,n,a,o,i){try{var s=t[o](i),l=s.value}catch(t){return void r(t)}s.done?e(l):Promise.resolve(l).then(n,a)}const C={middleware:["auth","verified","2fa_passed"],components:{Preloader:r(16417).Z,GameMenu:y.Z},props:["id"],metaInfo:function(){return{title:this.$t("Game {0}",[this.id])}},data:function(){return{game:null,serverHashModal:!1,clientHashModal:!1,shiftValueModal:!1}},computed:{serverHashCalculationCode:function(){return this.game?'print hash_hmac("sha256", "'.concat(this.game.provably_fair_game.secret,'", "').concat(this.game.provably_fair_game.server_seed,'")'):""},clientHashCalculationCode:function(){return this.game?'print hash_hmac("sha256", "'.concat(this.game.provably_fair_game.secret).concat(this.game.provably_fair_game.server_seed,'", "').concat(this.game.provably_fair_game.client_seed,'")'):""},shiftValueCalculationCode:function(){return this.game?'print hexdec(substr("'.concat(this.game.provably_fair_game.client_hash,'", -5))'):""}},created:function(){var t,e=this;return(t=w().mark((function t(){var r,n;return w().wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,g().get("/api/history/games/".concat(e.id,"/verify"));case 2:r=t.sent,(n=r.data.game).gameable.is_provably_fair||(e.$store.dispatch("message/error",{text:e.$t("This type of game is not provably fair.")}),e.$router.back()),e.game=n;case 6:case"end":return t.stop()}}),t)})),function(){var e=this,r=arguments;return new Promise((function(n,a){var o=t.apply(e,r);function i(t){Z(o,n,a,i,s,"next",t)}function s(t){Z(o,n,a,i,s,"throw",t)}i(void 0)}))})()},methods:{copyToClipboard:function(t){return(0,_.vQ)(t.$el.querySelector("textarea"))}}};const $=(0,r(51900).Z)(C,(function(){var t=this,e=t._self._c;return e(s.Z,[e(u.Z,{attrs:{align:"center",justify:"center"}},[e(i.Z,{attrs:{cols:"12",lg:"8"}},[e(a.Z,[e(v.Z,[e(n.Z,{attrs:{icon:""},on:{click:function(e){return t.$router.go(-1)}}},[e(c.Z,[t._v("mdi-arrow-left")])],1),t._v(" "),e(p.qW,[t._v("\n            "+t._s(t.$t("Game {0}",[t.id]))+"\n          ")]),t._v(" "),e(h.Z),t._v(" "),e("game-menu",{attrs:{id:t.id}}),t._v(" "),e("preloader",{attrs:{active:!t.game}})],1),t._v(" "),e(o.ZB,[e(d.Z,{staticClass:"mb-5",attrs:{value:t.game?t.game.provably_fair_game.secret:"",label:t.$t("Server secret"),outlined:"",readonly:"",disabled:!t.game,hint:t.$t("Randomly generated by the server before each game."),"persistent-hint":""}}),t._v(" "),e(d.Z,{staticClass:"mb-5",attrs:{value:t.game?t.game.provably_fair_game.server_seed:"",label:t.$t("Server seed"),outlined:"",readonly:"",disabled:!t.game,hint:t.$t("Randomly generated by the server before each game."),"persistent-hint":""}}),t._v(" "),e(d.Z,{staticClass:"mb-5",attrs:{value:t.game?t.game.provably_fair_game.hash:"",label:t.$t("Server hash"),outlined:"",readonly:"",disabled:!t.game,hint:t.$t("HMAC SHA256 hash of the server secret with server seed as the key, revealed to player before each game."),"persistent-hint":"","append-icon":"mdi-code-tags"},on:{"click:append":function(e){t.serverHashModal=!0}}}),t._v(" "),e(d.Z,{staticClass:"mb-5",attrs:{value:t.game?t.game.provably_fair_game.client_seed:"",label:t.$t("Client seed"),outlined:"",readonly:"",disabled:!t.game,hint:t.$t("A random string, which is provided before each game from the client side (by the player)."),"persistent-hint":""}}),t._v(" "),e(d.Z,{staticClass:"mb-5",attrs:{value:t.game?t.game.provably_fair_game.client_hash:"",label:t.$t("Client hash"),outlined:"",readonly:"",disabled:!t.game,hint:t.$t("HMAC SHA256 hash of the server secret and server seed with client seed as the key."),"persistent-hint":"","append-icon":"mdi-code-tags"},on:{"click:append":function(e){t.clientHashModal=!0}}}),t._v(" "),e(d.Z,{staticClass:"mb-5",attrs:{value:t.game?t.game.provably_fair_game.shift_value:"",label:t.$t("Shift value"),outlined:"",readonly:"",disabled:!t.game,hint:t.$t("Last 5 chars of the Client hash are converted to a decimal value."),"persistent-hint":"","append-icon":"mdi-code-tags"},on:{"click:append":function(e){t.shiftValueModal=!0}}}),t._v(" "),e(d.Z,{attrs:{value:t.game?t.game.gameable[t.game.gameable.secret_attribute]:"",label:t.$t("Adjusted secret"),outlined:"",readonly:"",disabled:!t.game,hint:t.game?t.game.gameable.secret_attribute_hint:"","persistent-hint":""}}),t._v(" "),e(l.Z,{attrs:{width:"600"},model:{value:t.serverHashModal,callback:function(e){t.serverHashModal=e},expression:"serverHashModal"}},[e(a.Z,[e(v.Z,[e(p.qW,[t._v("\n                  "+t._s(t.$t("Server hash"))+"\n                ")]),t._v(" "),e(h.Z),t._v(" "),e(n.Z,{attrs:{icon:""},on:{click:function(e){t.serverHashModal=!1}}},[e(c.Z,[t._v("mdi-close")])],1)],1),t._v(" "),e(o.ZB,{staticClass:"pa-4"},[e("p",[t._v(t._s(t.$t("Server hash can be calculated using the following PHP code.")))]),t._v(" "),e(f.Z,{ref:"server_hash",attrs:{outlined:"",readonly:"",label:t.$t("Code"),value:t.serverHashCalculationCode}}),t._v(" "),e(n.Z,{on:{click:function(e){return t.copyToClipboard(t.$refs.server_hash)}}},[t._v("\n                  "+t._s(t.$t("Copy"))+"\n                ")]),t._v(" "),e(n.Z,{attrs:{href:"http://phpfiddle.org",target:"_blank"}},[t._v("\n                  "+t._s(t.$t("Run on phpfiddle.org"))+"\n                ")])],1)],1)],1),t._v(" "),e(l.Z,{attrs:{width:"600"},model:{value:t.clientHashModal,callback:function(e){t.clientHashModal=e},expression:"clientHashModal"}},[e(a.Z,[e(v.Z,[e(p.qW,[t._v("\n                  "+t._s(t.$t("Client hash"))+"\n                ")]),t._v(" "),e(h.Z),t._v(" "),e(n.Z,{attrs:{icon:""},on:{click:function(e){t.clientHashModal=!1}}},[e(c.Z,[t._v("mdi-close")])],1)],1),t._v(" "),e(o.ZB,{staticClass:"pa-4"},[e("p",[t._v(t._s(t.$t("Client hash can be calculated using the following PHP code.")))]),t._v(" "),e(f.Z,{ref:"client_hash",attrs:{outlined:"",readonly:"",label:t.$t("Code"),value:t.clientHashCalculationCode}}),t._v(" "),e(n.Z,{on:{click:function(e){return t.copyToClipboard(t.$refs.client_hash)}}},[t._v("\n                  "+t._s(t.$t("Copy"))+"\n                ")]),t._v(" "),e(n.Z,{attrs:{href:"http://phpfiddle.org",target:"_blank"}},[t._v("\n                  "+t._s(t.$t("Run on phpfiddle.org"))+"\n                ")])],1)],1)],1),t._v(" "),e(l.Z,{attrs:{width:"600"},model:{value:t.shiftValueModal,callback:function(e){t.shiftValueModal=e},expression:"shiftValueModal"}},[e(a.Z,[e(v.Z,[e(p.qW,[t._v("\n                  "+t._s(t.$t("Shift value"))+"\n                ")]),t._v(" "),e(h.Z),t._v(" "),e(n.Z,{attrs:{icon:""},on:{click:function(e){t.shiftValueModal=!1}}},[e(c.Z,[t._v("mdi-close")])],1)],1),t._v(" "),e(o.ZB,{staticClass:"pa-4"},[e("p",[t._v(t._s(t.$t("Server hash can be calculated using the following PHP code.")))]),t._v(" "),e(f.Z,{ref:"shift_value",attrs:{outlined:"",readonly:"",label:t.$t("Code"),value:t.shiftValueCalculationCode}}),t._v(" "),e(n.Z,{on:{click:function(e){return t.copyToClipboard(t.$refs.shift_value)}}},[t._v("\n                  "+t._s(t.$t("Copy"))+"\n                ")]),t._v(" "),e(n.Z,{attrs:{href:"http://phpfiddle.org",target:"_blank"}},[t._v("\n                  "+t._s(t.$t("Run on phpfiddle.org"))+"\n                ")])],1)],1)],1)],1)],1)],1)],1)],1)}),[],!1,null,null,null).exports},87607:(t,e,r)=>{r.d(e,{Z:()=>n});const n={props:["id","small"]}},5750:(t,e,r)=>{r.d(e,{s:()=>u,x:()=>h});var n=r(15537),a=r(91864),o=r(48694),i=r(15151),s=r(53146),l=r(33560),c=r(27099),u=function(){var t=this,e=t._self._c;return e(c.Z,{attrs:{"offset-y":!0,transition:"scroll-y-transition",bottom:"",left:""},scopedSlots:t._u([{key:"activator",fn:function(r){var o=r.on;return[e(n.Z,t._g({attrs:{icon:""}},o),[e(a.Z,{attrs:{small:t.small}},[t._v("mdi-dots-vertical")])],1)]}}])},[t._v(" "),e(o.Z,[e(i.Z,{attrs:{to:{name:"history.games.show",params:{id:t.id}},exact:""}},[e(l.Z,[e(a.Z,{attrs:{small:t.small}},[t._v("mdi-eye")])],1),t._v(" "),e(s.km,[e(s.V9,[t._v(t._s(t.$t("View")))])],1)],1),t._v(" "),e(i.Z,{attrs:{to:{name:"history.games.verify",params:{id:t.id}},exact:""}},[e(l.Z,[e(a.Z,{attrs:{small:t.small}},[t._v("mdi-check-decagram")])],1),t._v(" "),e(s.km,[e(s.V9,[t._v(t._s(t.$t("Verify")))])],1)],1)],1)],1)},h=[]}}]);
+"use strict";
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["history-games-verify"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameMenu.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameMenu.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['id', 'small']
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/history/games/verify.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/history/games/verify.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_GameMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/components/GameMenu */ "./resources/js/components/GameMenu.vue");
+/* harmony import */ var _plugins_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/plugins/utils */ "./resources/js/plugins/utils.js");
+/* harmony import */ var _components_Preloader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/components/Preloader */ "./resources/js/components/Preloader.vue");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  middleware: ['auth', 'verified', '2fa_passed'],
+  components: {
+    Preloader: _components_Preloader__WEBPACK_IMPORTED_MODULE_3__["default"],
+    GameMenu: _components_GameMenu__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: ['id'],
+  metaInfo: function metaInfo() {
+    return {
+      title: this.$t('Game {0}', [this.id])
+    };
+  },
+  data: function data() {
+    return {
+      game: null,
+      serverHashModal: false,
+      clientHashModal: false,
+      shiftValueModal: false
+    };
+  },
+  computed: {
+    serverHashCalculationCode: function serverHashCalculationCode() {
+      return this.game ? "print hash_hmac(\"sha256\", \"".concat(this.game.provably_fair_game.secret, "\", \"").concat(this.game.provably_fair_game.server_seed, "\")") : '';
+    },
+    clientHashCalculationCode: function clientHashCalculationCode() {
+      return this.game ? "print hash_hmac(\"sha256\", \"".concat(this.game.provably_fair_game.secret).concat(this.game.provably_fair_game.server_seed, "\", \"").concat(this.game.provably_fair_game.client_seed, "\")") : '';
+    },
+    shiftValueCalculationCode: function shiftValueCalculationCode() {
+      return this.game ? "print hexdec(substr(\"".concat(this.game.provably_fair_game.client_hash, "\", -5))") : '';
+    }
+  },
+  created: function created() {
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _yield$axios$get, game;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/history/games/".concat(_this.id, "/verify"));
+          case 2:
+            _yield$axios$get = _context.sent;
+            game = _yield$axios$get.data.game;
+            if (!game.gameable.is_provably_fair) {
+              _this.$store.dispatch('message/error', {
+                text: _this.$t('This type of game is not provably fair.')
+              });
+              _this.$router.back();
+            }
+            _this.game = game;
+          case 6:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }))();
+  },
+  methods: {
+    copyToClipboard: function copyToClipboard(ref) {
+      return (0,_plugins_utils__WEBPACK_IMPORTED_MODULE_2__.copyToClipboard)(ref.$el.querySelector('textarea'));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/pages/history/games/verify.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/pages/history/games/verify.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _verify_vue_vue_type_template_id_6d0b4d0b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./verify.vue?vue&type=template&id=6d0b4d0b& */ "./resources/js/pages/history/games/verify.vue?vue&type=template&id=6d0b4d0b&");
+/* harmony import */ var _verify_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./verify.vue?vue&type=script&lang=js& */ "./resources/js/pages/history/games/verify.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _verify_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _verify_vue_vue_type_template_id_6d0b4d0b___WEBPACK_IMPORTED_MODULE_0__.render,
+  _verify_vue_vue_type_template_id_6d0b4d0b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/history/games/verify.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GameMenu.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/GameMenu.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GameMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GameMenu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameMenu.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GameMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/history/games/verify.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/pages/history/games/verify.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_verify_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./verify.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/history/games/verify.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_verify_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameMenu.vue?vue&type=template&id=0119fd48&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameMenu.vue?vue&type=template&id=0119fd48& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/VBtn.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/VIcon.js");
+/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/VList.js");
+/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/VListItem.js");
+/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
+/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/VListItemIcon.js");
+/* harmony import */ var vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/lib/components/VMenu */ "./node_modules/vuetify/lib/components/VMenu/VMenu.js");
+
+
+
+
+
+
+
+
+
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c(vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    attrs: {
+      "offset-y": true,
+      transition: "scroll-y-transition",
+      bottom: "",
+      left: ""
+    },
+    scopedSlots: _vm._u([{
+      key: "activator",
+      fn: function fn(_ref) {
+        var on = _ref.on;
+        return [_c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_1__["default"], _vm._g({
+          attrs: {
+            icon: ""
+          }
+        }, on), [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          attrs: {
+            small: _vm.small
+          }
+        }, [_vm._v("mdi-dots-vertical")])], 1)];
+      }
+    }])
+  }, [_vm._v(" "), _c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attrs: {
+      to: {
+        name: "history.games.show",
+        params: {
+          id: _vm.id
+        }
+      },
+      exact: ""
+    }
+  }, [_c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["default"], [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    attrs: {
+      small: _vm.small
+    }
+  }, [_vm._v("mdi-eye")])], 1), _vm._v(" "), _c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__.VListItemContent, [_c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__.VListItemTitle, [_vm._v(_vm._s(_vm.$t("View")))])], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attrs: {
+      to: {
+        name: "history.games.verify",
+        params: {
+          id: _vm.id
+        }
+      },
+      exact: ""
+    }
+  }, [_c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["default"], [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    attrs: {
+      small: _vm.small
+    }
+  }, [_vm._v("mdi-check-decagram")])], 1), _vm._v(" "), _c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__.VListItemContent, [_c(vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__.VListItemTitle, [_vm._v(_vm._s(_vm.$t("Verify")))])], 1)], 1)], 1)], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/history/games/verify.vue?vue&type=template&id=6d0b4d0b&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/history/games/verify.vue?vue&type=template&id=6d0b4d0b& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/VBtn.js");
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/VCard.js");
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VCol.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VContainer.js");
+/* harmony import */ var vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VDialog */ "./node_modules/vuetify/lib/components/VDialog/VDialog.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/VIcon.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VRow.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/VSpacer.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/VTextField.js");
+/* harmony import */ var vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VTextarea */ "./node_modules/vuetify/lib/components/VTextarea/VTextarea.js");
+/* harmony import */ var vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VToolbar */ "./node_modules/vuetify/lib/components/VToolbar/VToolbar.js");
+/* harmony import */ var vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VToolbar */ "./node_modules/vuetify/lib/components/VToolbar/index.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_0__["default"], [_c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    attrs: {
+      align: "center",
+      justify: "center"
+    }
+  }, [_c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    attrs: {
+      cols: "12",
+      lg: "8"
+    }
+  }, [_c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_4__["default"], [_c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      icon: ""
+    },
+    on: {
+      click: function click($event) {
+        return _vm.$router.go(-1);
+      }
+    }
+  }, [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__["default"], [_vm._v("mdi-arrow-left")])], 1), _vm._v(" "), _c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__.VToolbarTitle, [_vm._v("\n            " + _vm._s(_vm.$t("Game {0}", [_vm.id])) + "\n          ")]), _vm._v(" "), _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["default"]), _vm._v(" "), _c("game-menu", {
+    attrs: {
+      id: _vm.id
+    }
+  }), _vm._v(" "), _c("preloader", {
+    attrs: {
+      active: !_vm.game
+    }
+  })], 1), _vm._v(" "), _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_9__.VCardText, [_c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    staticClass: "mb-5",
+    attrs: {
+      value: _vm.game ? _vm.game.provably_fair_game.secret : "",
+      label: _vm.$t("Server secret"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.$t("Randomly generated by the server before each game."),
+      "persistent-hint": ""
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    staticClass: "mb-5",
+    attrs: {
+      value: _vm.game ? _vm.game.provably_fair_game.server_seed : "",
+      label: _vm.$t("Server seed"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.$t("Randomly generated by the server before each game."),
+      "persistent-hint": ""
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    staticClass: "mb-5",
+    attrs: {
+      value: _vm.game ? _vm.game.provably_fair_game.hash : "",
+      label: _vm.$t("Server hash"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.$t("HMAC SHA256 hash of the server secret with server seed as the key, revealed to player before each game."),
+      "persistent-hint": "",
+      "append-icon": "mdi-code-tags"
+    },
+    on: {
+      "click:append": function clickAppend($event) {
+        _vm.serverHashModal = true;
+      }
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    staticClass: "mb-5",
+    attrs: {
+      value: _vm.game ? _vm.game.provably_fair_game.client_seed : "",
+      label: _vm.$t("Client seed"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.$t("A random string, which is provided before each game from the client side (by the player)."),
+      "persistent-hint": ""
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    staticClass: "mb-5",
+    attrs: {
+      value: _vm.game ? _vm.game.provably_fair_game.client_hash : "",
+      label: _vm.$t("Client hash"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.$t("HMAC SHA256 hash of the server secret and server seed with client seed as the key."),
+      "persistent-hint": "",
+      "append-icon": "mdi-code-tags"
+    },
+    on: {
+      "click:append": function clickAppend($event) {
+        _vm.clientHashModal = true;
+      }
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    staticClass: "mb-5",
+    attrs: {
+      value: _vm.game ? _vm.game.provably_fair_game.shift_value : "",
+      label: _vm.$t("Shift value"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.$t("Last 5 chars of the Client hash are converted to a decimal value."),
+      "persistent-hint": "",
+      "append-icon": "mdi-code-tags"
+    },
+    on: {
+      "click:append": function clickAppend($event) {
+        _vm.shiftValueModal = true;
+      }
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    attrs: {
+      value: _vm.game ? _vm.game.gameable[_vm.game.gameable.secret_attribute] : "",
+      label: _vm.$t("Adjusted secret"),
+      outlined: "",
+      readonly: "",
+      disabled: !_vm.game,
+      hint: _vm.game ? _vm.game.gameable.secret_attribute_hint : "",
+      "persistent-hint": ""
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    attrs: {
+      width: "600"
+    },
+    model: {
+      value: _vm.serverHashModal,
+      callback: function callback($$v) {
+        _vm.serverHashModal = $$v;
+      },
+      expression: "serverHashModal"
+    }
+  }, [_c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_4__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__.VToolbarTitle, [_vm._v("\n                  " + _vm._s(_vm.$t("Server hash")) + "\n                ")]), _vm._v(" "), _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["default"]), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      icon: ""
+    },
+    on: {
+      click: function click($event) {
+        _vm.serverHashModal = false;
+      }
+    }
+  }, [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__["default"], [_vm._v("mdi-close")])], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_9__.VCardText, {
+    staticClass: "pa-4"
+  }, [_c("p", [_vm._v(_vm._s(_vm.$t("Server hash can be calculated using the following PHP code.")))]), _vm._v(" "), _c(vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    ref: "server_hash",
+    attrs: {
+      outlined: "",
+      readonly: "",
+      label: _vm.$t("Code"),
+      value: _vm.serverHashCalculationCode
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    on: {
+      click: function click($event) {
+        return _vm.copyToClipboard(_vm.$refs.server_hash);
+      }
+    }
+  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Copy")) + "\n                ")]), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      href: "http://phpfiddle.org",
+      target: "_blank"
+    }
+  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Run on phpfiddle.org")) + "\n                ")])], 1)], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    attrs: {
+      width: "600"
+    },
+    model: {
+      value: _vm.clientHashModal,
+      callback: function callback($$v) {
+        _vm.clientHashModal = $$v;
+      },
+      expression: "clientHashModal"
+    }
+  }, [_c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_4__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__.VToolbarTitle, [_vm._v("\n                  " + _vm._s(_vm.$t("Client hash")) + "\n                ")]), _vm._v(" "), _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["default"]), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      icon: ""
+    },
+    on: {
+      click: function click($event) {
+        _vm.clientHashModal = false;
+      }
+    }
+  }, [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__["default"], [_vm._v("mdi-close")])], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_9__.VCardText, {
+    staticClass: "pa-4"
+  }, [_c("p", [_vm._v(_vm._s(_vm.$t("Client hash can be calculated using the following PHP code.")))]), _vm._v(" "), _c(vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    ref: "client_hash",
+    attrs: {
+      outlined: "",
+      readonly: "",
+      label: _vm.$t("Code"),
+      value: _vm.clientHashCalculationCode
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    on: {
+      click: function click($event) {
+        return _vm.copyToClipboard(_vm.$refs.client_hash);
+      }
+    }
+  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Copy")) + "\n                ")]), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      href: "http://phpfiddle.org",
+      target: "_blank"
+    }
+  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Run on phpfiddle.org")) + "\n                ")])], 1)], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    attrs: {
+      width: "600"
+    },
+    model: {
+      value: _vm.shiftValueModal,
+      callback: function callback($$v) {
+        _vm.shiftValueModal = $$v;
+      },
+      expression: "shiftValueModal"
+    }
+  }, [_c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_3__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_4__["default"], [_c(vuetify_lib_components_VToolbar__WEBPACK_IMPORTED_MODULE_7__.VToolbarTitle, [_vm._v("\n                  " + _vm._s(_vm.$t("Shift value")) + "\n                ")]), _vm._v(" "), _c(vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["default"]), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      icon: ""
+    },
+    on: {
+      click: function click($event) {
+        _vm.shiftValueModal = false;
+      }
+    }
+  }, [_c(vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__["default"], [_vm._v("mdi-close")])], 1)], 1), _vm._v(" "), _c(vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_9__.VCardText, {
+    staticClass: "pa-4"
+  }, [_c("p", [_vm._v(_vm._s(_vm.$t("Server hash can be calculated using the following PHP code.")))]), _vm._v(" "), _c(vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    ref: "shift_value",
+    attrs: {
+      outlined: "",
+      readonly: "",
+      label: _vm.$t("Code"),
+      value: _vm.shiftValueCalculationCode
+    }
+  }), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    on: {
+      click: function click($event) {
+        return _vm.copyToClipboard(_vm.$refs.shift_value);
+      }
+    }
+  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Copy")) + "\n                ")]), _vm._v(" "), _c(vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attrs: {
+      href: "http://phpfiddle.org",
+      target: "_blank"
+    }
+  }, [_vm._v("\n                  " + _vm._s(_vm.$t("Run on phpfiddle.org")) + "\n                ")])], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/GameMenu.vue?vue&type=template&id=0119fd48&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/GameMenu.vue?vue&type=template&id=0119fd48& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GameMenu_vue_vue_type_template_id_0119fd48___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GameMenu_vue_vue_type_template_id_0119fd48___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GameMenu_vue_vue_type_template_id_0119fd48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GameMenu.vue?vue&type=template&id=0119fd48& */ "./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameMenu.vue?vue&type=template&id=0119fd48&");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/history/games/verify.vue?vue&type=template&id=6d0b4d0b&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/pages/history/games/verify.vue?vue&type=template&id=6d0b4d0b& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_verify_vue_vue_type_template_id_6d0b4d0b___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_verify_vue_vue_type_template_id_6d0b4d0b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vuetify_loader_lib_loader_js_ruleSet_1_rules_0_use_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_verify_vue_vue_type_template_id_6d0b4d0b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./verify.vue?vue&type=template&id=6d0b4d0b& */ "./node_modules/vuetify-loader/lib/loader.js??ruleSet[1].rules[0].use!./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/history/games/verify.vue?vue&type=template&id=6d0b4d0b&");
+
+
+/***/ })
+
+}]);

@@ -17,19 +17,6 @@
           <v-card-text>
             <v-form v-model="formIsValid" @submit.prevent="update">
               <v-text-field
-                v-model="form.code"
-                :label="$t('Code')"
-                type="text"
-                :readonly="true"
-                :error="form.errors.has('code')"
-                :error-messages="form.errors.get('code')"
-                outlined
-                append-icon="mdi-refresh"
-                @click:append="form.code = uuid()"
-                @keydown="clearFormErrors($event,'code')"
-              />
-
-              <v-text-field
                 v-model="form.name"
                 :label="$t('Name')"
                 type="text"
@@ -196,7 +183,6 @@ import Preloader from '~/components/Preloader'
 import FileUpload from '~/components/Admin/FileUpload'
 import { config } from '~/plugins/config'
 import FormParameter from '~/components/FormParameter'
-import { v4 as uuid } from 'uuid'
 
 export default {
   components: { FormParameter, FileUpload, Preloader, UserMenu },
@@ -220,7 +206,6 @@ export default {
       individualPermissions: false,
       showPassword: false,
       form: new Form({
-        code: null,
         name: null,
         email: null,
         fields: {},
@@ -280,7 +265,6 @@ export default {
   },
 
   methods: {
-    uuid,
     async update () {
       await this.form.patch(`/api/admin/users/${this.id}`)
 
