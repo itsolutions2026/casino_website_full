@@ -1,6 +1,6 @@
 {
     "id": "casino-holdem",
-    "name": "Casino Hold'em",
+    "name": "Poker Hold'em ",
     "type": "game",
     "description": "This add-on implements Casino Hold'em game.",
     "providers": [

@@ -60,7 +60,7 @@
       />
 
       <image-upload
-        :label="$t('Lootin image texture')"
+        :label="$t('Looter image texture')"
         :form="form"
         :default-value="headsImageUrl"
         :default-url="headsImageUrl"
@@ -68,7 +68,7 @@
       />
 
       <image-upload
-        :label="$t('Hootin image texture')"
+        :label="$t('Hooter image texture')"
         :form="form"
         :default-value="tailsImageUrl"
         :default-url="tailsImageUrl"

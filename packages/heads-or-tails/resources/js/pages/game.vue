@@ -24,7 +24,7 @@
           :value="0"
           @click="sound(clickSound)"
         >
-          {{ $t('Lootin') }}
+          {{ $t('LOOter') }}
 
         </v-btn>
         <v-btn
@@ -34,7 +34,7 @@
           :value="1"
           @click="sound(clickSound)"
         >
-          {{ $t('Hootin') }}
+          {{ $t('HOOter') }}
         </v-btn>
       </v-btn-toggle>
     </div>
@@ -392,12 +392,16 @@ export default {
         message: null,
         sound: null
       }
+      let VLabel = {
+        'Heads' : 'LOOter',
+        'Tails' : 'HOOter'
+      }
       if (game.win > 0) {
         this.result.sound = winSound
-        this.result.message = game.gameable.result + ', ' + this.$t('you won') + ' ' + game.win
+        this.result.message = VLabel[game.gameable.result] + ', ' + this.$t('you won') + ' ' + game.win
       } else {
         this.result.sound = loseSound
-        this.result.message = game.gameable.result + ', ' + this.$t('you lost')
+        this.result.message = VLabel[game.gameable.result] + ', ' + this.$t('you lost')
       }
       // 0 - heads, 1 - tails
       this.tossResult = game.gameable.toss_result
