@@ -20,9 +20,9 @@
           </v-icon>
         </v-btn>
       </template>
-      <v-btn v-if="provablyFairEnabled" fab small color="primary" @click="provablyFairModal = true">
-        <v-icon>mdi-check-decagram</v-icon>
-      </v-btn>
+<!--      <v-btn v-if="provablyFairEnabled" fab small color="primary" @click="provablyFairModal = true">-->
+<!--        <v-icon>mdi-check-decagram</v-icon>-->
+<!--      </v-btn>-->
       <v-btn fab small color="primary" @click="infoModal = true">
         <v-icon>mdi-information-variant</v-icon>
       </v-btn>
@@ -31,45 +31,45 @@
       </v-btn>
     </v-speed-dial>
 
-    <v-dialog v-if="provablyFairEnabled" v-model="provablyFairModal" width="600">
-      <v-card>
-        <v-toolbar>
-          <v-toolbar-title>
-            {{ $t('Provably fair') }}
-          </v-toolbar-title>
-          <v-spacer />
-          <v-btn icon @click="provablyFairModal = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-toolbar>
-        <v-card-text class="pa-4">
-          <v-form v-model="formIsValid" @submit.prevent="createProvablyFairGame">
-            <v-text-field
-              v-model="provablyFairGame.client_seed"
-              :label="$t('Client seed')"
-              outlined
-              :rules="[v => validationMaxLength(v, 32)]"
-            />
-            <v-text-field
-              ref="hash"
-              v-model="provablyFairGame.hash"
-              :label="$t('Server hash')"
-              outlined
-              readonly
-              append-icon="mdi-content-copy"
-              @click:append="copyToClipboard($refs.hash)"
-            />
-            <v-btn
-              type="submit"
-              color="primary"
-              :disabled="!formIsValid"
-            >
-              {{ $t('Generate') }}
-            </v-btn>
-          </v-form>
-        </v-card-text>
-      </v-card>
-    </v-dialog>
+<!--    <v-dialog v-if="provablyFairEnabled" v-model="provablyFairModal" width="600">-->
+<!--      <v-card>-->
+<!--        <v-toolbar>-->
+<!--          <v-toolbar-title>-->
+<!--            {{ $t('Provably fair') }}-->
+<!--          </v-toolbar-title>-->
+<!--          <v-spacer />-->
+<!--          <v-btn icon @click="provablyFairModal = false">-->
+<!--            <v-icon>mdi-close</v-icon>-->
+<!--          </v-btn>-->
+<!--        </v-toolbar>-->
+<!--        <v-card-text class="pa-4">-->
+<!--          <v-form v-model="formIsValid" @submit.prevent="createProvablyFairGame">-->
+<!--            <v-text-field-->
+<!--              v-model="provablyFairGame.client_seed"-->
+<!--              :label="$t('Client seed')"-->
+<!--              outlined-->
+<!--              :rules="[v => validationMaxLength(v, 32)]"-->
+<!--            />-->
+<!--            <v-text-field-->
+<!--              ref="hash"-->
+<!--              v-model="provablyFairGame.hash"-->
+<!--              :label="$t('Server hash')"-->
+<!--              outlined-->
+<!--              readonly-->
+<!--              append-icon="mdi-content-copy"-->
+<!--              @click:append="copyToClipboard($refs.hash)"-->
+<!--            />-->
+<!--            <v-btn-->
+<!--              type="submit"-->
+<!--              color="primary"-->
+<!--              :disabled="!formIsValid"-->
+<!--            >-->
+<!--              {{ $t('Generate') }}-->
+<!--            </v-btn>-->
+<!--          </v-form>-->
+<!--        </v-card-text>-->
+<!--      </v-card>-->
+<!--    </v-dialog>-->
 
     <v-dialog v-model="infoModal" width="600" class="overflow-hidden">
       <component :is="infoModalComponent" @close="infoModal = false" />

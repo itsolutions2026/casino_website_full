@@ -98,7 +98,7 @@ export default [
       { path: 'wins', name: 'history.wins', component: page('history/wins') },
       { path: 'losses', name: 'history.losses', component: page('history/losses') },
       { path: 'games/:id', name: 'history.games.show', component: page('history/games/show'), props: true },
-      { path: 'games/:id/verify', name: 'history.games.verify', component: page('history/games/verify'), props: true }
+      // { path: 'games/:id/verify', name: 'history.games.verify', component: page('history/games/verify'), props: true }
     ]
   },
 

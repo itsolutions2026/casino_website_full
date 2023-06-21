@@ -51,17 +51,20 @@ class GameService extends ParentGameService implements RandomGameService
 
         $gameable = new $this->gameableClass();
 
+        $gameable->deck = $this->deck->toArray();
+        $gameable->player_bet = $params['player_bet'] ?: 0;
+        $gameable->banker_bet = $params['banker_bet'] ?: 0;
+        $gameable->tie_bet = $params['tie_bet'] ?: 0;
         $gameable->player_hand = [$this->deck->getCard(1)->code, $this->deck->getCard(3)->code];
         $gameable->banker_hand = [$this->deck->getCard(2)->code, $this->deck->getCard(4)->code];
+
+
 
         $i = 6;
         while ($i < 51) {
             for ($j = 7; $j < 51; $j++) {
                 if ($i == $j) continue;
-                $gameable->deck = $this->deck->toArray();
-                $gameable->player_bet = $params['player_bet'] ?: 0;
-                $gameable->banker_bet = $params['banker_bet'] ?: 0;
-                $gameable->tie_bet = $params['tie_bet'] ?: 0;
+
 
                 if ($i !== 6) {
                     $gameable->player_hand = [$this->deck->getCard(1)->code, $this->deck->getCard($i)->code];

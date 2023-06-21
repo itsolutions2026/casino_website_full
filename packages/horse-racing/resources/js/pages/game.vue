@@ -638,6 +638,7 @@ export default {
       this.inputBets[type].splice(index, 1, Math.min(this.maxBet, bet))
     },
     async play () {
+
       this.sound(clickSound)
       this.loading = true
 

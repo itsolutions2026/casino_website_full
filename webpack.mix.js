@@ -20,14 +20,14 @@ const outputPath = function (path, prefix) {
   const matches = path.match(/^packages\/([a-z0-9-]+)\/.+\/([a-z0-9-_]+\.[a-z0-9]{3,4})$/i)
 
   return matches !== null && matches.length === 3
-    ? `${prefix}/${matches[1]}/${matches[2]}`
-    : `${path.replace('resources/', '')}`
+      ? `${prefix}/${matches[1]}/${matches[2]}`
+      : `${path.replace('resources/', '')}`
 }
 
 const output = {
-  // this causes issues with PWA, some JS files stop loading, needs further investigation
-  // chunkFilename: 'js/[name].js?id=[chunkhash]'
+  chunkFilename: 'js/[chunkhash].js'
 }
+
 
 const _module = {
   rules: [
@@ -138,32 +138,33 @@ if (mix.inProduction()) {
   // Note that PWA only works with HTTPS
   // https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW
   plugins.push(
-    new GenerateSW({
-      cacheId: 'stake-pwa',
-      sourcemap: false,
-      mode: 'production',
-      clientsClaim: true,
-      skipWaiting: true,
-      // Do not precache images, audio, text
-      exclude: [/\.(?:png|jpg|jpeg|svg|wav|mp3|webm|eot|ttf|woff|woff2|txt|map|glb)$/, /js\/packages\/.+\.js$/],
-      // Define runtime caching rules.
-      runtimeCaching: [
-        {
-          urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//,
-          handler: 'NetworkFirst'
-        },
-        {
-          urlPattern: /\.(?:png|jpg|jpeg|svg|wav|mp3|webm|eot|ttf|woff|woff2)$/,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'assets',
-            expiration: {
-              maxEntries: 50
+      new GenerateSW({
+        cacheId: 'stake-pwa',
+        sourcemap: false,
+        mode: 'production',
+        clientsClaim: true,
+        skipWaiting: true,
+        maximumFileSizeToCacheInBytes: 5000000,
+        // Do not precache images, audio, text
+        exclude: [/\.(?:png|jpg|jpeg|svg|wav|mp3|webm|eot|ttf|woff|woff2|txt|map|glb)$/, /js\/packages\/.+\.js$/],
+        // Define runtime caching rules.
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//,
+            handler: 'NetworkFirst'
+          },
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|wav|mp3|webm|eot|ttf|woff|woff2)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'assets',
+              expiration: {
+                maxEntries: 50
+              }
             }
           }
-        }
-      ]
-    }))
+        ]
+      }))
 }
 
 // https://stackoverflow.com/a/63255974/2767324
@@ -188,12 +189,7 @@ mix.options({
 
 mix
     .js('resources/js/app.js', 'public/js')
-    .browserSync({proxy: process.env.APP_URL})
     .vuetify('vuetify-loader')
     .vue()
-
-mix.version()
-
-if (mix.inProduction()) {
-  mix.version()
-}
+    .version()
+// .sourceMaps()

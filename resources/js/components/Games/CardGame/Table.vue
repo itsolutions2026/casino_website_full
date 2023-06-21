@@ -22,9 +22,9 @@
         <div class="button-mini game-info" @click="modalInfo = true">
           <img :src="`${imageBaseUrl}/info.png`">
         </div>
-        <div class="button-mini provably" @click="modalProvably = true">
-          <img :src="`${imageBaseUrl}/provably.png`">
-        </div>
+<!--        <div class="button-mini provably" @click="modalProvably = true">-->
+<!--          <img :src="`${imageBaseUrl}/provably.png`">-->
+<!--        </div>-->
         <div class="button-mini full" @click="fullscreen = !fullscreen">
           <img :src="`${imageBaseUrl}/full.png`">
         </div>
@@ -36,36 +36,36 @@
       <modal-info v-model="modalInfo">
         <slot name="info" />
       </modal-info>
-      <modal-info v-model="modalProvably">
-        <div class="provably-fair-form">
-          <h5>
-            {{ $t('Provably fair') }}
-          </h5>
-          <form @submit.prevent="createProvablyFairGame">
-            <label>{{ $t('Client seed') }}</label>
-            <input v-model="provablyFairGame.client_seed">
-            <label>{{ $t('Server hash') }}</label>
-            <div class="input-btn">
-              <input
-                ref="hash"
-                v-model="provablyFairGame.hash"
-                readonly
-              >
-              <div class="btn-icon" @click="copyToClipboard($refs.hash)">
-                <object>
-                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline--fa fa-clone fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z"></path></svg>
-                </object>
-              </div>
-            </div>
-            <button
-              type="submit"
-              :disabled="!provablyFairGame || !provablyFairGame.client_seed || !(provablyFairGame.client_seed.length > 0 && provablyFairGame.client_seed.length < 32)"
-            >
-              {{ $t('Generate') }}
-            </button>
-          </form>
-        </div>
-      </modal-info>
+<!--      <modal-info v-model="modalProvably">-->
+<!--        <div class="provably-fair-form">-->
+<!--          <h5>-->
+<!--            {{ $t('Provably fair') }}-->
+<!--          </h5>-->
+<!--          <form @submit.prevent="createProvablyFairGame">-->
+<!--            <label>{{ $t('Client seed') }}</label>-->
+<!--            <input v-model="provablyFairGame.client_seed">-->
+<!--            <label>{{ $t('Server hash') }}</label>-->
+<!--            <div class="input-btn">-->
+<!--              <input-->
+<!--                ref="hash"-->
+<!--                v-model="provablyFairGame.hash"-->
+<!--                readonly-->
+<!--              >-->
+<!--              <div class="btn-icon" @click="copyToClipboard($refs.hash)">-->
+<!--                <object>-->
+<!--                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" class="svg-inline&#45;&#45;fa fa-clone fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z"></path></svg>-->
+<!--                </object>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <button-->
+<!--              type="submit"-->
+<!--              :disabled="!provablyFairGame || !provablyFairGame.client_seed || !(provablyFairGame.client_seed.length > 0 && provablyFairGame.client_seed.length < 32)"-->
+<!--            >-->
+<!--              {{ $t('Generate') }}-->
+<!--            </button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </modal-info>-->
       <div class="portrait-warn">
         {{ $t('Please rotate your device to landscape orientation') }}
       </div>

@@ -63,27 +63,27 @@ class GameService extends ParentGameService implements RandomGameService
 
 
         if ($gameable->dealer_hand[0][1] != 'A' || $this->getUserAccountBalance() < 1.5 * $gameable->bet) {
-            
+
             if ($gameable->player_score == 21 && $gameable->dealer_score != 21) {
                 $gameable->player_blackjack = TRUE;
-                $gameable->win = $gameable->bet * 2.5; 
+                $gameable->win = $gameable->bet * 2.5;
                 $this->save(['bet' => $gameable->bet, 'win' => $gameable->win, 'status' => Game::STATUS_COMPLETED]);
-            
+
             } elseif ($gameable->player_score != 21 && $gameable->dealer_score == 21) {
                 $gameable->dealer_blackjack = TRUE;
                 $this->save(['bet' => $gameable->bet, 'win' => 0, 'status' => Game::STATUS_COMPLETED]);
-            
+
             } elseif ($gameable->player_score == 21 && $gameable->dealer_score == 21) {
                 $gameable->player_blackjack = TRUE;
                 $gameable->dealer_blackjack = TRUE;
-                $gameable->win = $gameable->bet; 
+                $gameable->win = $gameable->bet;
                 $this->save(['bet' => $gameable->bet, 'win' => $gameable->win, 'status' => Game::STATUS_COMPLETED]);
             }
 
-            
+
             if (!$this->isGameCompleted()) {
                 $this->addActions($gameable, ['hit', 'stand']);
-                
+
                 if ($this->getUserAccountBalance() >= $gameable->bet * 2) {
                     $this->addActions($gameable, ['double']);
                     if ($gameable->player_hand[0][1] == $gameable->player_hand[1][1]) {
@@ -92,11 +92,11 @@ class GameService extends ParentGameService implements RandomGameService
                 }
                 $this->save(['bet' => $gameable->bet, 'win' => 0, 'status' => Game::STATUS_IN_PROGRESS]);
             }
-        
+
         } elseif ($gameable->dealer_hand[0][1] == 'A' && $this->getUserAccountBalance() >= $gameable->bet / 2) {
-            
+
             $this->addActions($gameable, ['insurance']);
-            
+
             $this->save(['bet' => $gameable->bet, 'win' => 0, 'status' => Game::STATUS_IN_PROGRESS]);
         }
 
@@ -113,9 +113,12 @@ class GameService extends ParentGameService implements RandomGameService
 
         $gameable->actions = [];
 
+        $randomNumber = random_int(1, 100);
+
+
+
         while ($this->calculateScore($gameable->dealer_hand) < 17) {
-            
-            
+
             $gameable->dealer_hand = array_merge(
                 $gameable->dealer_hand,
                 [$this->deck->getCard(count($gameable->player_hand) + count($gameable->dealer_hand) + 1)->code]
@@ -124,13 +127,25 @@ class GameService extends ParentGameService implements RandomGameService
 
         $gameable->dealer_score = $this->calculateScore($gameable->dealer_hand);
 
-        
+        if($randomNumber < 48){
+            if ($gameable->dealer_score > 21 || $gameable->player_score > $gameable->dealer_score) {
+                $gameable->win = $gameable->bet * 2;
+                $completed = true;
+
+            } elseif ($gameable->player_score == $gameable->dealer_score) {
+                $gameable->win = $gameable->bet;
+                $completed = true;
+            }
+        } else if ( $randomNumber < 32 ){
+
+        }
+
         if ($gameable->dealer_score > 21 || $gameable->player_score > $gameable->dealer_score) {
-            $gameable->win = $gameable->bet * 2; 
-        
+            $gameable->win = $gameable->bet * 2;
+
         } elseif ($gameable->player_score == $gameable->dealer_score) {
-            $gameable->win = $gameable->bet; 
-        
+            $gameable->win = $gameable->bet;
+
         } else {
             $gameable->win = 0;
         }

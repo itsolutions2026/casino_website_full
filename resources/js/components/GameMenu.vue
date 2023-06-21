@@ -14,14 +14,14 @@
           <v-list-item-title>{{ $t('View') }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item :to="{ name: 'history.games.verify', params: { id } }" exact>
-        <v-list-item-icon>
-          <v-icon :small="small">mdi-check-decagram</v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ $t('Verify') }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+<!--      <v-list-item :to="{ name: 'history.games.verify', params: { id } }" exact>-->
+<!--        <v-list-item-icon>-->
+<!--          <v-icon :small="small">mdi-check-decagram</v-icon>-->
+<!--        </v-list-item-icon>-->
+<!--        <v-list-item-content>-->
+<!--          <v-list-item-title>{{ $t('Verify') }}</v-list-item-title>-->
+<!--        </v-list-item-content>-->
+<!--      </v-list-item>-->
     </v-list>
   </v-menu>
 </template>

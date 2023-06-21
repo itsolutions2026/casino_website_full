@@ -7,6 +7,7 @@ import Pusher from 'pusher-js' // used by Echo, needs to be explicitly imported
 const key = get(window, 'config.broadcasting.connections.pusher.key')
 const cluster = get(window, 'config.broadcasting.connections.pusher.options.cluster')
 
+
 const echo = key && cluster
   ? new Echo({
     broadcaster: 'pusher',
