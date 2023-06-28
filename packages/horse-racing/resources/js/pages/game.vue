@@ -660,6 +660,7 @@ export default {
 
       this.positions = game.gameable.positions.map(item => parseInt(item))
 
+
       await this.gameAnimation()
 
       // this.playing = false
